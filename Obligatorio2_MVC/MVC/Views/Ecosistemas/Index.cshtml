@@ -1,0 +1,106 @@
+﻿@model IEnumerable<LogicaNegocio.Ecosistema>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    .my-div {
+        /* Estilo de Bootstrap para un botón */
+        margin: 10px;
+        padding: 5px 10px;
+        border: 1px solid #007bff;
+        color: #fff;
+        display: inline-block;
+        text-decoration: none; /* Elimina el subrayado del enlace */
+        text-white;
+    }
+
+        .my-div a {
+            text-decoration: none; /* Asegúrate de que el enlace dentro del div también esté sin subrayar */
+        }
+</style>
+
+<h1>ECOSISTEMAS</h1>
+
+@if (Context.Session.GetString("nombre") != null){ 
+
+    <p>
+        <a class="btn btn-secondary" asp-action="Create">NUEVO ECOSISTEMA</a>
+    </p>
+ }
+<span class="text-danger">@ViewBag.Error</span>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre.Value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Latitud)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Longitud)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Area)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion.Value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagenEcosistema)
+            </th>
+            <th>
+                
+            </th>
+
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre.Value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Latitud)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Longitud)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion.Value)
+            </td>
+                <td>
+                    <img src="/img/ecosistemas/@item.ImagenEcosistema" height="70" />
+                </td>
+            <td>
+                <div class="my-div">
+                    @Html.ActionLink("AMENAZAS", "AmenazasDelEcosistema", new {  idEcosistema=item.Id })
+                </div>
+            </td>
+            
+        @if (Context.Session.GetString("nombre") != null){ 
+            <td>
+                    @Html.ActionLink("BORRAR", "Delete", new { id=item.Id }) |
+                
+                    @Html.ActionLink("Asignar Amenazas", "AsignarAmenazaAUnEcosistea", "Ecosistemas", new { IdEcosistema=item.Id })
+                
+            </td>
+        }
+        </tr>
+}
+    </tbody>
+</table>

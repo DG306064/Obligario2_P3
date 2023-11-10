@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ExcepcionesPropias</id>
+    <version>1.0.0</version>
+    <authors>ExcepcionesPropias</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net7.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.dll" target="lib\net7.0\ExcepcionesPropias.dll" />
+  </files>
+</package>

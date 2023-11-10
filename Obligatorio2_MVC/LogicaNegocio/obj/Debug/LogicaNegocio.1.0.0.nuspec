@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>LogicaNegocio</id>
+    <version>1.0.0</version>
+    <authors>LogicaNegocio</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net7.0">
+        <dependency id="ExcepcionesPropias" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.dll" target="lib\net7.0\LogicaNegocio.dll" />
+  </files>
+</package>

@@ -1,0 +1,111 @@
+﻿@model MVC.Models.EcosistemaViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>AGREGAR ECOSISTEMA</h1>
+<BR />
+<span class="text-danger">@ViewBag.Error</span>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="NombreEcosistema" class="control-label"></label>
+                <input asp-for="NombreEcosistema" class="form-control" />
+                <span asp-validation-for="NombreEcosistema" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescripcionEcosistema" class="control-label"></label>
+                <input asp-for="DescripcionEcosistema" class="form-control" />
+                <span asp-validation-for="DescripcionEcosistema" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ecosistema.Latitud" class="control-label"></label>
+                <input asp-for="Ecosistema.Latitud" class="form-control" />
+                <span asp-validation-for="Ecosistema.Latitud" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ecosistema.Longitud" class="control-label"></label>
+                <input asp-for="Ecosistema.Longitud" class="form-control" />
+                <span asp-validation-for="Ecosistema.Longitud" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ecosistema.Area" class="control-label"></label>
+                <input asp-for="Ecosistema.Area" class="form-control" />
+                <span asp-validation-for="Ecosistema.Area" class="text-danger"></span>
+            </div>
+           
+
+            <br />
+
+            <div class="form-group">
+                
+                <label class="control-label">Paises</label>
+
+                <select name="IdPaisSeleccionado">
+                    @foreach (LogicaNegocio.Pais pais in Model.Paises)
+                    {
+                        if (pais.Id == Model.idPaisSeleccionado)
+                        {
+                            <option selected value="@pais.Id">@pais.Nombre.Value</option>
+                        }
+                        else
+                        {
+                            <option value="@pais.Id">@pais.Nombre.Value</option>
+                        }
+                    }
+                </select>
+            </div>
+
+
+            <div class="form-group">
+
+                <label class="control-label">Estado de conservación</label>
+
+                <select name="idEstadoConservacion">
+                    @foreach (LogicaNegocio.EstadoConservacion estado in Model.EstadosDeConservacion)
+                    {
+                        if (estado.Id == Model.idEstadoConservacion)
+                        {
+                            <option selected value="@estado.Id">@estado.Nombre.Value</option>
+                        }
+                        else
+                        {
+                            <option value="@estado.Id">@estado.Nombre.Value</option>
+                        }
+                    }
+                </select>
+            </div>
+
+              <br />
+
+            <div class="form-group">
+                <label asp-for="ImagenEcosistema" class="control-label"></label>
+                <input asp-for="ImagenEcosistema" class="form-control" />
+                <span asp-validation-for="ImagenEcosistema" class="text-danger"></span>
+            </div>
+
+       
+
+
+
+            <div class="form-group">
+                <input type="submit" value="CREAR" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<LogicaNegocio.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>USUARIOS</h1>
+<br />
+<span class="text-danger">@ViewBag.Error</span>
+
+<p>
+    <a class="btn btn alert-secondary" asp-action="Create">NUEVO USUARIO</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaIngreso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rol)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaIngreso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rol)
+            </td>
+            <td>
+                    <div class="my-div">
+                        @Html.ActionLink("ELIMINAR", "Delete", new {  id=item.Id  })
+                    </div>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+<style>
+    .my-div {
+        margin: 10px;
+        padding: 6px 12px;
+        border: 1px solid #007bff;
+        color: #fff;
+        display: inline-block;
+        text-decoration: none;
+        text-white;
+    }
+
+        .my-div a {
+            text - decoration: none;
+        }
+</style>

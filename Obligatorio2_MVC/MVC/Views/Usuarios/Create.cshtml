@@ -1,0 +1,62 @@
+﻿@model MVC.Models.UsuarioViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>CREAR</h1>
+
+<span class="text-danger">@ViewBag.Error</span>
+<br />
+<span class="text-danger">@ViewBag.Error2</span>
+
+
+<h4>Usuario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           
+            <div class="form-group">
+                <label asp-for="Usuario.Alias" class="control-label"></label>
+                <input asp-for="Usuario.Alias" class="form-control" />
+                <span asp-validation-for="Usuario.Alias" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usuario.Password" class="control-label"></label>
+                <input asp-for="Usuario.Password" class="form-control" type="password" />
+                <span asp-validation-for="Usuario.Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ContraseñaAConfirmar" class="control-label"></label>
+                <input asp-for="ContraseñaAConfirmar" class="form-control" type="password" required />
+                <span asp-validation-for="ContraseñaAConfirmar" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Usuario.Rol" class="control-label"></label>
+                <div classs="form-group">
+
+                    <select name="Usuario.Rol">
+                        <option value="Usuario">Usuario</option>
+                        <option value="Admin">Admin</option>
+                    </select>
+
+                </div>
+                <span asp-validation-for="Usuario.Rol" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

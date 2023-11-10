@@ -1,0 +1,58 @@
+﻿@model MVC.Models.AmenazaViewModel;
+
+@{
+    ViewData["Title"] = "AmenazasDeLaEspecie";
+}
+
+<h1>AMENAZAS DEL ECOSISTEMA</h1>
+<br />
+<span class="text-danger">@ViewBag.Error</span>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayFor(model => model.Especie.NombreComun)
+            </th>
+            <th>
+                @Html.DisplayFor(model => model.Especie.NombreCientifico)
+
+        </tr>
+    </thead>
+</table>
+<hr />
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Amenaza.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amenaza.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amenaza.Peligrosidad)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.amenazas)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Peligrosidad)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,40 @@
+﻿@model LogicaNegocio.Parametros.Parametro
+
+@{
+    ViewData["Title"] = "ModificarParametros";
+}
+
+<h1>Modificar Parametros</h1>
+<br />
+<span class="text-danger">@ViewBag.Error</span>
+
+<span class="text-success">@ViewBag.Exito </span>
+
+
+<hr />
+
+
+<form class="row row-cols-lg-auto g-3 align-items-center" action="~/Parametros/ModificarElParametro" method="post">
+
+    <div class="col-12">
+        <input type="text" class="form-control" id="strBusqueda" name="valorNuevo">
+    </div>
+
+
+    <select class="form-control" id="slcFiltro" name="value">
+        <option value=0></option>
+        <option value=1>LARGO MAXIMO DE LAS DESCRIPCIONES</option>
+        <option value=2>LARGO MÍNIMO DE LAS DESCRIPCIONES</option>
+        <option value=3>LARGO MAXIMO DE LOS NOMBRES</option>
+        <option value=4>LARGO MÍNIMO DE LOS NOMBRES</option>
+    </select>
+
+    <div class="col-12">
+        <button class="btn btn-secondary" type="submit">Buscar</button>
+    </div>
+
+
+</form>
+
+
+

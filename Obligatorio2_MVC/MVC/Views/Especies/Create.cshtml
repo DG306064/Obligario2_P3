@@ -1,0 +1,95 @@
+﻿@model MVC.Models.EspecieViewModel;
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>REGISTRAR ESPECIE</h1>
+
+<span class="text-danger">@ViewBag.Error</span>
+
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+       
+            <div class="form-group">
+                <label asp-for="Especie.NombreCientifico" class="control-label"></label>
+                <input asp-for="Especie.NombreCientifico" class="form-control" />
+                <span asp-validation-for="Especie.NombreCientifico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreComunEspecie" class="control-label"></label>
+                <input asp-for="NombreComunEspecie" class="form-control" />
+                <span asp-validation-for="NombreComunEspecie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescripcionEspecie" class="control-label"></label>
+                <input asp-for="DescripcionEspecie" class="form-control" />
+                <span asp-validation-for="DescripcionEspecie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Especie.PesoMinimo" class="control-label"></label>
+                <input asp-for="Especie.PesoMinimo" class="form-control" />
+                <span asp-validation-for="Especie.PesoMinimo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Especie.PesoMaximo" class="control-label"></label>
+                <input asp-for="Especie.PesoMaximo" class="form-control" />
+                <span asp-validation-for="Especie.PesoMaximo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Especie.LongitudMinima" class="control-label"></label>
+                <input asp-for="Especie.LongitudMinima" class="form-control" />
+                <span asp-validation-for="Especie.LongitudMinima" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Especie.LongitudMaxima" class="control-label"></label>
+                <input asp-for="Especie.LongitudMaxima" class="form-control" />
+                <span asp-validation-for="Especie.LongitudMaxima" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+
+                <label class="control-label">Estado de conservación</label>
+
+                <select name="idEstadoConservacion">
+                    @foreach (LogicaNegocio.EstadoConservacion estado in Model.EstadosDeConservacion)
+                    {
+                        if (estado.Id == Model.idEstadoConservacion)
+                        {
+                            <option selected value="@estado.Id">@estado.Nombre.Value</option>
+                        }
+                        else
+                        {
+                            <option value="@estado.Id">@estado.Nombre.Value</option>
+                        }
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ImagenEspecie" class="control-label"></label>
+                <input asp-for="ImagenEspecie" class="form-control" />
+                <span asp-validation-for="ImagenEspecie" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <input type="submit" value="CREAR" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

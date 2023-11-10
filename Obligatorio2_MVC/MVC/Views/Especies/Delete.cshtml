@@ -1,0 +1,74 @@
+﻿@model LogicaNegocio.Especie
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>BORRAR</h1>
+<span class="text-danger">@ViewBag.Error</span>
+<br />
+<br />
+
+<h3>Estas seguro que quieres borrar esto?</h3>
+<div>
+    <h4>Especie</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreCientifico)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombreCientifico)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreComun)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombreComun)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PesoMinimo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PesoMinimo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PesoMaximo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PesoMaximo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LongitudMinima)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LongitudMinima)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LongitudMaxima)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LongitudMaxima)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ImagenEspecie)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="BORRAR" class="btn btn-danger" /> 
+        
+    </form>
+</div>

@@ -1,0 +1,141 @@
+﻿@model IEnumerable<LogicaNegocio.Especie>
+
+    
+ <style>
+    .my-div {
+        /* Estilo de Bootstrap para un botón */
+        margin: 8px;
+        padding: 4px 8px;
+        border: 1px solid #007bff;
+       
+        color: #fff;
+        display: inline-block;
+        text-decoration: none; /* Elimina el subrayado del enlace */
+        text-white ;
+    }
+
+        .my-div a {
+            text-decoration: none; /* Asegúrate de que el enlace dentro del div también esté sin subrayar */
+        }
+</style>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>ESPECIES</h1>
+
+<span class="text-danger">@ViewBag.Error</span>
+
+@if (Context.Session.GetString("nombre") != null)
+{
+
+    <p>
+        <a class="btn btn-secondary"  asp-action="Create">NUEVA ESPECIE</a>
+    </p>
+}
+
+
+<form class="row row-cols-lg-auto g-3 align-items-center" action="~/Especies/Buscador" method="post">
+
+    <div class="col-12">
+        <input type="text" class="form-control" id="strBusqueda" name="busqueda" placeholder="Busqueda" >
+    </div>
+
+
+    <select class="form-control" id="slcFiltro" name="filtro">
+        <option value=0></option>
+        <option value=1>Nombre Científico</option>
+        <option value=2>En peligro de extinción</option>
+        <option value=3>Especies por rango de peso</option>
+        <option value=4>Por ecosistema</option>
+        <option value=5>Ecosistemas en los que no puede habitar una especie</option>
+    </select>
+
+    <div class="col-12">
+        <button class="btn btn-secondary" type="submit">Buscar</button>
+    </div>
+
+
+</form>
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCientifico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreComun.Value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion.Value)
+            </th>
+            <th>
+            </th>
+            
+            <th>
+            </th>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.ImagenEspecie)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCientifico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreComun.Value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion.Value)
+            </td>
+            <td>
+                    <div class="my-div">
+                        @Html.ActionLink("DETALLES", "Details", new {  idEspecie=item.Id })
+                    </div>
+            </td>
+                
+             <td>
+                <img src="/img/especies/@item.ImagenEspecie" height="70" />
+             </td>
+             <td>
+                <div class="my-div">
+                    @Html.ActionLink("AMENAZAS", "AmenazasDeLaEspecie", new {  idEspecie=item.Id })
+                </div>
+            </td>
+            
+                @if (Context.Session.GetString("nombre") != null)
+                {
+             <td>
+                  
+                    @Html.ActionLink("Borrar", "Delete", new {  id=item.Id }) |
+                                    
+                   
+                    @Html.ActionLink("Asignar Ecosistema", "AsignarEcosistemas", new {  idEspecie=item.Id }) |
+                
+                   
+                    @Html.ActionLink("Asignar Amenazas", "AsignarAmenazaAUnaEspecie", "Especies", new { IdEspecie=item.Id })
+                  
+            </td>
+            }
+        </tr>
+}
+    </tbody>
+</table>

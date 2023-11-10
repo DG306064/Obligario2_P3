@@ -1,0 +1,76 @@
+﻿@model MVC.Models.AmenazaViewModel;
+
+@{
+    ViewData["Title"] = "AsignarAmenazaAUnEcosistea";
+}
+
+<style>
+    .my-div {
+        
+        margin: 10px;
+        padding: 6px 12px;
+        border: 1px solid #007bff;
+        color: #fff;
+        display: inline-block;
+        text-decoration: none; 
+        text-white;
+    }
+
+        .my-div a {
+            text-decoration: none; 
+        }
+</style>
+
+
+
+
+<h1>ASIGNAR AMENAZA A UN ECOSISTEMA</h1>
+<p>
+    <br />
+    <span class="text-danger">@ViewBag.Error</span>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Amenaza.Id)
+            </th>
+            <th>
+                    @Html.DisplayNameFor(model => model.Amenaza.Descripcion)
+            </th>
+            <th>
+                    @Html.DisplayNameFor(model => model.Amenaza.Peligrosidad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.amenazas) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Peligrosidad)
+            </td>
+            <td>
+                @if (Model.IdsDeLasAmenazas.Contains(item.Id))
+                {
+                     <div class="my-div">
+                                @Html.ActionLink("ELIMINAR ASIGNACION", "AsignarAmenazaAEcosistema", new {  IdEcosistema=Model.IdEcosistema, IdAmenaza=item.Id })
+                     </div>
+                }
+                else
+                {
+                     <div class="my-div">
+                                @Html.ActionLink("ASIGNAR", "AsignarAmenazaAEcosistema", new { IdEcosistema=Model.IdEcosistema, IdAmenaza=item.Id})
+                            </div>
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

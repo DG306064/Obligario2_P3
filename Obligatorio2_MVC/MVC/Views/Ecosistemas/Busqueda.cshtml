@@ -1,0 +1,65 @@
+﻿@model IEnumerable<LogicaNegocio.Ecosistema>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>ECOSISTEMA DONDE NO PUEDE VIVIR LA ESPECIE</h1>
+
+<span class="text-danger">@ViewBag.Error</span>
+
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Latitud)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Longitud)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Area)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Latitud)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Longitud)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Area)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+             
+            </tr>
+        }
+    </tbody>
+</table>

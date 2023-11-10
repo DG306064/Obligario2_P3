@@ -1,0 +1,76 @@
+﻿@model MVC.Models.AmenazaViewModel;
+
+@{
+    ViewData["Title"] = "AsignarAmenazaAUnaEspecie";
+}
+
+<style>
+    .my-div {
+        
+        margin: 10px;
+        padding: 6px 12px;
+        border: 1px solid #007bff;
+        color: #fff;
+        display: inline-block;
+        text-decoration: none; 
+        text-white;
+    }
+
+        .my-div a {
+            text-decoration: none; 
+        }
+</style>
+
+
+<h1>Asignar mmenaza a una especie</h1>
+
+<br />
+<span class="text-danger">@ViewBag.Error</span>
+
+  
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Amenaza.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amenaza.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amenaza.Peligrosidad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.amenazas) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Peligrosidad)
+            </td>
+            <td>
+                    @if (Model.IdsDeLasAmenazas.Contains(item.Id))
+                    {
+                        <div class="my-div">
+                            @Html.ActionLink("ELIMINAR ASIGNACION", "AsignarAmenaza", new {  IdEspecie=Model.IdEspecie, IdAmenaza=item.Id })
+                        </div>
+
+                    }
+                    else
+                    { 
+                        <div class="my-div">
+                            @Html.ActionLink("ASIGNAR", "AsignarAmenaza", new { IdEspecie=Model.IdEspecie, IdAmenaza=item.Id})
+                       </div>
+                    }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

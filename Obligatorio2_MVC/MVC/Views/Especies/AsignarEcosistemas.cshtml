@@ -1,0 +1,100 @@
+﻿@model MVC.Models.HabitatViewModel;
+
+@{
+    ViewData["Title"] = "AsignarEcosistemas";
+}
+
+<style>
+    .my-div {
+        /* Estilo de Bootstrap para un botón */
+        margin: 10px;
+        padding: 6px 12px;
+        border: 1px solid #007bff;
+        color: #fff;
+        display: inline-block;
+        text-decoration: none; /* Elimina el subrayado del enlace */
+        text-white;
+    }
+
+        .my-div a {
+            text-decoration: none; /* Asegúrate de que el enlace dentro del div también esté sin subrayar */
+        }
+</style>
+
+
+
+<h1>Asignar Ecosistemas</h1>
+<br />
+<span class="text-danger">@ViewBag.Error</span>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Latitud
+            </th>
+            <th>
+                Longitud
+            </th>
+            <th>
+                Area
+            </th>
+            <th>
+                Descripcion
+            </th>
+            <th>
+                Vista
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Habitats)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ecosistema.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ecosistema.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ecosistema.Latitud)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ecosistema.Longitud)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ecosistema.Area)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ecosistema.Descripcion)
+                </td>
+                <td>
+                    <img src="/img/ecosistemas/@item.ecosistema.ImagenEcosistema" height="70" />
+                </td>
+                <td>
+                    @if(item.habita == true)
+                    {
+                        <div class="my-div">
+                            @Html.ActionLink("ELIMINAR ASIGNACION", "AsignarElEcosistema", new { IdEcosistema = item.ecosistema.Id, IdEspecie = Model.IdEspecie  })
+                        </div>
+
+                    }
+                    @if(item.habita == false)
+                    {
+                        <div class="my-div">
+                            @Html.ActionLink("ASIGNAR", "AsignarElEcosistema", new { IdEcosistema = item.ecosistema.Id, IdEspecie = Model.IdEspecie  })
+                        </div>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

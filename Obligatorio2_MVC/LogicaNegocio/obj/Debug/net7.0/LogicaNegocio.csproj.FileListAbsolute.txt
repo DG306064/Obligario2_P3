@@ -1,0 +1,195 @@
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.deps.json
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfoInputs.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfo.cs
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\refint\LogicaNegocio.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\ref\LogicaNegocio.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CopyComplete
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.deps.json
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.dll
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfoInputs.cache
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfo.cs
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CopyComplete
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.dll
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\refint\LogicaNegocio.dll
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\ref\LogicaNegocio.dll
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.deps.json
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.dll
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfoInputs.cache
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfo.cs
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CopyComplete
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.dll
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\refint\LogicaNegocio.dll
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\ref\LogicaNegocio.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.deps.json
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfoInputs.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfo.cs
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CopyComplete
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\refint\LogicaNegocio.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\LogicaNegocio\obj\Debug\net7.0\ref\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.deps.json
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfoInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfo.cs
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CopyComplete
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\LogicaNegocio\obj\Debug\net7.0\refint\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\LogicaNegocio\obj\Debug\net7.0\ref\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfoInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfo.cs
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\refint\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.deps.json
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CopyComplete
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\ref\LogicaNegocio.dll
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.deps.json
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.dll
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfoInputs.cache
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfo.cs
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CopyComplete
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.dll
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\refint\LogicaNegocio.dll
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\LogicaNegocio\obj\Debug\net7.0\ref\LogicaNegocio.dll
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.deps.json
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.dll
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfoInputs.cache
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfo.cs
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CopyComplete
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.dll
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\refint\LogicaNegocio.dll
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\ref\LogicaNegocio.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.deps.json
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfoInputs.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfo.cs
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CopyComplete
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\refint\LogicaNegocio.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\ref\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.deps.json
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfoInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfo.cs
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CopyComplete
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\refint\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\LogicaNegocio\obj\Debug\net7.0\ref\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.deps.json
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfoInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfo.cs
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CopyComplete
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\refint\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\ref\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.deps.json
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfoInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfo.cs
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CopyComplete
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\refint\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\LogicaNegocio\obj\Debug\net7.0\ref\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.deps.json
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\LogicaNegocio\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfoInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfo.cs
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CopyComplete
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\LogicaNegocio\obj\Debug\net7.0\refint\LogicaNegocio.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\LogicaNegocio\obj\Debug\net7.0\ref\LogicaNegocio.dll
