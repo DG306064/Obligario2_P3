@@ -1,0 +1,144 @@
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.deps.json
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.AssemblyReference.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfoInputs.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfo.cs
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.CoreCompileInputs.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\refint\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ref\ExcepcionesPropias.dll
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.deps.json
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.AssemblyReference.cache
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfoInputs.cache
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfo.cs
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.CoreCompileInputs.cache
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\refint\ExcepcionesPropias.dll
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ref\ExcepcionesPropias.dll
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.deps.json
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.AssemblyReference.cache
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfoInputs.cache
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfo.cs
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.CoreCompileInputs.cache
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\refint\ExcepcionesPropias.dll
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Downloads\ppppppp\RESCATADO\GLORIOSO\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ref\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.deps.json
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.AssemblyReference.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfoInputs.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfo.cs
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.CoreCompileInputs.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\refint\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Desktop\www.compucalitv.com\GLORIOSO\Nueva carpeta\OBLIGATORIO-P3\ExcepcionesPropias\obj\Debug\net7.0\ref\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.deps.json
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.AssemblyReference.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfoInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfo.cs
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.CoreCompileInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\ExcepcionesPropias\obj\Debug\net7.0\refint\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA\ExcepcionesPropias\obj\Debug\net7.0\ref\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.deps.json
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.AssemblyReference.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfoInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfo.cs
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.CoreCompileInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\refint\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\ref\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.deps.json
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.AssemblyReference.cache
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfoInputs.cache
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfo.cs
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.CoreCompileInputs.cache
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\refint\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Desktop\dani\OBLIGATORIO-P3 LUCA2 VALUE OBJECTS\ExcepcionesPropias\obj\Debug\net7.0\ref\ExcepcionesPropias.dll
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.deps.json
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.AssemblyReference.cache
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfoInputs.cache
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfo.cs
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.CoreCompileInputs.cache
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\refint\ExcepcionesPropias.dll
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Downloads\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ref\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.deps.json
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.AssemblyReference.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfoInputs.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfo.cs
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.CoreCompileInputs.cache
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\refint\ExcepcionesPropias.dll
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\luca_\Desktop\www.compucalitv.com\OBLIGATORIO1 OFICIAL\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ref\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.deps.json
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.AssemblyReference.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfoInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfo.cs
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.CoreCompileInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\refint\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 LUCA2 ULTIMAS CORRECCIONES 3\ExcepcionesPropias\obj\Debug\net7.0\ref\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.deps.json
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.AssemblyReference.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfoInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfo.cs
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.CoreCompileInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\ExcepcionesPropias\obj\Debug\net7.0\refint\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio1\OBLIGATORIO-P3 FINAL\ExcepcionesPropias\obj\Debug\net7.0\ref\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.deps.json
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.AssemblyReference.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfoInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfo.cs
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.CoreCompileInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\ExcepcionesPropias\obj\Debug\net7.0\refint\ExcepcionesPropias.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\ExcepcionesPropias\obj\Debug\net7.0\ref\ExcepcionesPropias.dll

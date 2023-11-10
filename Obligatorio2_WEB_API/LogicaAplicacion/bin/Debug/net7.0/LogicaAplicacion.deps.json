@@ -1,0 +1,64 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "LogicaAplicacion/1.0.0": {
+        "dependencies": {
+          "DTOs": "1.0.0",
+          "LogicaNegocio": "1.0.0"
+        },
+        "runtime": {
+          "LogicaAplicacion.dll": {}
+        }
+      },
+      "DTOs/1.0.0": {
+        "dependencies": {
+          "ExcepcionesPropias": "1.0.0",
+          "LogicaNegocio": "1.0.0"
+        },
+        "runtime": {
+          "DTOs.dll": {}
+        }
+      },
+      "ExcepcionesPropias/1.0.0": {
+        "runtime": {
+          "ExcepcionesPropias.dll": {}
+        }
+      },
+      "LogicaNegocio/1.0.0": {
+        "dependencies": {
+          "ExcepcionesPropias": "1.0.0"
+        },
+        "runtime": {
+          "LogicaNegocio.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LogicaAplicacion/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DTOs/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ExcepcionesPropias/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LogicaNegocio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
