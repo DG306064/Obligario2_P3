@@ -6,7 +6,7 @@ namespace DTOs
     public class EcosistemaDTO
     {
         public int Id { get; set; }
-        public Nombre Nombre { get; set; }
+        public NombreDTO Nombre { get; set; }
 
         public double Latitud { get; set; }
 
@@ -14,7 +14,7 @@ namespace DTOs
 
         public int Area { get; set; }
 
-        public Descripcion Descripcion { get; set; }
+        public DescripcionDTO Descripcion { get; set; }
 
 
         public string Pais { get; set; }

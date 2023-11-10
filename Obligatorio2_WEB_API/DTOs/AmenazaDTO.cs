@@ -13,7 +13,7 @@ namespace DTOs
         public int Id { get; set; }      
         public string Descripcion { get; set; }
         public int Peligrosidad { get; set; }
-        public IEnumerable<Especie> Especies { get; set; }
-        public IEnumerable<Ecosistema> Ecosistemas { get; set; }
+        public IEnumerable<EspecieDTO> Especies { get; set; }
+        public IEnumerable<EcosistemaDTO> Ecosistemas { get; set; }
     }
 }

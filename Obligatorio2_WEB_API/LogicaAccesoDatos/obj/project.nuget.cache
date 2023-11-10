@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z9e4caDE8iRwNiIACWW+dCsJXeW6FeXAuadNnIByq5TY2TLFB28K71qph26lg1QJYr0AgoQKgw8eEeHBmCI4tg==",
+  "dgSpecHash": "uebXzMsQnuV61vb5FKEi4tUV3hF2uI2aUuOY+VkkAy6OqLAMQVQ5kXReDUtSjRcKK4EBjXzzz9Y+4uVd2l48jg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2\\Obligatorio2_WEB_API\\LogicaAccesoDatos\\LogicaAccesoDatos.csproj",
+  "projectFilePath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\LogicaAccesoDatos\\LogicaAccesoDatos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danie\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

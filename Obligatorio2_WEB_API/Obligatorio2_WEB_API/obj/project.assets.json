@@ -3406,11 +3406,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2\\Obligatorio2_WEB_API\\Obligatorio2_WEB_API\\Obligatorio2_WEB_API.csproj",
+      "projectUniqueName": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\Obligatorio2_WEB_API\\Obligatorio2_WEB_API.csproj",
       "projectName": "Obligatorio2_WEB_API",
-      "projectPath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2\\Obligatorio2_WEB_API\\Obligatorio2_WEB_API\\Obligatorio2_WEB_API.csproj",
+      "projectPath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\Obligatorio2_WEB_API\\Obligatorio2_WEB_API.csproj",
       "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2\\Obligatorio2_WEB_API\\Obligatorio2_WEB_API\\obj\\",
+      "outputPath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\Obligatorio2_WEB_API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3433,20 +3433,20 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2\\Obligatorio2_WEB_API\\DTOs\\DTOs.csproj": {
-              "projectPath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2\\Obligatorio2_WEB_API\\DTOs\\DTOs.csproj"
+            "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\DTOs\\DTOs.csproj": {
+              "projectPath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\DTOs\\DTOs.csproj"
             },
-            "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2\\Obligatorio2_WEB_API\\ExcepcionesPropias\\ExcepcionesPropias.csproj": {
-              "projectPath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2\\Obligatorio2_WEB_API\\ExcepcionesPropias\\ExcepcionesPropias.csproj"
+            "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\ExcepcionesPropias\\ExcepcionesPropias.csproj": {
+              "projectPath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\ExcepcionesPropias\\ExcepcionesPropias.csproj"
             },
-            "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2\\Obligatorio2_WEB_API\\LogicaAccesoDatos\\LogicaAccesoDatos.csproj": {
-              "projectPath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2\\Obligatorio2_WEB_API\\LogicaAccesoDatos\\LogicaAccesoDatos.csproj"
+            "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\LogicaAccesoDatos\\LogicaAccesoDatos.csproj": {
+              "projectPath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\LogicaAccesoDatos\\LogicaAccesoDatos.csproj"
             },
-            "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2\\Obligatorio2_WEB_API\\LogicaAplicacion\\LogicaAplicacion.csproj": {
-              "projectPath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2\\Obligatorio2_WEB_API\\LogicaAplicacion\\LogicaAplicacion.csproj"
+            "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\LogicaAplicacion\\LogicaAplicacion.csproj": {
+              "projectPath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\LogicaAplicacion\\LogicaAplicacion.csproj"
             },
-            "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2\\Obligatorio2_WEB_API\\LogicaNegocio\\LogicaNegocio.csproj": {
-              "projectPath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2\\Obligatorio2_WEB_API\\LogicaNegocio\\LogicaNegocio.csproj"
+            "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\LogicaNegocio\\LogicaNegocio.csproj": {
+              "projectPath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\LogicaNegocio\\LogicaNegocio.csproj"
             }
           }
         }
