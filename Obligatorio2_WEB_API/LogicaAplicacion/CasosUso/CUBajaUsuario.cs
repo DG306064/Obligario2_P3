@@ -24,7 +24,7 @@ namespace LogicaAplicacion.CasosUso
 
         public void BajaUsuario(Usuario obj, string nombreUsuario)
         {
-            RepoUsu.remove(obj);
+            RepoUsu.Remove(obj);
 
             RegistroDeCambios registro = new RegistroDeCambios()
             {

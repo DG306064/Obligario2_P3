@@ -6,7 +6,7 @@ namespace DTOs
     public class EcosistemaDTO
     {
         public int Id { get; set; }
-        public NombreDTO Nombre { get; set; }
+        public string Nombre { get; set; }
 
         public double Latitud { get; set; }
 
@@ -14,12 +14,12 @@ namespace DTOs
 
         public int Area { get; set; }
 
-        public DescripcionDTO Descripcion { get; set; }
+        public string Descripcion { get; set; }
 
 
-        public string Pais { get; set; }
+        public Pais Pais { get; set; }
 
-        public string EstadoConservacion { get; set; }
+        public EstadoConservacion EstadoConservacion { get; set; }
 
         public IEnumerable<AmenazaDTO> Amenazas { get; set; }
 
@@ -27,4 +27,8 @@ namespace DTOs
 
         public string ImagenEcosistema { get; set; }
     }
+
+
+
+
 }

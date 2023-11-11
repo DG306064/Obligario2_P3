@@ -1,7 +1,9 @@
 ﻿using LogicaAplicacion.InterfacesCU;
 using LogicaNegocio.Dominio;
+using LogicaNegocio.ValueObjects;
 using LogicaNegocio.InterfacesRepositorios;
 using LogicaNegocio.RegistrodeCambios;
+using DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,19 +26,33 @@ namespace LogicaAplicacion.CasosUso
             RepoRegistroCambios = repoRegistroCambios;
         }
 
+    
 
-
-
-        public void Alta(Ecosistema obj, string nombreUsuario)
+        public void Alta(EcosistemaDTO eco, string nombreUsuario)
         {
-            RepoEcosistema.Add(obj);
+            Ecosistema ecosistema = new Ecosistema()
+            {
+                Nombre = new Nombre(eco.Nombre),
+                Latitud = eco.Latitud,
+                Longitud = eco.Longitud,
+                Area = eco.Area,
+                Descripcion = new Descripcion(eco.Descripcion),
+                Pais = eco.Pais,
+                EstadoConservacion = eco.EstadoConservacion,
+                Amenazas = ConvertirAmenazas(eco.Amenazas),
+                ImagenEcosistema = eco.ImagenEcosistema
+            };
+
+            RepoEcosistema.Add(ecosistema);
+
+            eco.Id = ecosistema.Id;
 
             RegistroDeCambios registro = new RegistroDeCambios()
             {
 
                 NombreUsuario = nombreUsuario,
                 Fecha = DateTime.Now,
-                IdEntidadModificada = obj.Id,
+                IdEntidadModificada = eco.Id,
                 TipoDeEntidad = "Ecosistema",
                 TipoDeModificacion = "ALTA"
 
@@ -44,12 +60,16 @@ namespace LogicaAplicacion.CasosUso
 
             RepoRegistroCambios.Add(registro);
 
-
-
-
         }
 
-    
-       
+        public IEnumerable<Amenaza> ConvertirAmenazas(IEnumerable<AmenazaDTO> amenazas)
+        {
+            return amenazas.Select(a => new Amenaza()
+            {
+                Id = a.Id,
+                Descripcion = a.Descripcion,
+                Peligrosidad = a.Peligrosidad
+            });
+        }
     }
 }

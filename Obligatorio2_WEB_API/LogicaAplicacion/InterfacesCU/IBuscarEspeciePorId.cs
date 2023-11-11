@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LogicaNegocio.Dominio;
+using DTOs;
 
 namespace LogicaAplicacion.InterfacesCU
 {
     public interface IBuscarEspeciePorId
     {
-        Especie Buscar(int id);
+        EspecieDTO Buscar(int id);
     }
 }

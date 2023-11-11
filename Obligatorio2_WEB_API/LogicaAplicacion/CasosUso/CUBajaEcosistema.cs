@@ -2,6 +2,7 @@
 using LogicaNegocio.Dominio;
 using LogicaNegocio.InterfacesRepositorios;
 using LogicaNegocio.RegistrodeCambios;
+using DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,9 +25,9 @@ namespace LogicaAplicacion.CasosUso
         
         
         
-        public void BorrarEcosistema(Ecosistema obj, string nombreUsuario)
+        public void BorrarEcosistema(EcosistemaDTO obj, string nombreUsuario)
         {
-            RepoEcosistema.remove(obj);
+            RepoEcosistema.Remove(new Ecosistema() {Id = obj.Id});
 
             RegistroDeCambios registro = new RegistroDeCambios()
             {

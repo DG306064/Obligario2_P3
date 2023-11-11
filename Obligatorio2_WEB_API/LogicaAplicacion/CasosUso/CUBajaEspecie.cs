@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace LogicaAplicacion.CasosUso
 {
@@ -23,9 +24,9 @@ namespace LogicaAplicacion.CasosUso
         }
 
 
-        public void BajaEspecie(Especie obj, string nombreUsuario)
+        public void BajaEspecie(EspecieDTO obj, string nombreUsuario)
         {
-            RepoEspecie.remove(obj);
+            RepoEspecie.Remove(new Especie() { Id = obj.Id});
 
             RegistroDeCambios registro = new RegistroDeCambios()
             {
@@ -38,13 +39,7 @@ namespace LogicaAplicacion.CasosUso
 
             };
 
-
-
             RepoRegistroCambios.Add(registro);
-
-
         }
-
-      
     }
 }

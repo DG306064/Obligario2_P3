@@ -41,7 +41,7 @@ namespace LogicaAccesoDatos
             return pais;
         }
 
-        public void remove(Pais obj)
+        public void Remove(Pais obj)
         {
             throw new NotImplementedException();
         }

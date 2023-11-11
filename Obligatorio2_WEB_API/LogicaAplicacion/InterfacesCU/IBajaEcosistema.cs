@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LogicaNegocio.Dominio;
+using DTOs;
 
 namespace LogicaAplicacion.InterfacesCU
 {
     public interface IBajaEcosistema
     {
-        void BorrarEcosistema(Ecosistema obj, string nombreUsuario);
+        void BorrarEcosistema(EcosistemaDTO obj, string nombreUsuario);
     }
 }

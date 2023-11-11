@@ -35,7 +35,7 @@ namespace LogicaAccesoDatos
             return Contexto.Amenazas.Find(id);
         }
 
-        public void remove(Amenaza obj)
+        public void Remove(Amenaza obj)
         {
             throw new NotImplementedException();
         }

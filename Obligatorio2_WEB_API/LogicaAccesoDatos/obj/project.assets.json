@@ -1054,6 +1054,20 @@
           }
         }
       },
+      "DTOs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "ExcepcionesPropias": "1.0.0",
+          "LogicaNegocio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DTOs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DTOs.dll": {}
+        }
+      },
       "ExcepcionesPropias/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -2899,6 +2913,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "DTOs/1.0.0": {
+      "type": "project",
+      "path": "../DTOs/DTOs.csproj",
+      "msbuildProject": "../DTOs/DTOs.csproj"
+    },
     "ExcepcionesPropias/1.0.0": {
       "type": "project",
       "path": "../ExcepcionesPropias/ExcepcionesPropias.csproj",
@@ -2912,6 +2931,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "DTOs >= 1.0.0",
       "LogicaNegocio >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.11",
@@ -2951,6 +2971,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\DTOs\\DTOs.csproj": {
+              "projectPath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\DTOs\\DTOs.csproj"
+            },
             "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\LogicaNegocio\\LogicaNegocio.csproj": {
               "projectPath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\LogicaNegocio\\LogicaNegocio.csproj"
             }

@@ -10,7 +10,7 @@ namespace LogicaNegocio.InterfacesRepositorios
     {
 
         void Add(T obj);
-        void remove(T obj);
+        void Remove(T obj);
         void Update(T obj);
         IEnumerable<T> FindAll();
         T FindById(int id);

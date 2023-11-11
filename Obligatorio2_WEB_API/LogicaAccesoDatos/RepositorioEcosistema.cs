@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ExcepcionesPropias;
 using LogicaNegocio.Dominio;
+using DTOs;
 
 namespace LogicaAccesoDatos
 {
@@ -59,10 +60,13 @@ namespace LogicaAccesoDatos
 
         public Ecosistema FindById(int id)
         {
-            return Contexto.Ecosistemas.Find(id);
+            return Contexto.Ecosistemas.Include(e => e.Pais)
+                                       .Include(e => e.EstadoConservacion)
+                                       .Include(e => e.Amenazas)
+                                       .SingleOrDefault(e=> e.Id == id);
         }
 
-        public void remove(Ecosistema obj)
+        public void Remove(Ecosistema obj)
         {
             if (obj != null)
             {

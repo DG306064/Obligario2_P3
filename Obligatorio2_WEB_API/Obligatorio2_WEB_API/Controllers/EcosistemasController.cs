@@ -1,4 +1,5 @@
 ﻿using DTOs;
+using ExcepcionesPropias;
 using LogicaAplicacion.InterfacesCU;
 using Microsoft.AspNetCore.Mvc;
 
@@ -75,16 +76,61 @@ namespace Obligatorio2_Web_API.Controllers
         }
 
         // GET api/<EcosistemasController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{id}", Name ="BuscarPorId")]
+        public IActionResult Get(int id)
         {
-            return "value";
+            if (id <= 0) return BadRequest("El id debe ser un número mayor a 0.");
+            
+            EcosistemaDTO ecosistema = null;
+
+            try
+            {
+                ecosistema = CUBuscarEcosistemaPorId.BuscarEcoPorId(id);
+                
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Ocurrió un error inesperado");
+            }
+
+            if (ecosistema == null) return NotFound($"El ecosistema con id {id} no existe en la base de datos.");
+
+            return Ok(ecosistema);
         }
 
         // POST api/<EcosistemasController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Alta(EcosistemaDTO eco)
         {
+            /*if (HttpContext.Session.GetString("nombre") == null)
+            {
+                return BadRequest("NoAutorizado");
+            }*/
+
+            string nombreUsuario = "Daniel";//HttpContext.Session.GetString("nombre");
+
+            if (eco == null)
+            {
+                return BadRequest("La información enviada no es correcta para el alta");
+            }
+
+            try
+            {
+                CUAltaEcosistema.Alta(eco, nombreUsuario);
+                return CreatedAtRoute("BuscarPorId", new { id = eco.Id }, eco);
+            }
+            catch (EcosistemaException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch(DescripcionException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Ocurrión un error inesperado");
+            }
         }
 
         // PUT api/<EcosistemasController>/5
@@ -95,8 +141,26 @@ namespace Obligatorio2_Web_API.Controllers
 
         // DELETE api/<EcosistemasController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            if (id <= 0) return BadRequest("El id debe ser un número positivo mayor a cero");
+            string nombreUsuario = "Daniel";
+            try
+            {
+                EcosistemaDTO ecosistema = CUBuscarEcosistemaPorId.BuscarEcoPorId(id);
+                if (ecosistema == null) return NotFound("El ecosistema con el id " + id + " no existe");
+
+                CUBajaEco.BorrarEcosistema(ecosistema, nombreUsuario);
+                return NoContent();
+            }
+            catch (EcosistemaException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Ocurrió un error inesperado");
+            }
         }
     }
 }

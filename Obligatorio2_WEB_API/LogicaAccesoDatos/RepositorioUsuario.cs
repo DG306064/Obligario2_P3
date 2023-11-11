@@ -56,7 +56,7 @@ namespace LogicaAccesoDatos
             return Contexto.Usuarios.Find(id);
         }
 
-        public void remove(Usuario obj)
+        public void Remove(Usuario obj)
         {
             if (obj != null)
             {

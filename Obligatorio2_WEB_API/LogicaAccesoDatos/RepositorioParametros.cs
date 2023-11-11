@@ -45,7 +45,7 @@ namespace LogicaAccesoDatos
             throw new NotImplementedException();
         }
 
-        public void remove(Parametro obj)
+        public void Remove(Parametro obj)
         {
             throw new NotImplementedException();
         }

@@ -1,4 +1,5 @@
-﻿using LogicaAplicacion.InterfacesCU;
+﻿using DTOs;
+using LogicaAplicacion.InterfacesCU;
 using LogicaNegocio.Dominio;
 using LogicaNegocio.InterfacesRepositorios;
 using System;
@@ -20,9 +21,34 @@ namespace LogicaAplicacion.CasosUso
         }
 
         
-        public Ecosistema BuscarEcoPorId(int id)
+        public EcosistemaDTO BuscarEcoPorId(int id)
         {
-            return RepoEco.FindById(id);
+            var e = RepoEco.FindById(id);
+            EcosistemaDTO ecosistema = new EcosistemaDTO()
+            {
+                Id = e.Id,
+                Nombre = e.Nombre.Value,
+                Latitud = e.Latitud,
+                Longitud = e.Longitud,
+                Area = e.Area,
+                Descripcion = e.Descripcion.Value,
+                Pais = e.Pais,
+                EstadoConservacion = e.EstadoConservacion,
+                Amenazas = ConvertirAmenazas(e.Amenazas),
+                ImagenEcosistema = e.ImagenEcosistema
+            };
+
+            return ecosistema;
+        }
+
+        public IEnumerable<AmenazaDTO> ConvertirAmenazas(IEnumerable<Amenaza> amenazas)
+        {
+            return amenazas.Select(a => new AmenazaDTO()
+            {
+                Id = a.Id,
+                Descripcion = a.Descripcion,
+                Peligrosidad = a.Peligrosidad
+            });
         }
     }
 }

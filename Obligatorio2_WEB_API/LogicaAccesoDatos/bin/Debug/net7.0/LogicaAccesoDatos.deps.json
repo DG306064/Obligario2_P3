@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "LogicaAccesoDatos/1.0.0": {
         "dependencies": {
+          "DTOs": "1.0.0",
           "LogicaNegocio": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11",
@@ -611,6 +612,15 @@
           }
         }
       },
+      "DTOs/1.0.0": {
+        "dependencies": {
+          "ExcepcionesPropias": "1.0.0",
+          "LogicaNegocio": "1.0.0"
+        },
+        "runtime": {
+          "DTOs.dll": {}
+        }
+      },
       "ExcepcionesPropias/1.0.0": {
         "runtime": {
           "ExcepcionesPropias.dll": {}
@@ -1051,6 +1061,11 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "DTOs/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "ExcepcionesPropias/1.0.0": {
       "type": "project",

@@ -627,6 +627,7 @@
       },
       "LogicaAccesoDatos/1.0.0": {
         "dependencies": {
+          "DTOs": "1.0.0",
           "LogicaNegocio": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.13",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11"

@@ -61,13 +61,14 @@ namespace LogicaAccesoDatos
         {
             var  resultado = Contexto.Especies
                 .Include(especie=>especie.habitats)
+                .Include(especie=>especie.EstadoCons)
                 .Where(Especie => Especie.Id == id)
                 .SingleOrDefault();
 
             return resultado;
         }
 
-        public void remove(Especie obj)
+        public void Remove(Especie obj)
         {
             if (obj != null)
             {

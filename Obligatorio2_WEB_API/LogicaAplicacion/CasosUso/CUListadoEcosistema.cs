@@ -15,7 +15,8 @@ namespace LogicaAplicacion.CasosUso
     {
         public IRepositorioEcosistema RepoEcosistema { get; set; }
         public IRepositorioPais RepoPais { get; set; }
-        public CUListadoEcosistema( IRepositorioEcosistema repoEco, IRepositorioPais repoPais ) 
+
+        public CUListadoEcosistema( IRepositorioEcosistema repoEco, IRepositorioPais repoPais) 
         {
             RepoEcosistema = repoEco;
             RepoPais = repoPais;
@@ -29,16 +30,26 @@ namespace LogicaAplicacion.CasosUso
             return RepoEcosistema.FindAll().Select(e => new EcosistemaDTO
             {
                 Id = e.Id,
-                Nombre = e.Nombre,
+                Nombre = e.Nombre.Value,
                 Latitud = e.Latitud,
                 Longitud = e.Longitud,
                 Area = e.Area,
-                Descripcion = e.Descripcion,
-                Pais = e.Pais.Nombre.Value,
-                EstadoConservacion = e.EstadoConservacion.Nombre.Value,
-                Amenazas = e.Amenazas,
+                Descripcion = e.Descripcion.Value,
+                Pais = e.Pais,
+                EstadoConservacion = e.EstadoConservacion,
+                Amenazas = ConvertirAmenazas(e.Amenazas),
                 ImagenEcosistema = e.ImagenEcosistema
             }); ;
+        }
+
+        public IEnumerable<AmenazaDTO> ConvertirAmenazas(IEnumerable<Amenaza> amenazas)
+        {
+            return amenazas.Select(a => new AmenazaDTO()
+            {
+                Id = a.Id,
+                Descripcion = a.Descripcion,
+                Peligrosidad = a.Peligrosidad
+            });
         }
     }
 }

@@ -59,7 +59,7 @@ namespace LogicaAccesoDatos
             return Contexto.Habitats.Find(id);
         }
 
-        public void remove(Habitat obj)
+        public void Remove(Habitat obj)
         {
             throw new NotImplementedException();
         }

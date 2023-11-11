@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8ErBvGYm3Ehj4qvYsYKQ0eAKISCBzDziXkQ5SqpySfRB6IK1t6V8NYrHnuANqCjSJ55tnbRFvrkYK08AeXeAxg==",
+  "dgSpecHash": "GflEeMq11SDH+elHGrhJ1IEBasWrOu82l2lr9N3/luWWJJ5ncjAsPtXTQiaAq0aIVMuzmZJoooh2mKlalpMSVQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2\\Obligatorio2_MVC\\MVC\\MVC.csproj",
+  "projectFilePath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_MVC\\MVC\\MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danie\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

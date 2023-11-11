@@ -32,7 +32,7 @@ namespace LogicaAccesoDatos
             throw new NotImplementedException();
         }
 
-        public void remove(EstadoConservacion obj)
+        public void Remove(EstadoConservacion obj)
         {
             throw new NotImplementedException();
         }

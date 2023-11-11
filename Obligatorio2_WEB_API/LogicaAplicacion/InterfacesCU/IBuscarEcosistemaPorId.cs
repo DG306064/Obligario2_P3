@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LogicaNegocio.Dominio;
+using DTOs;
 
 namespace LogicaAplicacion.InterfacesCU
 {
     public interface IBuscarEcosistemaPorId 
     {
-        Ecosistema BuscarEcoPorId(int id);
+        EcosistemaDTO BuscarEcoPorId(int id);
     }
 }

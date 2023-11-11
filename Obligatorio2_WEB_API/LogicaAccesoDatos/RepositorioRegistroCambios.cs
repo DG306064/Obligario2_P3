@@ -56,7 +56,7 @@ namespace LogicaAccesoDatos
             throw new NotImplementedException();
         }
 
-        public void remove(RegistroDeCambios obj)
+        public void Remove(RegistroDeCambios obj)
         {
             throw new NotImplementedException();
         }
