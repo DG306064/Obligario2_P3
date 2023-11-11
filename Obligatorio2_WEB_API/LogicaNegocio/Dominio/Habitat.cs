@@ -11,13 +11,12 @@ namespace LogicaNegocio.Dominio
     public class Habitat : IValidable
     {
         public int Id { get; set; }
-        public Ecosistema ecosistema { get; set; }
-
-        public bool habita { get; set; }
+        public Ecosistema Ecosistema { get; set; }
+        public bool Habita { get; set; }
 
         public void Validate()
         {
-            if (ecosistema == null) throw new HabitatException("NO SE ENCONOTRÓ EL ECOSISTEMA");
+            if (Ecosistema == null) throw new HabitatException("NO SE ENCONOTRÓ EL ECOSISTEMA");
         }
     }
 }

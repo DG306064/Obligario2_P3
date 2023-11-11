@@ -27,11 +27,11 @@ namespace LogicaAplicacion.CasosUso
             EcosistemaDTO ecosistema = new EcosistemaDTO()
             {
                 Id = e.Id,
-                Nombre = e.Nombre.Value,
+                Nombre = e.Nombre,
                 Latitud = e.Latitud,
                 Longitud = e.Longitud,
                 Area = e.Area,
-                Descripcion = e.Descripcion.Value,
+                Descripcion = e.Descripcion,
                 Pais = e.Pais,
                 EstadoConservacion = e.EstadoConservacion,
                 Amenazas = ConvertirAmenazas(e.Amenazas),

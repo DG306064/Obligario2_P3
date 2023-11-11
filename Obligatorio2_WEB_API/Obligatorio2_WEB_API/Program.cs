@@ -77,6 +77,7 @@ builder.Services.AddScoped<IBuscarEcosistemaPorNombre, CUBuscarEcosistemaPorNomb
 builder.Services.AddScoped<IBuscarValorParametroPorNombre, CUBuscarValorParametroPorNombre>();
 builder.Services.AddScoped<IModificarMinLargoNombre, CUModificarMinLargoNombre>();
 builder.Services.AddScoped<IModificarMaxLargoNombre, CUModificarMaxLargoNombre>();
+builder.Services.AddScoped<IBajaHabitat, CUBajaHabitat>();
 
 builder.Services.AddScoped<IVOModificarMaxLargoNombre, CUVOModificarMaxLargoNombre>();
 builder.Services.AddScoped<IVOModificarMinLargoNombre, CUVOModificarMinLargoNombre>();

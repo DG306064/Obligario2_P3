@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LogicaNegocio.Dominio;
+using DTOs;
 
 namespace LogicaAplicacion.InterfacesCU
 {
     public interface IAltaEspecie
     {
-        void Add(Especie obj, string nombreUsuario);
+        void Add(EspecieDTO obj, string nombreUsuario);
     }
 }

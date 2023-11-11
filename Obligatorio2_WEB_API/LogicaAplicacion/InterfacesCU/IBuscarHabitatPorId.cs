@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LogicaNegocio.Dominio;
+using DTOs;
 
 namespace LogicaAplicacion.InterfacesCU
 {
     public interface IBuscarHabitatPorId
     {
 
-        Habitat BuscarHabitatPorId(int id);
+        HabitatDTO BuscarHabitatPorId(int id);
     }
 }

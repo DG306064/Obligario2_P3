@@ -30,11 +30,11 @@ namespace LogicaAplicacion.CasosUso
             return RepoEcosistema.FindAll().Select(e => new EcosistemaDTO
             {
                 Id = e.Id,
-                Nombre = e.Nombre.Value,
+                TextoNombre = e.Nombre.Value,
                 Latitud = e.Latitud,
                 Longitud = e.Longitud,
                 Area = e.Area,
-                Descripcion = e.Descripcion.Value,
+                TextoDescripcion = e.Descripcion.Value,
                 Pais = e.Pais,
                 EstadoConservacion = e.EstadoConservacion,
                 Amenazas = ConvertirAmenazas(e.Amenazas),

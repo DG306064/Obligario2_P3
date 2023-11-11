@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace LogicaAplicacion.CasosUso
 {
@@ -22,9 +23,10 @@ namespace LogicaAplicacion.CasosUso
             RepoRegistroCambios = repoRegistroCambios;
         }
 
-        public void BajaUsuario(Usuario obj, string nombreUsuario)
+        public void BajaUsuario(UsuarioDTO obj, string nombreUsuario)
         {
-            RepoUsu.Remove(obj);
+            var usuario = new Usuario() { Id = obj.Id };
+            RepoUsu.Remove(usuario);
 
             RegistroDeCambios registro = new RegistroDeCambios()
             {

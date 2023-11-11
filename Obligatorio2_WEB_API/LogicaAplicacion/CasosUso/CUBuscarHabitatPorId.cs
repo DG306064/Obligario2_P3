@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace LogicaAplicacion.CasosUso
 {
@@ -19,9 +20,18 @@ namespace LogicaAplicacion.CasosUso
         }
 
 
-        public Habitat BuscarHabitatPorId(int id)
+        public HabitatDTO BuscarHabitatPorId(int id)
         {
-            return RepoHabitat.FindById(id);
+            Habitat h = RepoHabitat.FindById(id);
+
+            HabitatDTO habitat = new HabitatDTO()
+            {
+                Id = h.Id,
+                Ecosistema = h.Ecosistema,
+                Habita = h.Habita
+            };
+
+            return habitat;
         }
     }
 }

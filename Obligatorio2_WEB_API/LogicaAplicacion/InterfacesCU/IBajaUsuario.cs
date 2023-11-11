@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace LogicaAplicacion.InterfacesCU
 {
     public interface IBajaUsuario
     {
-        void BajaUsuario(Usuario obj, string nombreUsuario);
+        void BajaUsuario(UsuarioDTO obj, string nombreUsuario);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using DTOs;
 using ExcepcionesPropias;
+using LogicaAplicacion.CasosUso;
 using LogicaAplicacion.InterfacesCU;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +17,7 @@ namespace Obligatorio2_WEB_API.Controllers
         public IWebHostEnvironment WHE { get; set; }
         public IListadoEcosistemas CUListadoEcosistema { get; set; }
         public IListadoEspecie CUListadoEspecie { get; set; }
-        public IAltaEspecie CUAltaEsp { get; set; }
+        public IAltaEspecie CUAltaEspecie { get; set; }
         public IBajaEspecie CUBajaEspecie { get; set; }
         public IBuscarEspeciePorId CUBuscarEspeciePorid { get; set; }
         public IObtenerEstadosDeConservacion CUObtenerEstadosDeConservacion { get; set; }
@@ -62,7 +63,7 @@ namespace Obligatorio2_WEB_API.Controllers
 
             WHE = whe;
             CUListadoEcosistema = cuListaEco;
-            CUAltaEsp = CUalta;
+            CUAltaEspecie = CUalta;
             CUListadoEspecie = cuListadoEspecie;
             CUBajaEspecie = cuBajaEspecie;
             CUBuscarEspeciePorid = cuBuscarPorid;
@@ -88,22 +89,64 @@ namespace Obligatorio2_WEB_API.Controllers
 
         // GET: api/<EspeciesController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            IEnumerable<EspecieDTO> especies = null;
+
+            try
+            {
+                especies = CUListadoEspecie.Listado();
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, "Ocurrió un error inesperado");
+            }
+
+            return Ok(especies);
         }
 
         // GET api/<EspeciesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{id}",Name ="BuscarPorEspecieId")]
+        public IActionResult Get(int id)
         {
-            return "value";
+            if(id<=0) return BadRequest("El id debe ser mayor a 0");
+
+            EspecieDTO especie = null;
+
+            try
+            {
+                especie = CUBuscarEspeciePorid.Buscar(id);
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500,"Ocurrió un error inesperado.");
+            }
+
+            if(especie == null) return NotFound($"La especie con el id {id} no existe en la base de datos");
+
+            return Ok(especie);
         }
 
         // POST api/<EspeciesController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post(EspecieDTO especie)
         {
+            string nombreUsuario = "Daniel";//HttpContext.Session.GetString("nombre");
+
+            if (especie == null)
+            {
+                return BadRequest("La información enviada no es correcta para el alta");
+            }
+
+            try
+            {
+                CUAltaEspecie.Add(especie, nombreUsuario);
+                return CreatedAtRoute("BuscarPorId", new { id = especie.Id }, especie);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Ocurrió un error inesperado.");
+            }
         }
 
         // PUT api/<EspeciesController>/5
@@ -121,7 +164,7 @@ namespace Obligatorio2_WEB_API.Controllers
             try
             {
                 EspecieDTO especie = CUBuscarEspeciePorid.Buscar(id);
-                if (especie == null) return NotFound("El ecosistema con el id " + id + " no existe");
+                if (especie == null) return NotFound("La especie con el id " + id + " no existe");
 
                 CUBajaEspecie.BajaEspecie(especie, nombreUsuario);
                 return NoContent();

@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
+using ExcepcionesPropias;
 
 namespace LogicaAplicacion.CasosUso
 {
@@ -23,9 +25,19 @@ namespace LogicaAplicacion.CasosUso
 
 
 
-        public void AltaUsuario(Usuario obj, string nombreUsuario)
+        public void AltaUsuario(UsuarioDTO obj, string nombreUsuario)
         {
-            RepoUsu.Add(obj);
+            if (obj == null) throw new UsuarioException("El usuario no puede ser nulo.");
+
+            Usuario usuario = new Usuario()
+            {
+                Id = obj.Id,
+                Alias = obj.Alias,
+                Password = obj.Password,
+                HashedPassword = obj.HashedPassword
+            };
+
+            RepoUsu.Add(usuario);
 
             RegistroDeCambios registro = new RegistroDeCambios()
             {

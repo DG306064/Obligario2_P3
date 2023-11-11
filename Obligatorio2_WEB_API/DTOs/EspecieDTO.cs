@@ -15,15 +15,17 @@ namespace DTOs
         public int Id { get; set; }
         public string NombreCientifico { get; set; }
         public Nombre NombreComun { get; set; }
-        public string Descripcion { get; set; }
+        public string TextoNombreComun { get; set; }
+        public Descripcion Descripcion { get; set; }
+        public string TextoDescripcion { get; set; }
         public int PesoMinimo { get; set; }
         public int PesoMaximo { get; set; }
         public int LongitudMinima { get; set; }
         public int LongitudMaxima { get; set; }
         public string ImagenEspecie { get; set; }
-        public string EstadoCons { get; set; }
-
-        public IEnumerable<Amenaza> Amenazas { get; set; }
-        public IEnumerable<Habitat> habitats { get; set; }
+        public EstadoConservacion EstadoCons { get; set; }
+        public string NombreEstadoCons { get; set; }
+        public IEnumerable<AmenazaDTO> Amenazas { get; set; }
+        public IEnumerable<HabitatDTO> Habitats { get; set; }
     }
 }

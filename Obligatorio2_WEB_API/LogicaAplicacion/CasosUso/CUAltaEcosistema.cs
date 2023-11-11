@@ -32,11 +32,11 @@ namespace LogicaAplicacion.CasosUso
         {
             Ecosistema ecosistema = new Ecosistema()
             {
-                Nombre = new Nombre(eco.Nombre),
+                Nombre = eco.Nombre,
                 Latitud = eco.Latitud,
                 Longitud = eco.Longitud,
                 Area = eco.Area,
-                Descripcion = new Descripcion(eco.Descripcion),
+                Descripcion = eco.Descripcion,
                 Pais = eco.Pais,
                 EstadoConservacion = eco.EstadoConservacion,
                 Amenazas = ConvertirAmenazas(eco.Amenazas),

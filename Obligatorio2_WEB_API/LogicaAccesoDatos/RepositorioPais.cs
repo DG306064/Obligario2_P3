@@ -35,7 +35,10 @@ namespace LogicaAccesoDatos
         public Pais FindById(int id)
         {
             if (id == 0) throw new Exception("El id no puede ser 0");
-            var pais = Contexto.Paises.SingleOrDefault(p => p.Id == id);
+
+            var pais = Contexto.Paises.Include(p=>p.Nombre)
+                                      .SingleOrDefault(p => p.Id == id);
+
             if (pais is null) throw new Exception("El id no existe en la base de datos.");
 
             return pais;

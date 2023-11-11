@@ -27,19 +27,39 @@ namespace LogicaAplicacion.CasosUso
             {
                 Id = e.Id,
                 NombreCientifico = e.NombreCientifico,
-                NombreComun = e.NombreComun,
-                Descripcion = e.Descripcion.Value,
+                TextoNombreComun = e.NombreComun.Value,
+                TextoDescripcion = e.Descripcion.Value,
                 PesoMinimo = e.PesoMinimo,
                 PesoMaximo = e.PesoMaximo,
                 LongitudMinima = e.LongitudMinima,
                 LongitudMaxima = e.LongitudMaxima,
                 ImagenEspecie = e.ImagenEspecie,
-                EstadoCons = e.EstadoCons.Nombre.Value,
-                Amenazas = e.Amenazas,
-                habitats = e.habitats
+                EstadoCons = e.EstadoCons,
+                Amenazas = ConvertirAmenazas(e.Amenazas),
+                //Habitats = ConvertirHabitats(e.Habitats)
     };
 
             return especie;
         }
+
+        public IEnumerable<AmenazaDTO> ConvertirAmenazas(IEnumerable<Amenaza> amenazas)
+        {
+            return amenazas.Select(a => new AmenazaDTO()
+            {
+                Id = a.Id,
+                Descripcion = a.Descripcion,
+                Peligrosidad = a.Peligrosidad
+            });
+        }
+
+        /*public IEnumerable<HabitatDTO> ConvertirHabitats(IEnumerable<Habitat> habitats)
+        {
+            return habitats.Select(h => new HabitatDTO()
+            {
+                Id = h.Id,
+                Ecosistema = h.Ecosistema.Nombre.Value,
+                Habita = h.Habita
+            });
+        }*/
     }
 }

@@ -58,23 +58,18 @@ namespace LogicaAccesoDatos
 
         public void Remove(Usuario obj)
         {
-            if (obj != null)
-            {
-                try
-                {
-                    Contexto.Remove(obj);
-                    Contexto.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    throw new UsuarioException("OCURRIÓ UN ERROR AL INTENTAR ELIMINAR EL USUARIO");
-                 
-                }
+            if (obj == null) throw new UsuarioException("El usuario no puede ser nulo.");
 
+            Usuario aBorrar = Contexto.Usuarios.Find(obj.Id);
+
+            if (aBorrar != null)
+            {
+                Contexto.Usuarios.Remove(aBorrar);
+                Contexto.SaveChanges();
             }
             else
             {
-                throw new UsuarioException("NO SE PROPORCIONÓ UN USUARIO");
+                throw new UsuarioException("No existe el usuario a borrar en la base de datos.");
             }
         }
 

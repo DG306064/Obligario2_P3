@@ -69,14 +69,14 @@ namespace Obligatorio2_Web_API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Ocurrión un error inesperado");
+                return StatusCode(500, "Ocurrió un error inesperado");
             }
 
             return Ok(ecosistemas);
         }
 
         // GET api/<EcosistemasController>/5
-        [HttpGet("{id}", Name ="BuscarPorId")]
+        [HttpGet("{id}", Name ="BuscarEcosistemaPorId")]
         public IActionResult Get(int id)
         {
             if (id <= 0) return BadRequest("El id debe ser un número mayor a 0.");
@@ -100,7 +100,7 @@ namespace Obligatorio2_Web_API.Controllers
 
         // POST api/<EcosistemasController>
         [HttpPost]
-        public IActionResult Alta(EcosistemaDTO eco)
+        public IActionResult Post(EcosistemaDTO eco)
         {
             /*if (HttpContext.Session.GetString("nombre") == null)
             {

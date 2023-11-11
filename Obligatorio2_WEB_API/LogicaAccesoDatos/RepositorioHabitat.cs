@@ -26,11 +26,11 @@ namespace LogicaAccesoDatos
             {
                 obj.Validate();
 
-                if (obj.ecosistema == null) throw new HabitatException("EL HABITAT DEBE CONTENER UN ECOSISTEMA");
+                if (obj.Ecosistema == null) throw new HabitatException("EL HABITAT DEBE CONTENER UN ECOSISTEMA");
 
                 try
                 {
-                    Contexto.Entry(obj.ecosistema).State = EntityState.Unchanged;
+                    Contexto.Entry(obj.Ecosistema).State = EntityState.Unchanged;
                     Contexto.Habitats.Add(obj);
                     Contexto.SaveChanges();
                 }
@@ -56,12 +56,25 @@ namespace LogicaAccesoDatos
 
         public Habitat FindById(int id)
         {
-            return Contexto.Habitats.Find(id);
+            return Contexto.Habitats.Include(h=>h.Ecosistema)
+                                    .SingleOrDefault(h=>h.Id == id);
         }
 
         public void Remove(Habitat obj)
         {
-            throw new NotImplementedException();
+            if (obj == null) throw new HabitatException("El habitat no puede ser nulo");
+
+            var aBorrar = Contexto.Habitats.Find(obj.Id);
+
+            if (aBorrar != null)
+            {
+                Contexto.Habitats.Remove(aBorrar);
+                Contexto.SaveChanges();
+            }
+            else
+            {
+                throw new HabitatException("No existe el habitat a borrar");
+            }
         }
 
         public void Update(Habitat obj)
@@ -87,16 +100,16 @@ namespace LogicaAccesoDatos
 
             var Habitat = Contexto.Especies
                 .Where(especie => especie.Id == idEspecie)
-                .SelectMany(especie => especie.habitats).Include(habitat=>habitat.ecosistema)
-                .SingleOrDefault(habitat => habitat.ecosistema.Id == idEcosistema);
+                .SelectMany(especie => especie.Habitats).Include(habitat=>habitat.Ecosistema)
+                .SingleOrDefault(habitat => habitat.Ecosistema.Id == idEcosistema);
 
-            if (Habitat.habita == false)
+            if (Habitat.Habita == false)
             {
-                Habitat.habita = true;
+                Habitat.Habita = true;
             }
             else
             {
-                Habitat.habita = false;
+                Habitat.Habita = false;
             }
 
             Update(Habitat);

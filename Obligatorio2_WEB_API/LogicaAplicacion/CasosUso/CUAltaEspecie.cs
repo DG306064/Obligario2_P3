@@ -7,24 +7,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace LogicaAplicacion.CasosUso
 {
     public class CUAltaEspecie : IAltaEspecie
     {
-        public IRepositorioEspecie repoEspecie { get; set; }
+        public IRepositorioEspecie RepoEspecie { get; set; }
         public IRepositorio<RegistroDeCambios> RepoRegistroCambios { get; set; }
 
 
         public CUAltaEspecie(IRepositorioEspecie RepoEsp, IRepositorio<RegistroDeCambios> repoRegistroCambios)
         {
-            repoEspecie = RepoEsp;
+            RepoEspecie = RepoEsp;
             RepoRegistroCambios = repoRegistroCambios;
         }
 
-        public void Add(Especie obj, string nombreUsuario)
+        public void Add(EspecieDTO obj, string nombreUsuario)
         {
-            repoEspecie.Add(obj);
+            Especie especie = new Especie() 
+            {
+                Id = obj.Id,
+                NombreCientifico = obj.NombreCientifico,
+                NombreComun = obj.NombreComun,
+                Descripcion = obj.Descripcion,
+                PesoMinimo = obj.PesoMinimo,
+                PesoMaximo = obj.PesoMaximo,
+                LongitudMinima = obj.LongitudMinima,
+                LongitudMaxima = obj.LongitudMaxima,
+                ImagenEspecie = obj.ImagenEspecie,
+                EstadoCons = obj.EstadoCons,
+            };
+
+            RepoEspecie.Add(especie);
 
             RegistroDeCambios registro = new RegistroDeCambios()
             {

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace LogicaAplicacion.CasosUso
 {
@@ -23,10 +24,15 @@ namespace LogicaAplicacion.CasosUso
 
 
 
-        public void Alta(Habitat obj, string nombreUsuario)
+        public void Alta(HabitatDTO obj, string nombreUsuario)
         {
-
-            RepoHabitat.Add(obj);
+            Habitat habitat = new Habitat()
+            {
+                Id = obj.Id,
+                Ecosistema = obj.Ecosistema,
+                Habita = obj.Habita,
+            };
+            RepoHabitat.Add(habitat);
 
             RegistroDeCambios registro = new RegistroDeCambios()
             {

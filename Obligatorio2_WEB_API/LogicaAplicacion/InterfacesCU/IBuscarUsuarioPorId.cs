@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace LogicaAplicacion.InterfacesCU
 {
     public interface IBuscarUsuarioPorId
     {
-        Usuario BuscarPorId(int idUsuario);
+        UsuarioDTO BuscarPorId(int idUsuario);
     }
 }

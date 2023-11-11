@@ -54,40 +54,34 @@ namespace LogicaAccesoDatos
 
         public IEnumerable<Especie> FindAll()
         {
-            return Contexto.Especies.ToList();
+            return Contexto.Especies.Include(e=>e.EstadoCons)
+                                    .Include(e=>e.Habitats)
+                                    .Include(e=>e.Amenazas)
+                                    .ToList();
         }
 
         public Especie FindById(int id)
         {
             var  resultado = Contexto.Especies
-                .Include(especie=>especie.habitats)
+                .Include(especie=>especie.Habitats)
                 .Include(especie=>especie.EstadoCons)
-                .Where(Especie => Especie.Id == id)
-                .SingleOrDefault();
+                .Include(especie=>especie.Amenazas)
+                .SingleOrDefault(Especie => Especie.Id == id);
 
             return resultado;
         }
 
         public void Remove(Especie obj)
         {
-            if (obj != null)
+            Especie aBorrar = Contexto.Especies.Find(obj.Id);
+            if (aBorrar != null)
             {
-                Especie esp = FindById(obj.Id);
-                if(esp != null)
-                {
-                    Contexto.Remove(esp);
-                    Contexto.SaveChanges();
-                }
-                else
-                {
-                    throw new EspecieException("No se proporcionó una especie");
-                }
-
-
+                Contexto.Especies.Remove(aBorrar);
+                Contexto.SaveChanges();
             }
             else
             {
-                throw new EspecieException("No se proporcionó una especie");
+                throw new PaisException("No existe la especie a borrar");
             }
         }
 
@@ -129,8 +123,8 @@ namespace LogicaAccesoDatos
 
             var HabitatsDeEspecie = Contexto.Especies
                .Where(especie => especie.Id == idEspecie)
-               .SelectMany(especie => especie.habitats).
-               Include(habitat => habitat.ecosistema)
+               .SelectMany(especie => especie.Habitats)
+               .Include(habitat => habitat.Ecosistema)
                .ToList();
 
             if (HabitatsDeEspecie == null) throw new EspecieException("ocurrió un problema obteniendo los posibles ecosistemas de esa especie");
@@ -152,7 +146,7 @@ namespace LogicaAccesoDatos
             List<Habitat> listaList = habitatsDeLaEspecie.ToList();
 
             listaList.Add(habitat);
-            especie.habitats = listaList;
+            especie.Habitats = listaList;
 
             Update(especie);
 
@@ -196,8 +190,8 @@ namespace LogicaAccesoDatos
 
             var ListaFinalDeEosistemasSinHabitat = Contexto.Ecosistemas
                             .Where(eco => !Contexto.Especies.Where(especie => especie.Id == idEspecie)
-                            .Any(especie => especie.habitats
-                                 .Any(hab => hab.ecosistema.Id == eco.Id)))
+                            .Any(especie => especie.Habitats
+                                 .Any(hab => hab.Ecosistema.Id == eco.Id)))
                             .ToList();
 
             return ListaFinalDeEosistemasSinHabitat;
@@ -254,8 +248,8 @@ namespace LogicaAccesoDatos
 
             var especies = Contexto.Especies
                 .Where(especie => especie.EstadoCons.Valor < 60 || especie.Amenazas.Count() > 3 ||
-                (especie.habitats.Any(habitat => habitat.ecosistema.Amenazas.Count() > 3 
-                && habitat.habita == true && habitat.ecosistema.EstadoConservacion.Valor < 60))).ToList();
+                (especie.Habitats.Any(habitat => habitat.Ecosistema.Amenazas.Count() > 3 
+                && habitat.Habita == true && habitat.Ecosistema.EstadoConservacion.Valor < 60))).ToList();
                 
             return especies;
         }
@@ -296,9 +290,10 @@ namespace LogicaAccesoDatos
 
         public IEnumerable<Especie> especiesFiltradasPorEcosistema(string ecosistema)
         {
-            var especies = Contexto.Especies
-                                        .Where(e => e.habitats.Any(h => h.ecosistema.Nombre.Value == ecosistema && h.habita == true))
-                                        .ToList();
+            var especies = Contexto.Especies.Include(e=>e.Amenazas)
+                                            .Include(e=>e.Habitats)
+                                            .Where(e => e.Habitats.Any(h => h.Ecosistema.Nombre.Value == ecosistema && h.Habita == true))
+                                            .ToList();
             return especies;
 
         }

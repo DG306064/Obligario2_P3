@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace LogicaAplicacion.CasosUso
 {
@@ -17,9 +18,16 @@ namespace LogicaAplicacion.CasosUso
         {
             RepoUsu = repoUsu;
         }
-        public Usuario BuscarPorId(int idUsuario)
+        public UsuarioDTO BuscarPorId(int idUsuario)
         {
-           return RepoUsu.FindById(idUsuario);
+            Usuario u = RepoUsu.FindById(idUsuario);
+            UsuarioDTO usuario = new UsuarioDTO()
+            {
+                Id = u.Id,
+                Alias = u.Alias
+            };
+
+            return usuario;
         }
     }
 }

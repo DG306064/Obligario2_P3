@@ -22,7 +22,7 @@ namespace LogicaAccesoDatos
 
         public void Add(Ecosistema obj)
         {
-            if(obj!= null)
+            if (obj != null)
             {
                 obj.Validate();
                 if (ExisteNombreEcosistema(obj.Nombre.Value)) throw new EcosistemaException("YA EXISTE UN ECOSISTEMA CON ESE NOMBRE");
@@ -37,12 +37,13 @@ namespace LogicaAccesoDatos
                     Contexto.Ecosistemas.Add(obj);
                     Contexto.SaveChanges();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     throw new EcosistemaException("No se pudo realizar el alta", ex);
                 }
 
-            }else
+            }
+            else
             {
                 throw new EcosistemaException("No se provee un ecosistema");
             }
@@ -50,10 +51,10 @@ namespace LogicaAccesoDatos
 
         public IEnumerable<Ecosistema> FindAll()
         {
-                return Contexto.Ecosistemas.Include(e => e.Pais)
-                                           .Include(e => e.EstadoConservacion)
-                                           .Include(e => e.Amenazas)
-                                           .ToList();
+            return Contexto.Ecosistemas.Include(e => e.Pais)
+                                       .Include(e => e.EstadoConservacion)
+                                       .Include(e => e.Amenazas)
+                                       .ToList();
         }
 
 
@@ -63,29 +64,28 @@ namespace LogicaAccesoDatos
             return Contexto.Ecosistemas.Include(e => e.Pais)
                                        .Include(e => e.EstadoConservacion)
                                        .Include(e => e.Amenazas)
-                                       .SingleOrDefault(e=> e.Id == id);
+                                       .Include(e => e.Nombre)
+                                       .Include(e => e.Descripcion)
+                                       .SingleOrDefault(e => e.Id == id);
         }
 
         public void Remove(Ecosistema obj)
         {
-            if (obj != null)
-            {
-                if (CantidadDeEspeciesHabitandoUnEcosistema(obj.Id) != 0) throw new EcosistemaException("EL ECOSISTEMA TIENE ESPECIES HABITÁNDOLO");
-                try
-                {
-                    Contexto.Remove(obj);
-                    Contexto.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    throw new EcosistemaException("Ocurrió un error al eliminar un ecosistema");
-                }
+            if (obj == null) throw new EcosistemaException("El ecosistema no puede ser nulo.");
 
+            if (CantidadDeEspeciesHabitandoUnEcosistema(obj.Id) != 0) throw new EcosistemaException("EL ECOSISTEMA TIENE ESPECIES HABITÁNDOLO");
+            
+            Ecosistema aBorrar = Contexto.Ecosistemas.Find(obj.Id);
+            if (aBorrar != null)
+            {
+                Contexto.Ecosistemas.Remove(aBorrar);
+                Contexto.SaveChanges();
             }
             else
             {
-                throw new EcosistemaException("NO SE PROPORCIONÓ UN ECOSISTEMA");
+                throw new PaisException("No existe el ecosistema a borrar");
             }
+
         }
 
         public void Update(Ecosistema obj)
@@ -100,18 +100,18 @@ namespace LogicaAccesoDatos
             }
             else
             {
-                    throw new EcosistemaException("EL ECOSISTEMA PROPORCIONADO NO EXISTE");
+                throw new EcosistemaException("EL ECOSISTEMA PROPORCIONADO NO EXISTE");
             }
-            
+
         }
 
         public int CantidadDeEspeciesHabitandoUnEcosistema(int IdEcosistema)
         {
             var cantidad = Contexto.Especies
-                 .Count(especie => especie.habitats.Any(habitat=>habitat.ecosistema.Id == IdEcosistema && habitat.habita == true));
+                 .Count(especie => especie.Habitats.Any(habitat => habitat.Ecosistema.Id == IdEcosistema && habitat.Habita == true));
 
             return cantidad;
-        
+
         }
 
         public void AsignarUnaAmenaza(int IdEcosistema, int IdAmenaza)
@@ -143,7 +143,7 @@ namespace LogicaAccesoDatos
 
         }
 
-        
+
 
         public bool ExisteNombreEcosistema(string nombreEcosistema)
         {
@@ -174,13 +174,13 @@ namespace LogicaAccesoDatos
         public Ecosistema BuscarECosistemaPorNombre(string nombreEcosistema)
         {
             var eco = Contexto.Ecosistemas
-                    .Include(eco=>eco.EstadoConservacion)
+                    .Include(eco => eco.EstadoConservacion)
                     .Where(eco => eco.Nombre.Value == nombreEcosistema)
                     .SingleOrDefault();
 
             return eco;
         }
 
-     
+
     }
 }

@@ -55,7 +55,7 @@ namespace LogicaNegocio.Dominio
         public EstadoConservacion EstadoCons { get; set; }
 
         public IEnumerable<Amenaza> Amenazas { get; set; }
-        public IEnumerable<Habitat> habitats { get; set; }
+        public IEnumerable<Habitat> Habitats { get; set; } 
 
 
 
