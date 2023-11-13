@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LogicaNegocio.Dominio;
+using DTOs;
 
 namespace LogicaAplicacion.InterfacesCU
 {
     public interface IEspeciesFiltradasPorEcosistema
     {
-        IEnumerable<Especie> EspeciesFIltradasPorEcosistema(string nombreEcosistema);
+        IEnumerable<EspecieDTO> EspeciesFIltradasPorEcosistema(string nombreEcosistema);
     }
 }

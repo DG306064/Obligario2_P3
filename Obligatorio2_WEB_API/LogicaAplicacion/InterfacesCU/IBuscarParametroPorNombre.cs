@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace LogicaAplicacion.InterfacesCU
 {
-    public interface IModificarMinLargoDescripcion
+    public interface IBuscarParametroPorNombre
     {
-        void Modificar(string nombreParametro, string valorNuevo, string nombreUsuario);
+        ParametroDTO BuscarParametroPorNombre(string nombre);
     }
 }

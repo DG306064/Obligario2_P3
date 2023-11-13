@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace LogicaAplicacion.CasosUso
 {
@@ -19,9 +20,18 @@ namespace LogicaAplicacion.CasosUso
 
 
 
-        public IEnumerable<Habitat> ObtenerHabitatsDeLaEspecie(int idEspecie)
+        public IEnumerable<HabitatDTO> ObtenerHabitatsDeLaEspecie(int idEspecie)
         {
-            return RepoEspecie.ObtenerHabitatsDeLaEspecie(idEspecie);
+            var habitats = RepoEspecie.ObtenerHabitatsDeLaEspecie(idEspecie);
+
+            var habitatsDTO = habitats.Select(h => new HabitatDTO()
+            {
+                Id = h.Id,
+                NombreEcosistema = h.Ecosistema.Nombre.Value,
+                Habita = h.Habita
+            });
+
+            return habitatsDTO; 
         }
 
       

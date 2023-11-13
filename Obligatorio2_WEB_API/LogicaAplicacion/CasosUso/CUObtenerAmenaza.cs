@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LogicaNegocio.Dominio;
+using DTOs;
 
 namespace LogicaAplicacion.CasosUso
 {
@@ -17,10 +18,20 @@ namespace LogicaAplicacion.CasosUso
         {
             RepoAmenaza = repoAmenaza;
         }
-        public Amenaza ObtenerAmenaza(int idAmenaza)
+        public AmenazaDTO ObtenerAmenaza(int idAmenaza)
         {
-            return RepoAmenaza.FindById(idAmenaza);
+            var amenaza = RepoAmenaza.FindById(idAmenaza);
 
+            var amenazaDTO = new AmenazaDTO()
+            {
+                Id = amenaza.Id,
+                Descripcion = amenaza.Descripcion.Value,
+                Peligrosidad = amenaza.Peligrosidad,
+                Ecosistemas = amenaza.Ecosistemas.Select(eco => eco.Nombre.Value),
+                Especies = amenaza.Especies.Select(esp => esp.NombreComun.Value)
+            };
+
+            return amenazaDTO;  
         }
     }
 }

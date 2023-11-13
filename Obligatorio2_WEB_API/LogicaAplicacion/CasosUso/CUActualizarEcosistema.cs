@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LogicaNegocio.Dominio;
+using DTOs;
 
 namespace LogicaAplicacion.CasosUso
 {
@@ -18,9 +19,30 @@ namespace LogicaAplicacion.CasosUso
             RepositorioEcosistema = repositorio;
         }
 
-        public void Actualizar(Ecosistema obj)
+        public void Actualizar(EcosistemaDTO obj)
         {
-            RepositorioEcosistema.Update(obj);
+            Ecosistema eco = RepositorioEcosistema.FindById(obj.Id);
+            eco.Nombre = obj.Nombre;
+            eco.Latitud = obj.Latitud;
+            eco.Longitud = obj.Longitud;
+            eco.Area = obj.Area;
+            eco.Descripcion = obj.Descripcion;
+            eco.Pais = obj.Pais;
+            eco.EstadoConservacion = obj.EstadoConservacion;
+            eco.Amenazas = ConvertirAmenazas(obj.Amenazas);
+            eco.ImagenEcosistema = obj.ImagenEcosistema;
+
+            RepositorioEcosistema.Update(eco);
+        }
+
+        public IEnumerable<Amenaza> ConvertirAmenazas(IEnumerable<AmenazaDTO> amenazas)
+        {
+            return amenazas.Select(a => new Amenaza()
+            {
+                Id = a.Id,
+                Descripcion = a.Descripcion,
+                Peligrosidad = a.Peligrosidad
+            });
         }
     }
 }

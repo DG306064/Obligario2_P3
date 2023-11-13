@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace LogicaAplicacion.CasosUso
 {
@@ -17,9 +18,32 @@ namespace LogicaAplicacion.CasosUso
         {
             repoEspecie = RepoEsp;
         }
-        public Especie IObtenerEspeciePorNombreCientifico(string nombre)
+        public EspecieDTO IObtenerEspeciePorNombreCientifico(string nombre)
         {
-            return repoEspecie.EspeciePorNombreCientifico(nombre);
+            var e = repoEspecie.EspeciePorNombreCientifico(nombre);
+
+            var especie = new EspecieDTO()
+            {
+                Id = e.Id,
+                NombreCientifico = e.NombreCientifico,
+                TextoNombreComun = e.NombreComun.Value,
+                TextoDescripcion = e.Descripcion.Value,
+                PesoMinimo = e.PesoMinimo,
+                PesoMaximo = e.PesoMaximo,
+                LongitudMinima = e.LongitudMinima,
+                LongitudMaxima = e.LongitudMaxima,
+                ImagenEspecie = e.ImagenEspecie,
+                EstadoCons = e.EstadoCons,
+                Amenazas = e.Amenazas.Select(a => new AmenazaDTO()
+                {
+                    Id = a.Id,
+                    Descripcion = a.Descripcion.Value,
+                    Peligrosidad = a.Peligrosidad,
+                })
+                //Habitats = ConvertirHabitats(e.Habitats)
+            };
+
+            return especie;
         }
     }
 }

@@ -33,7 +33,7 @@ namespace LogicaAplicacion.CasosUso
                 LongitudMaxima = e.LongitudMaxima,
                 ImagenEspecie = e.ImagenEspecie,
                 EstadoCons = e.EstadoCons,
-                Amenazas = ConvertirAmenazas(e.Amenazas),
+                Amenazas = ConvertirAmenazas(e.Amenazas)
                 //Habitats = ConvertirHabitats(e.Habitats)
             });
         }
@@ -43,7 +43,7 @@ namespace LogicaAplicacion.CasosUso
             return amenazas.Select(a => new AmenazaDTO()
             {
                 Id = a.Id,
-                Descripcion = a.Descripcion,
+                Descripcion = a.Descripcion.Value,
                 Peligrosidad = a.Peligrosidad
             });
         }

@@ -11,7 +11,7 @@ namespace Obligatorio2_WEB_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioController : ControllerBase
+    public class UsuariosController : ControllerBase
     {
         public IAltaUsuario CUAltaUsuario { get; set; }
         public IListadoUsuario CUListadoUsuario { get; set; }
@@ -21,7 +21,7 @@ namespace Obligatorio2_WEB_API.Controllers
         public IBajaUsuario CUBajaUsuario { get; set; }
         public IModificarUsuario CUModificarUsuario { get; set; }
 
-        public UsuarioController(IAltaUsuario CUAltaUsu, IListadoUsuario CUListUsu,
+        public UsuariosController(IAltaUsuario CUAltaUsu, IListadoUsuario CUListUsu,
                                     IObtenerUsuarioParaLogear CUobtenerUsuarioParaLogear, IVerSiExisteUsuario CUverSiExisteUsu,
                                     IBuscarUsuarioPorId cuBuscarUsuarioPorId, IBajaUsuario cuBajaUsuario, IModificarUsuario
                                     cuModificarUsuario)

@@ -238,8 +238,6 @@ namespace MVC.Controllers
                     ViewBag.Error = "El ecosistema aún tiene especies habitandoló, pruebe nuevamente cuando la especie se haya extinto";
 
                     return View(eco);
-
-
                 }
 
 

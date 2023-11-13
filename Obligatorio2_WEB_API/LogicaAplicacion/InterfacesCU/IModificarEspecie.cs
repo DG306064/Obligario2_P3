@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LogicaNegocio.Dominio;
+using DTOs;
 
 namespace LogicaAplicacion.InterfacesCU
 {
     public interface IModificarEspecie
     {
-        void ModificarEspecie(Especie obj);
+        void ModificarEspecie(EspecieDTO obj);
     }
 }

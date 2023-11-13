@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LogicaNegocio.Dominio;
+using DTOs;
 
 namespace LogicaAplicacion.InterfacesCU
 {
     public interface IAmenazasDeUnaEspecie
     {
-        IEnumerable<Amenaza> AmenazasDeLaEspecie(int idEspecie);
+        IEnumerable<AmenazaDTO> AmenazasDeLaEspecie(int idEspecie);
     }
 }

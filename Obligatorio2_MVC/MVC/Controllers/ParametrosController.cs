@@ -161,9 +161,9 @@ namespace MVC.Controllers
 
                         if (int.TryParse(valorNuevo, out ValorParseadO))
                         {
-                            if (ValorParseadO < 0) throw new ParametrosException("DEBES INGRESAR UN NUMERO POSITIVO");
+                            if (ValorParseadO < 0) throw new ParametroException("DEBES INGRESAR UN NUMERO POSITIVO");
 
-                            string valorParametro = CUBuscarValorParametroPorNombre.BuscarValorParametroPorNombre("MinLargoNombre");
+                            string valorParametro = CUBuscarParametroPorNombre.BuscarParametroPorNombre("MinLargoNombre");
 
                             if(int.TryParse(valorParametro, out ValorParametro))
                             {

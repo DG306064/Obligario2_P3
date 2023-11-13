@@ -91,7 +91,7 @@ namespace LogicaAccesoDatos
 
 
 
-        public IEnumerable<Usuario> ObtenerUsuarioParaLogear(string alias, string password)
+        public Usuario ObtenerUsuarioParaLogear(string alias, string password)
         {
             if (string.IsNullOrEmpty(alias)) throw new ParametrosException("EL ALIAS DEL NO PUEDE ESTAR VACIO");
             if (string.IsNullOrEmpty(password)) throw new ParametrosException("LA CONTRASEÑA NO PUEDE ESTAR VACIA");
@@ -99,7 +99,7 @@ namespace LogicaAccesoDatos
             var resultado = Contexto.Usuarios
                    .Where(usu => usu.Alias == alias)
                    .Where(usu => usu.Password == password)
-                   .ToList();
+                   .SingleOrDefault();
  
             return resultado;
         }

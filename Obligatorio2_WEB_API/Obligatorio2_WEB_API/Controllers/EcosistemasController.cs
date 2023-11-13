@@ -1,6 +1,8 @@
 ﻿using DTOs;
 using ExcepcionesPropias;
+using LogicaAplicacion.CasosUso;
 using LogicaAplicacion.InterfacesCU;
+using LogicaNegocio.Dominio;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -135,8 +137,28 @@ namespace Obligatorio2_Web_API.Controllers
 
         // PUT api/<EcosistemasController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult Put(EcosistemaDTO e)
         {
+            string nombreUsuario = "Daniel";//HttpContext.Session.GetString("nombre");
+
+            if (e == null)
+            {
+                return BadRequest("No se envió información para el alta");
+            }
+
+            try
+            {
+                CUActualizarEcosistema.Actualizar(e);
+                return Ok(e);
+            }
+            catch (EcosistemaException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Ocurrión un error inesperado");
+            }
         }
 
         // DELETE api/<EcosistemasController>/5

@@ -74,7 +74,6 @@ namespace MVC.Controllers
             {
                 ecosistema = eco,
                 habita = false
-
             };
 
 

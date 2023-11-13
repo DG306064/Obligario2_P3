@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace LogicaAplicacion.InterfacesCU
 {
     public interface IEcosistemasSinHabitatEnUnaEspecie
     {
-        IEnumerable<Ecosistema> ObtenerEcosistemasSinHabitatEnUnaEspecie(int idEspecie);
+        IEnumerable<EcosistemaDTO> ObtenerEcosistemasSinHabitatEnUnaEspecie(int idEspecie);
     }
 }

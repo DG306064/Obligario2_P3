@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace LogicaAplicacion.CasosUso
 {
@@ -20,9 +21,18 @@ namespace LogicaAplicacion.CasosUso
             repoEspecie = RepoEsp;
         }
 
-        public IEnumerable<Amenaza> AmenazasDeLaEspecie(int idEspecie)
+        public IEnumerable<AmenazaDTO> AmenazasDeLaEspecie(int idEspecie)
         {
-            return repoEspecie.ObtenerAmenazas(idEspecie);
+            var amenazas = repoEspecie.ObtenerAmenazas(idEspecie);
+
+            var amenazasDTO = amenazas.Select(a => new AmenazaDTO()
+            {
+                Id = a.Id,
+                Descripcion = a.Descripcion.Value,
+                Peligrosidad = a.Peligrosidad
+            });
+
+            return amenazasDTO;
         }
     }
 }

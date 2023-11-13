@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace LogicaAplicacion.CasosUso
 {
@@ -20,9 +21,18 @@ namespace LogicaAplicacion.CasosUso
 
 
 
-        public IEnumerable<Pais> Listado()
+        public IEnumerable<PaisDTO> Listado()
         {
-            return RepoPais.FindAll();
+            var paises = RepoPais.FindAll();
+
+            var paisesDTO = paises.Select(p => new PaisDTO()
+            {
+                Id = p.Id,
+                CodigoIsoAlpha = p.CodigoIsoAlpha,
+                Nombre = p.Nombre
+            });
+
+            return paisesDTO; 
         }
     }
 }

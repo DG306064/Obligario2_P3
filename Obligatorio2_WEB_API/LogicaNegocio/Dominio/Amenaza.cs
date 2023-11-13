@@ -16,7 +16,7 @@ namespace LogicaNegocio.Dominio
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Descripcion requerido")]
-        public string Descripcion { get; set; }
+        public Descripcion Descripcion { get; set; }
 
         [Required(ErrorMessage = " peligrosidad requerida")]
         public int Peligrosidad { get; set; }

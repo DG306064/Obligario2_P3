@@ -1,4 +1,5 @@
 ﻿using LogicaNegocio.Dominio;
+using LogicaNegocio.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

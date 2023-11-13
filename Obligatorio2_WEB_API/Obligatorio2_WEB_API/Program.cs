@@ -65,8 +65,7 @@ builder.Services.AddScoped<IEspeciesFiltradasPorEcosistema, CUEspeciesFiltradasP
 builder.Services.AddScoped<IBuscarUsuarioPorId, CUBuscarUsuarioPorId>();
 builder.Services.AddScoped<IBajaUsuario, CUBajaUsuario>();
 builder.Services.AddScoped<IModificarUsuario, CUModificarUsuario>();
-builder.Services.AddScoped<IModificarMinLargoDescripcion, CUModificarMinLargoDescripcion>();
-builder.Services.AddScoped<IModificarMaxLargoDescripcion, CUModificarMaxLargoDescripcion>();
+builder.Services.AddScoped<IModificarParametro, CUModificarParametro>();
 builder.Services.AddScoped<IObtenerEspeciePorNombreCientifico, CUObtenerEspeciePorNombreCientifico>();
 builder.Services.AddScoped<IAmenazasDeUnaEspecie, CUAmenazasDeUnaEspecie>();
 builder.Services.AddScoped<IAmenazasDeUnEcosistema, CUAmenazasDeUnEcosistema>();
@@ -74,9 +73,8 @@ builder.Services.AddScoped<IEcosistemasQueNoPuedeHabitarUnaEspecie, CUEcosistema
 builder.Services.AddScoped<IBuscarEspeciesPorRangoDePeso, CUBuscarEspeciesPorRangoDePeso>();
 builder.Services.AddScoped<IActualizarEcosistema, CUActualizarEcosistema>();
 builder.Services.AddScoped<IBuscarEcosistemaPorNombre, CUBuscarEcosistemaPorNombre>();
-builder.Services.AddScoped<IBuscarValorParametroPorNombre, CUBuscarValorParametroPorNombre>();
-builder.Services.AddScoped<IModificarMinLargoNombre, CUModificarMinLargoNombre>();
-builder.Services.AddScoped<IModificarMaxLargoNombre, CUModificarMaxLargoNombre>();
+builder.Services.AddScoped<IBuscarParametroPorNombre, CUBuscarParametroPorNombre>();
+builder.Services.AddScoped<IModificarParametro, CUModificarParametro>();
 builder.Services.AddScoped<IBajaHabitat, CUBajaHabitat>();
 
 builder.Services.AddScoped<IVOModificarMaxLargoNombre, CUVOModificarMaxLargoNombre>();

@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
+using LogicaNegocio.ValueObjects;
 
 namespace LogicaAplicacion.CasosUso
 {
@@ -18,9 +20,18 @@ namespace LogicaAplicacion.CasosUso
         }
 
 
-        public Amenaza AmenazaENComun(int idEspecie, int idEcosistema)
+        public AmenazaDTO AmenazaENComun(int idEspecie, int idEcosistema)
         {
-            return RepoEspecie.AmenazaEnComun(idEspecie, idEcosistema);
+            var a = RepoEspecie.AmenazaEnComun(idEspecie, idEcosistema);
+
+            var amenaza = new AmenazaDTO()
+            {
+                Id = a.Id,
+                Descripcion = a.Descripcion.Value,
+                Peligrosidad = a.Peligrosidad,
+            };
+
+            return amenaza;
         }
     }
 }

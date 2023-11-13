@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace LogicaAplicacion.CasosUso
 {
@@ -17,9 +18,35 @@ namespace LogicaAplicacion.CasosUso
         {
             repoEspecie = RepoEsp;
         }
-        public IEnumerable<Especie> EspeciesORdenadasPorNombreCientifico()
+        public IEnumerable<EspecieDTO> EspeciesORdenadasPorNombreCientifico()
         {
-            return repoEspecie.EspeciesOrdenadasPorNombreCientifico();
+            var especies = repoEspecie.EspeciesOrdenadasPorNombreCientifico();
+            var especiesDTO = especies.Select(e => new EspecieDTO()
+            {
+                Id = e.Id,
+                NombreCientifico = e.NombreCientifico,
+                TextoNombreComun = e.NombreComun.Value,
+                TextoDescripcion = e.Descripcion.Value,
+                PesoMinimo = e.PesoMinimo,
+                PesoMaximo = e.PesoMaximo,
+                LongitudMinima = e.LongitudMinima,
+                LongitudMaxima = e.LongitudMaxima,
+                ImagenEspecie = e.ImagenEspecie,
+                EstadoCons = e.EstadoCons,
+                Amenazas = ConvertirAmenazas(e.Amenazas)
+            });
+
+            return especiesDTO;
+        }
+
+        public IEnumerable<AmenazaDTO> ConvertirAmenazas(IEnumerable<Amenaza> amenazas)
+        {
+            return amenazas.Select(a => new AmenazaDTO()
+            {
+                Id = a.Id,
+                Descripcion = a.Descripcion.Value,
+                Peligrosidad = a.Peligrosidad
+            });
         }
     }
 }

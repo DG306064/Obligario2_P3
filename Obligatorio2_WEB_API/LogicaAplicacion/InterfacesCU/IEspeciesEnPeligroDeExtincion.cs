@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace LogicaAplicacion.InterfacesCU
 {
     public interface IEspeciesEnPeligroDeExtincion
     {
-        IEnumerable<Especie> EspeciesENPeligroDeExtincion();
+        IEnumerable<EspecieDTO> EspeciesENPeligroDeExtincion();
 
     }
 }

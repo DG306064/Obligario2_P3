@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LogicaNegocio.Dominio;
+using DTOs;
 
 namespace LogicaAplicacion.InterfacesCU
 {
     public interface IBuscarEspeciesPorRangoDePeso
     {
-        IEnumerable<Especie> BuscarEspeciesPorRangoDePeso(int pesoMin, int pesoMax);
+        IEnumerable<EspecieDTO> BuscarEspeciesPorRangoDePeso(int pesoMin, int pesoMax);
     }
 }

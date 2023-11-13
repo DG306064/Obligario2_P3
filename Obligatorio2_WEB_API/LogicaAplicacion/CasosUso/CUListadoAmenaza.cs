@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LogicaNegocio.Dominio;
+using DTOs;
 
 namespace LogicaAplicacion.CasosUso
 {
@@ -19,9 +20,19 @@ namespace LogicaAplicacion.CasosUso
         }
 
 
-        public IEnumerable<Amenaza> ListadoAmenaza()
+        public IEnumerable<AmenazaDTO> ListadoAmenaza()
         {
-            return RepoAmenaza.FindAll();
+            var amenazas = RepoAmenaza.FindAll();
+
+            var amenazasDTO = amenazas.Select(a => new AmenazaDTO()
+            {
+                Id = a.Id,
+                Descripcion = a.Descripcion.Value,
+                Peligrosidad = a.Peligrosidad
+
+            });
+
+            return amenazasDTO
         }
     }
 }

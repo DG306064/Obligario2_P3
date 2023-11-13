@@ -46,7 +46,7 @@ namespace LogicaAplicacion.CasosUso
             return amenazas.Select(a => new AmenazaDTO()
             {
                 Id = a.Id,
-                Descripcion = a.Descripcion,
+                Descripcion = a.Descripcion.Value,
                 Peligrosidad = a.Peligrosidad
             });
         }

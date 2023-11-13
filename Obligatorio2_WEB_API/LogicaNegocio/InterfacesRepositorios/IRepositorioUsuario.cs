@@ -9,7 +9,7 @@ namespace LogicaNegocio.InterfacesRepositorios
 {
     public interface IRepositorioUsuario : IRepositorio<Usuario>
     {
-        IEnumerable<Usuario> ObtenerUsuarioParaLogear(string alias, string password);
+        Usuario ObtenerUsuarioParaLogear(string alias, string password);
 
         bool VerSiExisteUsuario(string alias);
     }

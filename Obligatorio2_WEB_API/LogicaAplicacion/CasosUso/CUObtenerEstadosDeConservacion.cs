@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace LogicaAplicacion.CasosUso
 {
@@ -22,9 +23,18 @@ namespace LogicaAplicacion.CasosUso
 
 
 
-        public IEnumerable<EstadoConservacion> ObtenerEstadosDeConservacion()
+        public IEnumerable<EstadoConservacionDTO> ObtenerEstadosDeConservacion()
         {
-            return RepoEstado.FindAll();
+            var estados = RepoEstado.FindAll();
+
+            var estadosDTO = estados.Select(e => new EstadoConservacionDTO()
+            {
+                Id = e.Id,
+                Nombre = e.Nombre.Value,
+                Valor = e.Valor
+            });
+
+            return estadosDTO;
         }
     }
 }

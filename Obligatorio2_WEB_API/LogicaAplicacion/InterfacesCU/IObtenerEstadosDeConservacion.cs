@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LogicaNegocio.Dominio;
+using DTOs;
 
 namespace LogicaAplicacion.InterfacesCU
 {
     public interface IObtenerEstadosDeConservacion
     {
-        IEnumerable<EstadoConservacion> ObtenerEstadosDeConservacion();
+        IEnumerable<EstadoConservacionDTO> ObtenerEstadosDeConservacion();
     }
 }

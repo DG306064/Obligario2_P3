@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTOs;
 
 namespace LogicaAplicacion.InterfacesCU
 {
     public interface IAmenazasDeUnEcosistema
     {
-        IEnumerable<Amenaza> AmenazasDeUnEcosistema(int idEcosistema);
+        IEnumerable<AmenazaDTO> AmenazasDeUnEcosistema(int idEcosistema);
     }
 }
