@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LogicaNegocio.Dominio;
 using DTOs;
+using LogicaNegocio.ValueObjects;
 
 namespace LogicaAplicacion.CasosUso
 {
@@ -29,20 +30,15 @@ namespace LogicaAplicacion.CasosUso
             eco.Descripcion = obj.Descripcion;
             eco.Pais = obj.Pais;
             eco.EstadoConservacion = obj.EstadoConservacion;
-            eco.Amenazas = ConvertirAmenazas(obj.Amenazas);
+            eco.Amenazas = obj.Amenazas.Select(a => new Amenaza()
+            {
+                Id = a.Id,
+                Descripcion = new Descripcion(a.Descripcion),
+                Peligrosidad = a.Peligrosidad,
+            });
             eco.ImagenEcosistema = obj.ImagenEcosistema;
 
             RepositorioEcosistema.Update(eco);
-        }
-
-        public IEnumerable<Amenaza> ConvertirAmenazas(IEnumerable<AmenazaDTO> amenazas)
-        {
-            return amenazas.Select(a => new Amenaza()
-            {
-                Id = a.Id,
-                Descripcion = a.Descripcion,
-                Peligrosidad = a.Peligrosidad
-            });
         }
     }
 }

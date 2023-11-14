@@ -32,7 +32,7 @@ namespace LogicaAplicacion.CasosUso
 
             });
 
-            return amenazasDTO
+            return amenazasDTO;
         }
     }
 }

@@ -10,6 +10,6 @@ namespace LogicaAplicacion.InterfacesCU
 {
     public interface IObtenerUsuarioParaLogear
     {
-        IEnumerable<UsuarioDTO> ObtenerUsuarioParaLogear(string alias, string password);
+        UsuarioDTO ObtenerUsuarioParaLogear(string alias, string password);
     }
 }

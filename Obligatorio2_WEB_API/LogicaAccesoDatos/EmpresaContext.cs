@@ -39,7 +39,7 @@ namespace LogicaAccesoDatos
             modelBuilder.Entity<Especie>().OwnsOne(esp => esp.Descripcion).HasIndex(des => des.Value).IsUnique();
             modelBuilder.Entity<EstadoConservacion>().OwnsOne(est => est.Nombre).HasIndex(nom => nom.Value).IsUnique();
             modelBuilder.Entity<Pais>().OwnsOne(pais => pais.Nombre).HasIndex(nom => nom.Value).IsUnique();
-
+            modelBuilder.Entity<Amenaza>().OwnsOne(ame => ame.Descripcion).HasIndex(des => des.Value).IsUnique();
             modelBuilder.Entity<Especie>().HasMany(especie => especie.Habitats).WithOne().OnDelete(DeleteBehavior.NoAction);
 
 

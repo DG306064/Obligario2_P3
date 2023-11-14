@@ -30,9 +30,6 @@ namespace LogicaNegocio.Dominio
         {
             if (Peligrosidad < 1) throw new AmenazaException("El nivel de peligrosidad debe ser mayor a 0");
             if (Peligrosidad > 10) throw new AmenazaException("El nivel de peligrosidad debe ser menor a 10");
-            if (string.IsNullOrEmpty(Descripcion)) throw new AmenazaException("La descripcion no puede estar vacia.");
-            if (Descripcion.Length < 2 || Descripcion.Length > 50) throw new AmenazaException("La descripcion debe tener entre 2 y 50 caracteres");
-
         }
     }
 }
