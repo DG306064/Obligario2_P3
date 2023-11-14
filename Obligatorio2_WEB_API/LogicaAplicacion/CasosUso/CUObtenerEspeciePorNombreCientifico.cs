@@ -33,7 +33,12 @@ namespace LogicaAplicacion.CasosUso
                 LongitudMinima = e.LongitudMinima,
                 LongitudMaxima = e.LongitudMaxima,
                 ImagenEspecie = e.ImagenEspecie,
-                EstadoCons = e.EstadoCons,
+                EstadoCons = new EstadoConservacionDTO()
+                {
+                    Id = e.EstadoCons.Id,
+                    Nombre = e.EstadoCons.Nombre.Value,
+                    Valor = e.EstadoCons.Valor
+                },
                 Amenazas = e.Amenazas.Select(a => new AmenazaDTO()
                 {
                     Id = a.Id,

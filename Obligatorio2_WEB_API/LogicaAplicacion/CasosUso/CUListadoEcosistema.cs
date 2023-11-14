@@ -35,8 +35,19 @@ namespace LogicaAplicacion.CasosUso
                 Longitud = e.Longitud,
                 Area = e.Area,
                 TextoDescripcion = e.Descripcion.Value,
-                Pais = e.Pais,
-                EstadoConservacion = e.EstadoConservacion,
+                Pais = new PaisDTO() 
+                {
+                    Id = e.Pais.Id,
+                    CodigoIsoAlpha = e.Pais.CodigoIsoAlpha,
+                    Nombre = e.Pais.Nombre.Value,
+
+                },
+                EstadoConservacion = new EstadoConservacionDTO()
+                {
+                    Id = e.EstadoConservacion.Id,
+                    Nombre = e.EstadoConservacion.Nombre.Value,
+                    Valor = e.EstadoConservacion.Valor
+                },
                 Amenazas = ConvertirAmenazas(e.Amenazas),
                 ImagenEcosistema = e.ImagenEcosistema
             }); ;

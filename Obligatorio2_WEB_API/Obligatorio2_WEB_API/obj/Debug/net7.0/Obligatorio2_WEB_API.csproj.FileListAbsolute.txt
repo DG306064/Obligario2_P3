@@ -86,12 +86,6 @@ C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\Ob
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\System.CodeDom.dll
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\obj\Debug\net7.0\Obligatorio2_WEB_API.csproj.AssemblyReference.cache
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\obj\Debug\net7.0\Obligatorio2_WEB_API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\obj\Debug\net7.0\Obligatorio2_WEB_API.AssemblyInfoInputs.cache
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\obj\Debug\net7.0\Obligatorio2_WEB_API.AssemblyInfo.cs
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\obj\Debug\net7.0\Obligatorio2_WEB_API.csproj.CoreCompileInputs.cache
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\obj\Debug\net7.0\Obligatorio2_WEB_API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\appsettings.json
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\Obligatorio2_WEB_API.exe
@@ -336,6 +330,13 @@ C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\LogicaAccesoDatos.pdb
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\LogicaAplicacion.pdb
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\obj\Debug\net7.0\Obligatorio2_WEB_API.csproj.AssemblyReference.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\obj\Debug\net7.0\Obligatorio2_WEB_API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\obj\Debug\net7.0\Obligatorio2_WEB_API.AssemblyInfoInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\obj\Debug\net7.0\Obligatorio2_WEB_API.AssemblyInfo.cs
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\obj\Debug\net7.0\Obligatorio2_WEB_API.csproj.CoreCompileInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\obj\Debug\net7.0\Obligatorio2_WEB_API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\obj\Debug\net7.0\Obligatorio2_WEB_API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\obj\Debug\net7.0\staticwebassets\msbuild.Obligatorio2_WEB_API.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\obj\Debug\net7.0\staticwebassets\msbuild.build.Obligatorio2_WEB_API.props
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Obligatorio2_WEB_API.props

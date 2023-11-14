@@ -17,12 +17,14 @@ namespace LogicaAplicacion.CasosUso
     public class CUAltaEcosistema : IAltaEcosistema
     {
         public IRepositorioEcosistema RepoEcosistema { get; set; }
+        public IRepositorio<EstadoConservacion> RepoEstadoConservacion { get; set; }
         public IRepositorio<RegistroDeCambios> RepoRegistroCambios { get; set; }
 
-        public CUAltaEcosistema(IRepositorioEcosistema repoEcosistema, IRepositorio<RegistroDeCambios> 
+        public CUAltaEcosistema(IRepositorioEcosistema repoEcosistema,IRepositorio<EstadoConservacion> repoEstado, IRepositorio<RegistroDeCambios> 
                                 repoRegistroCambios)
         {
             RepoEcosistema = repoEcosistema;
+            RepoEstadoConservacion = repoEstado;
             RepoRegistroCambios = repoRegistroCambios;
         }
 
@@ -32,14 +34,17 @@ namespace LogicaAplicacion.CasosUso
         {
             Ecosistema ecosistema = new Ecosistema()
             {
-                Nombre = eco.Nombre,
+                Nombre = new Nombre(eco.Nombre),
                 Latitud = eco.Latitud,
                 Longitud = eco.Longitud,
                 Area = eco.Area,
-                Descripcion = eco.Descripcion,
-                Pais = eco.Pais,
-                EstadoConservacion = eco.EstadoConservacion,
-                Amenazas = ConvertirAmenazas(eco.Amenazas),
+                Descripcion = new Descripcion(eco.Descripcion),
+                Pais = new Pais() 
+                { 
+                    Id = eco.Pais.Id
+                },
+                EstadoConservacion = RepoEstadoConservacion.FindById(eco.IdEstadoConservacion),
+                //Amenazas = eco.Amenazas.Select(a => RepositorioAmenaza.FindById(a.Id)),
                 ImagenEcosistema = eco.ImagenEcosistema
             };
 

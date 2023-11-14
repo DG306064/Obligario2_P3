@@ -14,10 +14,12 @@ namespace LogicaAplicacion.CasosUso
     public class CUBuscarEspeciePorId : IBuscarEspeciePorId
     {
         public IRepositorioEspecie RepoEspecie { get; set; }
+        public IRepositorioAmenaza RepoAmenaza { get; set; }
 
-        public CUBuscarEspeciePorId(IRepositorioEspecie repoEspecie)
+        public CUBuscarEspeciePorId(IRepositorioEspecie repoEspecie, IRepositorioAmenaza repoAmenaza)
         {
             RepoEspecie = repoEspecie;
+            RepoAmenaza = repoAmenaza;
         }
 
         public EspecieDTO Buscar(int id)
@@ -34,9 +36,24 @@ namespace LogicaAplicacion.CasosUso
                 LongitudMinima = e.LongitudMinima,
                 LongitudMaxima = e.LongitudMaxima,
                 ImagenEspecie = e.ImagenEspecie,
-                EstadoCons = e.EstadoCons,
-                Amenazas = ConvertirAmenazas(e.Amenazas),
-                //Habitats = ConvertirHabitats(e.Habitats)
+                EstadoCons = new EstadoConservacionDTO()
+                {
+                    Id = e.EstadoCons.Id,
+                    Nombre = e.EstadoCons.Nombre.Value,
+                    Valor = e.EstadoCons.Valor
+                },
+                Amenazas = e.Amenazas.Select(a => new AmenazaDTO()
+                {
+                    Id = a.Id,
+                    Descripcion = a.Descripcion.Value,
+                    Peligrosidad = a.Peligrosidad
+                }),
+                Habitats = e.Habitats.Select(h => new HabitatDTO()
+                {
+                    Id = h.Id,
+                    NombreEcosistema = h.Ecosistema.Nombre.Value,
+                    Habita = h.Habita
+                })
     };
 
             return especie;

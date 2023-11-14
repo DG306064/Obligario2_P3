@@ -27,7 +27,7 @@ namespace LogicaAplicacion.CasosUso
             HabitatDTO habitat = new HabitatDTO()
             {
                 Id = h.Id,
-                Ecosistema = h.Ecosistema,
+                NombreEcosistema = h.Ecosistema.Nombre.Value,
                 Habita = h.Habita
             };
 

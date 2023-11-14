@@ -1,12 +1,13 @@
-﻿using ExcepcionesPropias;
-using LogicaAplicacion.CasosUso;
-using LogicaAplicacion.InterfacesCU;
-using LogicaNegocio;
-using LogicaNegocio.ValueObjects;
+﻿//using ExcepcionesPropias;
+//using LogicaAplicacion.CasosUso;
+//using LogicaAplicacion.InterfacesCU;
+//using LogicaNegocio;
+//using LogicaNegocio.ValueObjects;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
+//using Microsoft.IdentityModel.Tokens;
 using MVC.Models;
+using Newtonsoft.Json;
 
 namespace MVC.Controllers
 {
@@ -14,84 +15,55 @@ namespace MVC.Controllers
     {
 
        public IWebHostEnvironment WHE { get; set; }
-       public IListadoEcosistemas CUListadoEcosistema { get; set; }
-        public IListadoEspecie CUListadoEspecie { get; set; }
-        public IAltaEspecie CUAltaEsp { get; set; }
-        public IBajaEspecie CUBajaEspecie { get; set; }
-        public IBuscarEspeciePorId CUBuscarEspeciePorid { get; set; }
-        public IObtenerEstadosDeConservacion CUObtenerEstadosDeConservacion { get; set; }
-        public IObtenerHabitatsDeLaEspecie CUObtenerHabitatsDeLaEspecie { get; set; }
-        public IAsignarUnEcosistema CUAsignarUnEcosistema { get; set; }
-        public IListadoAmenaza CUlistadoAmenazas { get; set; }
-        public IObtenerAmenaza CUObtenerAmenaza { get; set; }
-        public IAsignarAmenazaAEspecie CUAsignarAmenaza { get; set; }
-        public IObtenerIdsDeAmenazasDeEspecies CUObtenerIdsDeAmenazasDeEspecies { get; set; }
-        public IAmenazaEnComun CUAmenazaEnComun { get; set; }
-        public IEstadosCompatibles CUEstadosCompatibles { get; set; }
-        public IEspeciesOrdenadasPorNombreCientifico CUEspeciesOrdenadasPorNombreCientifico { get; set; }
-        public IEspeciesEnPeligroDeExtincion CUEspeciesEnPeligroDeExtincion { get; set; }
-        public IEspeciesFiltradasPorEcosistema CUEspeciesFiltradasPorEcosistema { get; set; }
-        public IObtenerEspeciePorNombreCientifico CUObtenerEspeciePorNombreCientifico { get; set; }
-        public IAmenazasDeUnaEspecie CUAmenazasDeUnaEspecie { get; set; }
-        public IBuscarEspeciesPorRangoDePeso CUBuscarEspeciesPorRangoDePeso { get; set; }
-
-        public IModificarEspecie CUModificarEspecie { get; set; }
-        public IBuscarEcosistemaPorNombre CUBuscarEcosistemaPorNombre { get; set; }
-        public IEcosistemasQueNoPuedeHabitarUnaEspecie CUEcosistemasQueNoPuedeHabitarUnaEspecie { get; set; }
+       
 
 
 
 
 
 
-        public EspeciesController(IWebHostEnvironment whe, IListadoEcosistemas cuListaEco, IAltaEspecie CUalta, IListadoEspecie cuListadoEspecie,
-                                    IBajaEspecie cuBajaEspecie, IBuscarEspeciePorId cuBuscarPorid,
-                                     IObtenerEstadosDeConservacion  cuObtenerEstadosDeConservacion,
-                                      IObtenerHabitatsDeLaEspecie cuObtenerHabitatsDeLaEspecie,
-                                      IAsignarUnEcosistema cuAsignarUnEcosistema, IListadoAmenaza culistadoAmenazas,
-                                      IObtenerAmenaza cuObtenerAmenaza, IAsignarAmenazaAEspecie cuAsignarAmenaza,
-                                      IObtenerIdsDeAmenazasDeEspecies cuObtenerIdsDeAmenazasDeEspecies,
-                                      IAmenazaEnComun cuAmenazaEnComun, IEstadosCompatibles cuEstadosCompatibles,
-                                      IEspeciesOrdenadasPorNombreCientifico cuEspeciesOrdenadasPorNombreCientifico,
-                                      IEspeciesEnPeligroDeExtincion cUEspeciesEnPeligroDeExtincion,
-                                      IEspeciesFiltradasPorEcosistema cuEspeciesFiltradasPorEcosistema, IObtenerEspeciePorNombreCientifico cuObtenerEspeciePorNombreCientifico,
-                                      IAmenazasDeUnaEspecie cuAmenazasDeUnaEspecie, IBuscarEspeciesPorRangoDePeso cUBuscarEspeciesPorRangoDePeso,
-                                      IModificarEspecie cUModificarEspecie, IBuscarEcosistemaPorNombre cUBuscarEcosistemaPorNombre, 
-                                      IEcosistemasQueNoPuedeHabitarUnaEspecie cUEcosistemasQueNoPuedeHabitarUnaEspecie)
+        public EspeciesController(IWebHostEnvironment whe)
         {
-
             WHE = whe;
-            CUListadoEcosistema = cuListaEco;
-            CUAltaEsp = CUalta;
-            CUListadoEspecie = cuListadoEspecie;
-            CUBajaEspecie = cuBajaEspecie;
-            CUBuscarEspeciePorid = cuBuscarPorid;
-            CUObtenerEstadosDeConservacion = cuObtenerEstadosDeConservacion;
-            CUObtenerHabitatsDeLaEspecie = cuObtenerHabitatsDeLaEspecie;
-            CUAsignarUnEcosistema = cuAsignarUnEcosistema;
-            CUlistadoAmenazas = culistadoAmenazas;
-            CUObtenerAmenaza = cuObtenerAmenaza;
-            CUAsignarAmenaza = cuAsignarAmenaza;
-            CUObtenerIdsDeAmenazasDeEspecies = cuObtenerIdsDeAmenazasDeEspecies;
-            CUAmenazaEnComun = cuAmenazaEnComun;
-            CUEstadosCompatibles = cuEstadosCompatibles;
-            CUEspeciesOrdenadasPorNombreCientifico = cuEspeciesOrdenadasPorNombreCientifico;
-            CUEspeciesEnPeligroDeExtincion = cUEspeciesEnPeligroDeExtincion;
-            CUEspeciesFiltradasPorEcosistema = cuEspeciesFiltradasPorEcosistema;
-            CUObtenerEspeciePorNombreCientifico = cuObtenerEspeciePorNombreCientifico;
-            CUAmenazasDeUnaEspecie = cuAmenazasDeUnaEspecie;
-            CUBuscarEspeciesPorRangoDePeso = cUBuscarEspeciesPorRangoDePeso;
-            CUModificarEspecie = cUModificarEspecie;
-            CUBuscarEcosistemaPorNombre = cUBuscarEcosistemaPorNombre;
-            CUEcosistemasQueNoPuedeHabitarUnaEspecie = cUEcosistemasQueNoPuedeHabitarUnaEspecie;
         }
 
 
 
         public ActionResult Index()
         {
-            ViewBag.Error = TempData["Error"];
-            IEnumerable<Especie> especies = CUListadoEspecie.Listado();
+            
+            IEnumerable<EspecieDTO> especies = null;
+
+            HttpClient cliente = new HttpClient();
+
+            string url = "url del index de la api";
+
+            var tarea1 = cliente.GetAsync(url);
+            tarea1.Wait();
+
+            var respuesta = tarea1.Result;
+
+            var contenido = respuesta.Content;
+
+            var tarea2 = contenido.ReadAsStringAsync();
+
+            tarea2.Wait();
+
+            string json = tarea2.Result;
+
+            if (respuesta.IsSuccessStatusCode)
+            {
+                
+
+                var paises = JsonConvert.DeserializeObject<List<EspecieDTO>>(json);
+
+                return View(paises);
+            }
+            else
+            {
+                ViewBag.Error = json;
+                return View();
+            }
             return View(especies);
         }
 

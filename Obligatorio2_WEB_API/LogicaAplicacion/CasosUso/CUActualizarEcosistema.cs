@@ -8,37 +8,41 @@ using System.Threading.Tasks;
 using LogicaNegocio.Dominio;
 using DTOs;
 using LogicaNegocio.ValueObjects;
+using LogicaNegocio.RegistrodeCambios;
 
 namespace LogicaAplicacion.CasosUso
 {
     public class CUActualizarEcosistema : IActualizarEcosistema
     {
-        IRepositorioEcosistema RepositorioEcosistema { get; set; }
+        public IRepositorioEcosistema RepoEcosistema { get; set; }
+        public IRepositorio<EstadoConservacion> RepoEstadoConservacion { get; set; }
+        public IRepositorio<RegistroDeCambios> RepoRegistroCambios { get; set; }
 
-        public CUActualizarEcosistema(IRepositorioEcosistema repositorio)
+        public IRepositorioAmenaza RepositorioAmenaza { get; set; }
+
+        public CUActualizarEcosistema(IRepositorioEcosistema repoEcosistema, IRepositorio<EstadoConservacion> repoEstado, IRepositorio<RegistroDeCambios>
+                                repoRegistroCambios, IRepositorioAmenaza repoAmenaza)
         {
-            RepositorioEcosistema = repositorio;
+            RepoEcosistema = repoEcosistema;
+            RepoEstadoConservacion = repoEstado;
+            RepoRegistroCambios = repoRegistroCambios;
+            RepositorioAmenaza = repoAmenaza;
         }
 
         public void Actualizar(EcosistemaDTO obj)
         {
-            Ecosistema eco = RepositorioEcosistema.FindById(obj.Id);
-            eco.Nombre = obj.Nombre;
+            Ecosistema eco = RepoEcosistema.FindById(obj.Id);
+            eco.Nombre = new Nombre(obj.Nombre);
             eco.Latitud = obj.Latitud;
             eco.Longitud = obj.Longitud;
             eco.Area = obj.Area;
-            eco.Descripcion = obj.Descripcion;
-            eco.Pais = obj.Pais;
-            eco.EstadoConservacion = obj.EstadoConservacion;
-            eco.Amenazas = obj.Amenazas.Select(a => new Amenaza()
-            {
-                Id = a.Id,
-                Descripcion = new Descripcion(a.Descripcion),
-                Peligrosidad = a.Peligrosidad,
-            });
+            eco.Descripcion = new Descripcion(eco.Descripcion.Value);
+            eco.Pais = new Pais(){Id = obj.Pais.Id};
+            eco.EstadoConservacion = RepoEstadoConservacion.FindById(obj.IdEstadoConservacion);
+            eco.Amenazas = obj.Amenazas.Select(a => RepositorioAmenaza.FindById(a.Id));
             eco.ImagenEcosistema = obj.ImagenEcosistema;
 
-            RepositorioEcosistema.Update(eco);
+            RepoEcosistema.Update(eco);
         }
     }
 }

@@ -2,6 +2,7 @@
 using LogicaNegocio.Dominio;
 using LogicaNegocio.InterfacesRepositorios;
 using LogicaNegocio.RegistrodeCambios;
+using LogicaNegocio.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,12 +16,14 @@ namespace LogicaAplicacion.CasosUso
     {
         public IRepositorioEspecie RepoEspecie { get; set; }
         public IRepositorio<RegistroDeCambios> RepoRegistroCambios { get; set; }
+        public IRepositorio<EstadoConservacion> RepoEstadoConservacion { get; set; }
 
 
-        public CUAltaEspecie(IRepositorioEspecie RepoEsp, IRepositorio<RegistroDeCambios> repoRegistroCambios)
+        public CUAltaEspecie(IRepositorioEspecie RepoEsp, IRepositorio<RegistroDeCambios> repoRegistroCambios, IRepositorio<EstadoConservacion> repoEstadoConservacion)
         {
             RepoEspecie = RepoEsp;
             RepoRegistroCambios = repoRegistroCambios;
+            RepoEstadoConservacion = repoEstadoConservacion;
         }
 
         public void Add(EspecieDTO obj, string nombreUsuario)
@@ -29,14 +32,14 @@ namespace LogicaAplicacion.CasosUso
             {
                 Id = obj.Id,
                 NombreCientifico = obj.NombreCientifico,
-                NombreComun = obj.NombreComun,
-                Descripcion = obj.Descripcion,
+                NombreComun = new Nombre(obj.NombreComun),
+                Descripcion = new Descripcion(obj.Descripcion),
                 PesoMinimo = obj.PesoMinimo,
                 PesoMaximo = obj.PesoMaximo,
                 LongitudMinima = obj.LongitudMinima,
                 LongitudMaxima = obj.LongitudMaxima,
                 ImagenEspecie = obj.ImagenEspecie,
-                EstadoCons = obj.EstadoCons,
+                EstadoCons = RepoEstadoConservacion.FindById(obj.IdEstadoCons),
             };
 
             RepoEspecie.Add(especie);

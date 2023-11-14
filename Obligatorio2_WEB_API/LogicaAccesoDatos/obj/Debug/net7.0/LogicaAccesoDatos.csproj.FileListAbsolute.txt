@@ -226,11 +226,6 @@ C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\Lo
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\LogicaAccesoDatos\obj\Debug\net7.0\LogicaAccesoDatos.pdb
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\LogicaAccesoDatos\obj\Debug\net7.0\LogicaAccesoDatos.genruntimeconfig.cache
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\LogicaAccesoDatos\obj\Debug\net7.0\ref\LogicaAccesoDatos.dll
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\obj\Debug\net7.0\LogicaAccesoDatos.csproj.AssemblyReference.cache
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\obj\Debug\net7.0\LogicaAccesoDatos.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\obj\Debug\net7.0\LogicaAccesoDatos.AssemblyInfoInputs.cache
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\obj\Debug\net7.0\LogicaAccesoDatos.AssemblyInfo.cs
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\obj\Debug\net7.0\LogicaAccesoDatos.csproj.CoreCompileInputs.cache
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\bin\Debug\net7.0\LogicaAccesoDatos.deps.json
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\bin\Debug\net7.0\LogicaAccesoDatos.runtimeconfig.json
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\bin\Debug\net7.0\LogicaAccesoDatos.dll
@@ -241,6 +236,11 @@ C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\bin\Debug\net7.0\DTOs.pdb
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\bin\Debug\net7.0\LogicaNegocio.pdb
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\obj\Debug\net7.0\LogicaAccesoDatos.csproj.AssemblyReference.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\obj\Debug\net7.0\LogicaAccesoDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\obj\Debug\net7.0\LogicaAccesoDatos.AssemblyInfoInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\obj\Debug\net7.0\LogicaAccesoDatos.AssemblyInfo.cs
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\obj\Debug\net7.0\LogicaAccesoDatos.csproj.CoreCompileInputs.cache
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\obj\Debug\net7.0\LogicaAccesoDatos.csproj.CopyComplete
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\obj\Debug\net7.0\LogicaAccesoDatos.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\LogicaAccesoDatos\obj\Debug\net7.0\refint\LogicaAccesoDatos.dll

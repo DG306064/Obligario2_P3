@@ -10,7 +10,8 @@ namespace DTOs
     public class HabitatDTO
     {
         public int Id { get; set; }
-        public Ecosistema Ecosistema { get; set; }
+        public EcosistemaDTO Ecosistema { get; set; }
+        public int IdEcosistema { get; set; }
         public string NombreEcosistema { get; set; }
         public bool Habita { get; set; }
     }

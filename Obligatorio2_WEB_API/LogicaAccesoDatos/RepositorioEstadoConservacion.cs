@@ -1,5 +1,6 @@
 ﻿using LogicaNegocio.Dominio;
 using LogicaNegocio.InterfacesRepositorios;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,8 @@ namespace LogicaAccesoDatos
 
         public EstadoConservacion FindById(int id)
         {
-            throw new NotImplementedException();
+            return Contexto.Estados.Include(e => e.Nombre)
+                                   .SingleOrDefault(e => e.Id == id);
         }
 
         public void Remove(EstadoConservacion obj)

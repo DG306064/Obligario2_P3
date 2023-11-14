@@ -29,7 +29,7 @@ namespace LogicaAplicacion.CasosUso
             {
                 Id = p.Id,
                 CodigoIsoAlpha = p.CodigoIsoAlpha,
-                Nombre = p.Nombre
+                Nombre = p.Nombre.Value
             });
 
             return paisesDTO; 

@@ -35,21 +35,21 @@ namespace LogicaAplicacion.CasosUso
                 LongitudMinima = e.LongitudMinima,
                 LongitudMaxima = e.LongitudMaxima,
                 ImagenEspecie = e.ImagenEspecie,
-                EstadoCons = e.EstadoCons,
-                Amenazas = ConvertirAmenazas(e.Amenazas)
+                EstadoCons = new EstadoConservacionDTO()
+                {
+                    Id = e.EstadoCons.Id,
+                    Nombre = e.EstadoCons.Nombre.Value,
+                    Valor = e.EstadoCons.Valor
+                },
+                Amenazas = e.Amenazas.Select(a => new AmenazaDTO()
+                {
+                    Id = a.Id,
+                    Descripcion = a.Descripcion.Value,
+                    Peligrosidad = a.Peligrosidad
+                }),
             });
 
             return especiesDTO; 
-        }
-
-        public IEnumerable<AmenazaDTO> ConvertirAmenazas(IEnumerable<Amenaza> amenazas)
-        {
-            return amenazas.Select(a => new AmenazaDTO()
-            {
-                Id = a.Id,
-                Descripcion = a.Descripcion.Value,
-                Peligrosidad = a.Peligrosidad
-            });
         }
     }
 }

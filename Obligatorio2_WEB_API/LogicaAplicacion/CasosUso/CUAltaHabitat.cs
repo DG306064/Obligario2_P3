@@ -15,11 +15,13 @@ namespace LogicaAplicacion.CasosUso
     {
         public IRepositorioHabitat RepoHabitat { get; set; }
         public IRepositorio<RegistroDeCambios> RepoRegistroCambios { get; set; }
+        public IRepositorioEcosistema RepoEcosistema { get; set; }
 
-        public CUAltaHabitat(IRepositorioHabitat repoHab, IRepositorio<RegistroDeCambios> repoRegistroCambios)
+        public CUAltaHabitat(IRepositorioHabitat repoHab, IRepositorio<RegistroDeCambios> repoRegistroCambios,IRepositorioEcosistema repoEcosistema)
         {
             RepoHabitat = repoHab;
             RepoRegistroCambios = repoRegistroCambios;
+            RepoEcosistema = repoEcosistema;
         }
 
 
@@ -29,7 +31,7 @@ namespace LogicaAplicacion.CasosUso
             Habitat habitat = new Habitat()
             {
                 Id = obj.Id,
-                Ecosistema = obj.Ecosistema,
+                Ecosistema = RepoEcosistema.FindById(obj.IdEcosistema),
                 Habita = obj.Habita,
             };
             RepoHabitat.Add(habitat);
