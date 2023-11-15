@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MVC.Models;
-using LogicaNegocio;
-using LogicaAplicacion.CasosUso;
-using LogicaAplicacion.InterfacesCU;
+using MVC.DTOs;
+using Newtonsoft.Json;
+//using LogicaAplicacion.CasosUso;
+//using LogicaAplicacion.InterfacesCU;
 using ExcepcionesPropias;
 
 namespace MVC.Controllers
@@ -12,148 +12,129 @@ namespace MVC.Controllers
     {
 
 
-        public IListadoEcosistemas CUListadoEcosistema { get; set; }
-        public IAltaHabitat CUAltaHabitat { get; set; }
-        public IBuscarEspeciePorId CUBuscarEspeciePorId { get; set; }
-        public IBuscarHabitatPorId CUBuscarHabitatPorId { get; set; }
-        public IObtenerHabitatsDeLaEspecie CUObtenerHabitatsDeLaEspecie { get; set; }
-        public IAgregarHabitatEnLaEspecie CUAgregarHabitatEnLaEspecie { get; set; }
+        
 
-        public IEcosistemasSinHabitatEnUnaEspecie CUEcosistemasSinHabitatEnUnaEspecie { get; set; }
-
-
-
-
-        public HabitatsController(IListadoEcosistemas cuListaEco, IAltaHabitat cuIAltaHabitat, IBuscarEspeciePorId cuBuscarEspeciePorId,
-                                    IBuscarHabitatPorId CUBuscarHabitatporId, IObtenerHabitatsDeLaEspecie cuObtenerHabitatsDeLaEspecie,
-                                    IAgregarHabitatEnLaEspecie cuAgregarHabitatEnLaEspecie, IEcosistemasSinHabitatEnUnaEspecie
-                                    cuEcosistemasSinHabitatEnUnaEspecie)
+        public HabitatsController()
         {
-             CUListadoEcosistema = cuListaEco;
-            CUAltaHabitat = cuIAltaHabitat;
-            CUBuscarEspeciePorId = cuBuscarEspeciePorId;
-            CUBuscarHabitatPorId = CUBuscarHabitatporId;
-            CUObtenerHabitatsDeLaEspecie = cuObtenerHabitatsDeLaEspecie;
-            CUAgregarHabitatEnLaEspecie = cuAgregarHabitatEnLaEspecie;
-            CUEcosistemasSinHabitatEnUnaEspecie = cuEcosistemasSinHabitatEnUnaEspecie;
-
+            
         }
 
-        public ActionResult Create(Especie especie)
+        public IActionResult Create(DTOEspecie especie)
         {
-            if (HttpContext.Session.GetString("nombre") == null)
-            {
-                return View("NoAutorizado");
-            }
+           // if (HttpContext.Session.GetString("nombre") == null)
+           // {
+           //     return View("NoAutorizado");
+           // }
 
-            HabitatViewModel vm = new HabitatViewModel()
-            {
-               IdEspecie = especie.Id,
-               Especie = especie,
-               Ecosistemas = CUEcosistemasSinHabitatEnUnaEspecie.ObtenerEcosistemasSinHabitatEnUnaEspecie(especie.Id)
+           // HabitatViewModel vm = new HabitatViewModel()
+           // {
+           //    IdEspecie = especie.Id,
+           //    Especie = especie,
+           //    Ecosistemas = CUEcosistemasSinHabitatEnUnaEspecie.ObtenerEcosistemasSinHabitatEnUnaEspecie(especie.Id)
 
-           };
+           //};
 
-            return View(vm);
+            return View(especie);
         }
 
 
         
-        public ActionResult GenerarHabitat(HabitatViewModel vm)
+        public IActionResult GenerarHabitat(DTOHabitat vm)
         {
+            return View(vm);
+            //if (HttpContext.Session.GetString("nombre") == null)
+            //{
+            //    return View("NoAutorizado");
+            //}
 
-            if (HttpContext.Session.GetString("nombre") == null)
-            {
-                return View("NoAutorizado");
-            }
-
-            Ecosistema eco = new Ecosistema() { Id = vm.IdEcosistema };
+            //Ecosistema eco = new Ecosistema() { Id = vm.IdEcosistema };
            
 
-            vm.Habitat = new Habitat()
-            {
-                ecosistema = eco,
-                habita = false
-            };
+            //vm.Habitat = new Habitat()
+            //{
+            //    ecosistema = eco,
+            //    habita = false
+            //};
 
 
-            try
-            {
-                if (HttpContext.Session.GetString("nombre") == null) throw new CambiosException("HAY QUE LOGEARSE PRIMERO");
+            //try
+            //{
+            //    if (HttpContext.Session.GetString("nombre") == null) throw new CambiosException("HAY QUE LOGEARSE PRIMERO");
 
-                string NombreUsuario = HttpContext.Session.GetString("nombre");
-                CUAltaHabitat.Alta(vm.Habitat, NombreUsuario);
-                vm.IdHabitat = vm.Habitat.Id;
+            //    string NombreUsuario = HttpContext.Session.GetString("nombre");
+            //    CUAltaHabitat.Alta(vm.Habitat, NombreUsuario);
+            //    vm.IdHabitat = vm.Habitat.Id;
 
                 
-                Especie especie = CUBuscarEspeciePorId.Buscar(vm.IdEspecie);
-                vm.Especie = especie;
+            //    Especie especie = CUBuscarEspeciePorId.Buscar(vm.IdEspecie);
+            //    vm.Especie = especie;
 
 
-                return RedirectToAction("AgregarHabitatEnLaEspecie", "Habitats", vm);
-            }
-            catch (CambiosException ex)
-            {
+            //    return RedirectToAction("AgregarHabitatEnLaEspecie", "Habitats", vm);
+            //}
+            //catch (CambiosException ex)
+            //{
 
-                vm.Especie = new Especie() { Id = vm.IdEspecie };
-                ViewBag.Error = ex.Message;
-                return RedirectToAction("Create", vm.Especie);
+            //    vm.Especie = new Especie() { Id = vm.IdEspecie };
+            //    ViewBag.Error = ex.Message;
+            //    return RedirectToAction("Create", vm.Especie);
 
-            }
-            catch (HabitatException ex)
-            {
+            //}
+            //catch (HabitatException ex)
+            //{
 
-                vm.Especie = new Especie() { Id = vm.IdEspecie };
-                ViewBag.Error = ex.Message;
-                return RedirectToAction("Create", vm.Especie);
+            //    vm.Especie = new Especie() { Id = vm.IdEspecie };
+            //    ViewBag.Error = ex.Message;
+            //    return RedirectToAction("Create", vm.Especie);
 
-            }
-            catch (Exception ex)
-            {
-                vm.Especie = new Especie() { Id = vm.IdEspecie };
+            //}
+            //catch (Exception ex)
+            //{
+            //    vm.Especie = new Especie() { Id = vm.IdEspecie };
 
-                ViewBag.Error = "Ocurrió un problema al intentar el alta del cliente";
-                return RedirectToAction("Create", vm.Especie);
+            //    ViewBag.Error = "Ocurrió un problema al intentar el alta del cliente";
+            //    return RedirectToAction("Create", vm.Especie);
 
-            }
+            //}
 
         }
 
-        public ActionResult AgregarHabitatEnLaEspecie(HabitatViewModel vm)
+        public IActionResult AgregarHabitatEnLaEspecie(DTOHabitat vm)
         {
-            if (HttpContext.Session.GetString("nombre") == null)
-            {
-                return View("NoAutorizado");
-            }
+            return View(vm);
+            //if (HttpContext.Session.GetString("nombre") == null)
+            //{
+            //    return View("NoAutorizado");
+            //}
 
-            try
-            {
-                CUAgregarHabitatEnLaEspecie.AgregarHabitatEnLaEspecie(vm.IdEspecie, vm.IdHabitat);
+            //try
+            //{
+            //    CUAgregarHabitatEnLaEspecie.AgregarHabitatEnLaEspecie(vm.IdEspecie, vm.IdHabitat);
 
-                vm.Especie = new Especie() { Id = vm.IdEspecie };
+            //    vm.Especie = new Especie() { Id = vm.IdEspecie };
 
-                return RedirectToAction("Create", vm.Especie);
+            //    return RedirectToAction("Create", vm.Especie);
 
-            }
-            catch (EspecieException ex)
-            {
-                vm.Ecosistemas = CUEcosistemasSinHabitatEnUnaEspecie.ObtenerEcosistemasSinHabitatEnUnaEspecie(vm.IdEspecie);
+            //}
+            //catch (EspecieException ex)
+            //{
+            //    vm.Ecosistemas = CUEcosistemasSinHabitatEnUnaEspecie.ObtenerEcosistemasSinHabitatEnUnaEspecie(vm.IdEspecie);
 
-                vm.Especie = new Especie() { Id = vm.IdEspecie };
-                ViewBag.Error = ex.Message;
-                return View("Create", vm);
+            //    vm.Especie = new Especie() { Id = vm.IdEspecie };
+            //    ViewBag.Error = ex.Message;
+            //    return View("Create", vm);
 
-            }
-            catch (Exception ex)
-            {
-                vm.Ecosistemas = CUEcosistemasSinHabitatEnUnaEspecie.ObtenerEcosistemasSinHabitatEnUnaEspecie(vm.IdEspecie);
+            //}
+            //catch (Exception ex)
+            //{
+            //    vm.Ecosistemas = CUEcosistemasSinHabitatEnUnaEspecie.ObtenerEcosistemasSinHabitatEnUnaEspecie(vm.IdEspecie);
 
-                vm.Especie = new Especie() { Id = vm.IdEspecie };
+            //    vm.Especie = new Especie() { Id = vm.IdEspecie };
 
-                ViewBag.Error = "Ocurrió un error asignando el ecosistema";
-                return View("Create", vm);
+            //    ViewBag.Error = "Ocurrió un error asignando el ecosistema";
+            //    return View("Create", vm);
 
-            }
+            //}
 
 
         }

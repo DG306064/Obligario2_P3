@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LogicaNegocio.Ecosistema>
+﻿@model IEnumerable<MVC.Models.EcosistemaViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -34,22 +34,22 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Id)
+                @Html.DisplayNameFor(model => model.Ecosistema.Id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Nombre.Value)
+                @Html.DisplayNameFor(model => model.Ecosistema.Nombre)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Latitud)
+                @Html.DisplayNameFor(model => model.Ecosistema.Latitud)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Longitud)
+                @Html.DisplayNameFor(model => model.Ecosistema.Longitud)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Area)
+                @Html.DisplayNameFor(model => model.Ecosistema.Area)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Descripcion.Value)
+                @Html.DisplayNameFor(model => model.Ecosistema.Descripcion)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ImagenEcosistema)
@@ -66,37 +66,37 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Id)
+                    @Html.DisplayFor(modelItem => item.Ecosistema.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Nombre.Value)
+                    @Html.DisplayFor(modelItem => item.Ecosistema.Nombre)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Latitud)
+                @Html.DisplayFor(modelItem => item.Ecosistema.Latitud)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Longitud)
+                    @Html.DisplayFor(modelItem => item.Ecosistema.Longitud)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Area)
+                    @Html.DisplayFor(modelItem => item.Ecosistema.Area)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Descripcion.Value)
+                    @Html.DisplayFor(modelItem => item.Ecosistema.Descripcion)
             </td>
                 <td>
                     <img src="/img/ecosistemas/@item.ImagenEcosistema" height="70" />
                 </td>
             <td>
                 <div class="my-div">
-                    @Html.ActionLink("AMENAZAS", "AmenazasDelEcosistema", new {  idEcosistema=item.Id })
+                        @Html.ActionLink("AMENAZAS", "AmenazasDelEcosistema", new {  idEcosistema=item.Ecosistema.Id })
                 </div>
             </td>
             
         @if (Context.Session.GetString("nombre") != null){ 
             <td>
-                    @Html.ActionLink("BORRAR", "Delete", new { id=item.Id }) |
-                
-                    @Html.ActionLink("Asignar Amenazas", "AsignarAmenazaAUnEcosistea", "Ecosistemas", new { IdEcosistema=item.Id })
+                        @Html.ActionLink("BORRAR", "Delete", new { id=item.Ecosistema.Id }) |
+
+                        @Html.ActionLink("ASIGNAR AMENAZAS", "AsignarAmenazaAUnEcosistea", "Ecosistemas", new { IdEcosistema=item.Ecosistema.Id })
                 
             </td>
         }

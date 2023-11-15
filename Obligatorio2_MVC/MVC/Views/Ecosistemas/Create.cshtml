@@ -1,4 +1,5 @@
-﻿@model MVC.Models.EcosistemaViewModel
+﻿
+@model MVC.Models.EcosistemaViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -16,14 +17,14 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
-                <label asp-for="NombreEcosistema" class="control-label"></label>
-                <input asp-for="NombreEcosistema" class="form-control" />
-                <span asp-validation-for="NombreEcosistema" class="text-danger"></span>
+                <label asp-for="Ecosistema.Nombre" class="control-label"></label>
+                <input asp-for="Ecosistema.Nombre" class="form-control" />
+                <span asp-validation-for="Ecosistema.Nombre" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DescripcionEcosistema" class="control-label"></label>
-                <input asp-for="DescripcionEcosistema" class="form-control" />
-                <span asp-validation-for="DescripcionEcosistema" class="text-danger"></span>
+                <label asp-for="Ecosistema.Descripcion" class="control-label"></label>
+                <input asp-for="Ecosistema.Descripcion" class="form-control" />
+                <span asp-validation-for="Ecosistema.Descripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Ecosistema.Latitud" class="control-label"></label>
@@ -49,15 +50,15 @@
                 <label class="control-label">Paises</label>
 
                 <select name="IdPaisSeleccionado">
-                    @foreach (LogicaNegocio.Pais pais in Model.Paises)
+                    @foreach (MVC.DTOs.DTOPais pais in Model.Paises)
                     {
-                        if (pais.Id == Model.idPaisSeleccionado)
+                        if (pais.Id == Model.IdPaisSeleccionado)
                         {
-                            <option selected value="@pais.Id">@pais.Nombre.Value</option>
+                            <option selected value="@pais.Id">@pais.Nombre</option>
                         }
                         else
                         {
-                            <option value="@pais.Id">@pais.Nombre.Value</option>
+                            <option value="@pais.Id">@pais.Nombre</option>
                         }
                     }
                 </select>
@@ -69,15 +70,15 @@
                 <label class="control-label">Estado de conservación</label>
 
                 <select name="idEstadoConservacion">
-                    @foreach (LogicaNegocio.EstadoConservacion estado in Model.EstadosDeConservacion)
+                    @foreach (MVC.DTOs.DTOEstadoConservacion estado in Model.EstadosDeConservacion)
                     {
-                        if (estado.Id == Model.idEstadoConservacion)
+                        if (estado.Id == Model.IdEstadoConservacion)
                         {
-                            <option selected value="@estado.Id">@estado.Nombre.Value</option>
+                            <option selected value="@estado.Id">@estado.Nombre</option>
                         }
                         else
                         {
-                            <option value="@estado.Id">@estado.Nombre.Value</option>
+                            <option value="@estado.Id">@estado.Nombre</option>
                         }
                     }
                 </select>

@@ -1,4 +1,4 @@
-﻿@model MVC.Models.UsuarioViewModel
+﻿@model MVC.Models.UsuarioLoginViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -19,20 +19,20 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
            
             <div class="form-group">
-                <label asp-for="Usuario.Alias" class="control-label"></label>
-                <input asp-for="Usuario.Alias" class="form-control" />
-                <span asp-validation-for="Usuario.Alias" class="text-danger"></span>
+                <label asp-for="Alias" class="control-label"></label>
+                <input asp-for="Alias" class="form-control" />
+                <span asp-validation-for="Alias" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Usuario.Password" class="control-label"></label>
-                <input asp-for="Usuario.Password" class="form-control" type="password" />
-                <span asp-validation-for="Usuario.Password" class="text-danger"></span>
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" type="password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="ContraseñaAConfirmar" class="control-label"></label>
-                <input asp-for="ContraseñaAConfirmar" class="form-control" type="password" required />
-                <span asp-validation-for="ContraseñaAConfirmar" class="text-danger"></span>
+                <label asp-for="PasswordAConfirmar" class="control-label"></label>
+                <input asp-for="PasswordAConfirmar" class="form-control" type="password" required />
+                <span asp-validation-for="PasswordAConfirmar" class="text-danger"></span>
             </div>
 
             <div class="form-group">

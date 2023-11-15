@@ -1,40 +1,17 @@
 ﻿using ExcepcionesPropias;
-using LogicaAplicacion.CasosUso;
-using LogicaAplicacion.InterfacesCU;
-using LogicaNegocio;
+//using LogicaAplicacion.CasosUso;
+//using LogicaAplicacion.InterfacesCU;
+//using LogicaNegocio;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MVC.Models;
+using MVC.DTOs;
+using Newtonsoft.Json;
 
 namespace MVC.Controllers
 {
     public class UsuariosController : Controller
     {
-        public IAltaUsuario CUAltaUsuario { get; set; }
-        public IListadoUsuario CUListadoUsuario { get; set; }
-        public IObtenerUsuarioParaLogear CUObtenerUsuarioParaLogear { get; set; }
-        public IVerSiExisteUsuario CUVerSiExisteUsuario { get; set; }
-        public IBuscarUsuarioPorId CUBuscarUsuarioPorId { get; set; }
-        public IBajaUsuario CUBajaUsuario { get; set; }
-        public IModificarUsuario CUModificarUsuario { get; set; }
-
-        
-        public UsuariosController(IAltaUsuario CUAltaUsu, IListadoUsuario CUListUsu,
-                                    IObtenerUsuarioParaLogear CUobtenerUsuarioParaLogear, IVerSiExisteUsuario CUverSiExisteUsu,
-                                    IBuscarUsuarioPorId cuBuscarUsuarioPorId, IBajaUsuario cuBajaUsuario, IModificarUsuario
-                                    cuModificarUsuario)
-        {
-
-
-
-            CUAltaUsuario = CUAltaUsu;
-            CUListadoUsuario = CUListUsu;
-            CUObtenerUsuarioParaLogear = CUobtenerUsuarioParaLogear;
-            CUVerSiExisteUsuario = CUverSiExisteUsu;
-            CUBuscarUsuarioPorId = cuBuscarUsuarioPorId;
-            CUBajaUsuario = cuBajaUsuario;
-            CUModificarUsuario = cuModificarUsuario;
-        }
+        public UsuariosController(){}
 
 
 
@@ -43,20 +20,20 @@ namespace MVC.Controllers
         // GET: UsuariosController
         public ActionResult Index()
         {
-            if (HttpContext.Session.GetString("rol") != "Admin" ||( HttpContext.Session.GetString("rol") == "Admin" && HttpContext.Session.GetString("nombre") != "admin1"))
-            {
-                return View("NoAutorizado");
-            }
+            //if (HttpContext.Session.GetString("rol") != "Admin" ||( HttpContext.Session.GetString("rol") == "Admin" && HttpContext.Session.GetString("nombre") != "admin1"))
+            //{
+            //    return View("NoAutorizado");
+            //}
 
-            IEnumerable<Usuario> ListUsuarios = CUListadoUsuario.Listado();
-            return View(ListUsuarios);
+            //IEnumerable<Usuario> ListUsuarios = CUListadoUsuario.Listado();
+            return View();
         }
 
    
 
         public ActionResult Create()
         {
-            UsuarioViewModel vm = new UsuarioViewModel();   
+            DTOUsuario vm = new DTOUsuario();   
 
             return View(vm);
         }
@@ -66,41 +43,42 @@ namespace MVC.Controllers
         // POST: UsuariosController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(UsuarioViewModel vm)
+        public ActionResult Create(DTOUsuario vm)
         {
-            vm.Usuario.FechaIngreso = DateTime.Today;
+            return View();
+            //vm.Usuario.FechaIngreso = DateTime.Today;
 
-            try
-            {
-                if (vm.Usuario.Password != vm.ContraseñaAConfirmar) throw new UsuarioException("ERROR EN LA CONFIRMACION DE LA CONTRASEÑA");
+            //try
+            //{
+            //    if (vm.Usuario.Password != vm.ContraseñaAConfirmar) throw new UsuarioException("ERROR EN LA CONFIRMACION DE LA CONTRASEÑA");
 
-                vm.Usuario.Validate();
+            //    vm.Usuario.Validate();
 
-                bool usuarioExiste = CUVerSiExisteUsuario.VerSiExisteUsuario(vm.Usuario.Alias);
+            //    bool usuarioExiste = CUVerSiExisteUsuario.VerSiExisteUsuario(vm.Usuario.Alias);
 
-                if (usuarioExiste == true) throw new UsuarioException("YA EXISTE UN USUARIO CON ESE ALIAS");
+            //    if (usuarioExiste == true) throw new UsuarioException("YA EXISTE UN USUARIO CON ESE ALIAS");
 
 
-                string hashedPassword = HashPassword(vm.Usuario.Password);
+            //    string hashedPassword = HashPassword(vm.Usuario.Password);
 
-                vm.Usuario.HashedPassword = hashedPassword;
-                CUAltaUsuario.AltaUsuario(vm.Usuario,vm.Usuario.Alias);
+            //    vm.Usuario.HashedPassword = hashedPassword;
+            //    CUAltaUsuario.AltaUsuario(vm.Usuario,vm.Usuario.Alias);
 
-                return RedirectToAction("Login");
+            //    return RedirectToAction("Login");
 
-            }
-            catch (UsuarioException ex)
-            {
-                ViewBag.Error = ex.Message;
-                return View(vm);
+            //}
+            //catch (UsuarioException ex)
+            //{
+            //    ViewBag.Error = ex.Message;
+            //    return View(vm);
 
-            }
-            catch (Exception ex)
-            {
-                ViewBag.Error = "Ocurrió un error al hacer el alta del usuario";
-                //ViewBag.Error2 = ex.Message;
-                return View(vm);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    ViewBag.Error = "Ocurrió un error al hacer el alta del usuario";
+            //    //ViewBag.Error2 = ex.Message;
+            //    return View(vm);
+            //}
 
 
         }
@@ -108,63 +86,64 @@ namespace MVC.Controllers
         // GET: UsuariosController/Edit/5
         public ActionResult Edit(int id)
         {
-            UsuarioViewModel vm = null;
-            Usuario usuario = CUBuscarUsuarioPorId.BuscarPorId(id);
+            //UsuarioViewModel vm = null;
+            //Usuario usuario = CUBuscarUsuarioPorId.BuscarPorId(id);
           
-            if (usuario == null)
-            {
-                ViewBag.Error = "El usuario con el id " + id + " no existe";
-            }
-            else
-            {
+            //if (usuario == null)
+            //{
+            //    ViewBag.Error = "El usuario con el id " + id + " no existe";
+            //}
+            //else
+            //{
 
-                vm = new UsuarioViewModel()
-                {
-                    Usuario = usuario
-                };
-            }
-            return View(vm);
+            //    vm = new UsuarioViewModel()
+            //    {
+            //        Usuario = usuario
+            //    };
+            //}
+            return View();
         }
     
 
         // POST: UsuariosController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(UsuarioViewModel vm)
+        public ActionResult Edit(DTOUsuario vm)
         {
-            try
-            {
-                vm.Usuario.Validate();
+            return View(vm);
+            //try
+            //{
+            //    vm.Usuario.Validate();
 
-                string NombreUsuario = HttpContext.Session.GetString("nombre");
-                CUModificarUsuario.Modificar(vm.Usuario, NombreUsuario);
+            //    string NombreUsuario = HttpContext.Session.GetString("nombre");
+            //    CUModificarUsuario.Modificar(vm.Usuario, NombreUsuario);
 
-                return RedirectToAction(nameof(Index));
-            }
-            catch (UsuarioException ex)
-            {
-                ViewBag.Error = ex.Message;
-                return View(vm);
-            }
-            catch (Exception ex)
-            {
+            //    return RedirectToAction(nameof(Index));
+            //}
+            //catch (UsuarioException ex)
+            //{
+            //    ViewBag.Error = ex.Message;
+            //    return View(vm);
+            //}
+            //catch (Exception ex)
+            //{
 
-                ViewBag.Error = "Ocurrió un problema al intentar la modificación del usuario";
-                return View(vm);
-            }
+            //    ViewBag.Error = "Ocurrió un problema al intentar la modificación del usuario";
+            //    return View(vm);
+            //}
 
         }
 
         // GET: UsuariosController/Delete/5
         public ActionResult Delete(int id)
         {
-            Usuario usuario = CUBuscarUsuarioPorId.BuscarPorId(id);
+            //Usuario usuario = CUBuscarUsuarioPorId.BuscarPorId(id);
           
-            if (usuario == null)
-            {
-                ViewBag.Error = "El usuario con el id " + id + " no existe";
-            }
-            return View(usuario);
+            //if (usuario == null)
+            //{
+            //    ViewBag.Error = "El usuario con el id " + id + " no existe";
+            //}
+            return View();
         }
 
 
@@ -172,24 +151,25 @@ namespace MVC.Controllers
         // POST: UsuariosController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(Usuario obj)
+        public ActionResult Delete(DTOUsuario obj)
         {
-            try
-            {
-                string NombreUsuario = HttpContext.Session.GetString("nombre");
-                CUBajaUsuario.BajaUsuario(obj, NombreUsuario);              
-                return RedirectToAction(nameof(Index));
-            }
-            catch (UsuarioException ex)
-            {
-                ViewBag.Error = ex.Message;
-                return View(obj);
-            }
-            catch (Exception ex)
-            {
-                ViewBag.Error = "Ocurrió un error al intentar eliminar el ecosistema";
-                return View(obj);
-            }
+            return View();
+            //try
+            //{
+            //    string NombreUsuario = HttpContext.Session.GetString("nombre");
+            //    CUBajaUsuario.BajaUsuario(obj, NombreUsuario);              
+            //    return RedirectToAction(nameof(Index));
+            //}
+            //catch (UsuarioException ex)
+            //{
+            //    ViewBag.Error = ex.Message;
+            //    return View(obj);
+            //}
+            //catch (Exception ex)
+            //{
+            //    ViewBag.Error = "Ocurrió un error al intentar eliminar el ecosistema";
+            //    return View(obj);
+            //}
         }
 
 
@@ -206,39 +186,40 @@ namespace MVC.Controllers
 
         public ActionResult Login()
         {
-            UsuarioLoginViewModel vm = new UsuarioLoginViewModel();
+            DTOUsuario vm = new DTOUsuario();
 
             return View(vm);
         }
 
         [HttpPost]
-         public ActionResult Login(UsuarioLoginViewModel vm)
+         public ActionResult Login(DTOUsuario vm)
          {
-            try
-            {
-                IEnumerable<Usuario> usuario = CUObtenerUsuarioParaLogear.ObtenerUsuarioParaLogear(vm.alias, vm.password);
-                if (usuario.Count() == 1)
-                {
-                    Usuario usu = usuario.First();
+            return View();
+           // try
+           // {
+           //     IEnumerable<Usuario> usuario = CUObtenerUsuarioParaLogear.ObtenerUsuarioParaLogear(vm.alias, vm.password);
+           //     if (usuario.Count() == 1)
+           //     {
+           //         Usuario usu = usuario.First();
 
-                    HttpContext.Session.SetString("nombre", usu.Alias);
-                    HttpContext.Session.SetString("rol", usu.Rol);
+           //         HttpContext.Session.SetString("nombre", usu.Alias);
+           //         HttpContext.Session.SetString("rol", usu.Rol);
 
-                    return RedirectToAction("Index", "Home");
+           //         return RedirectToAction("Index", "Home");
 
-                }
-                else
-                {
-                    throw new Exception( "DATOS INCORRECTOS. ingrese datos válidos");
-                }
+           //     }
+           //     else
+           //     {
+           //         throw new Exception( "DATOS INCORRECTOS. ingrese datos válidos");
+           //     }
 
-            }
-           catch(Exception ex)   
-            {
-                ViewBag.Error = "DATOS INCORRECTOS. ingrese datos válidos";
-                return View();
+           // }
+           //catch(Exception ex)   
+           // {
+           //     ViewBag.Error = "DATOS INCORRECTOS. ingrese datos válidos";
+           //     return View();
 
-            }
+           // }
          }
 
         public ActionResult Logout()

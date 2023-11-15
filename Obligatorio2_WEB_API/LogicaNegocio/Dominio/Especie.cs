@@ -50,10 +50,7 @@ namespace LogicaNegocio.Dominio
 
         [Required(ErrorMessage = "Imagen requerida")]
         public string ImagenEspecie { get; set; }
-
-
         public EstadoConservacion EstadoCons { get; set; }
-
         public IEnumerable<Amenaza> Amenazas { get; set; }
         public IEnumerable<Habitat> Habitats { get; set; } 
 

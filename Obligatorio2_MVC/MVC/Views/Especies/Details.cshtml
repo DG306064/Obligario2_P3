@@ -1,4 +1,4 @@
-﻿@model MVC.Models.EspecieViewModel;
+﻿@model MVC.DTOs.DTOEspecie
 
 @{
     ViewData["Title"] = "Details";
@@ -11,46 +11,46 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Especie.Id)
+            @Html.DisplayNameFor(model => model.Id)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Especie.Id)
+            @Html.DisplayFor(model => model.Id)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Especie.NombreCientifico)
+            @Html.DisplayNameFor(model => model.NombreCientifico)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Especie.NombreCientifico)
+            @Html.DisplayFor(model => model.NombreCientifico)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Especie.PesoMinimo)
+            @Html.DisplayNameFor(model => model.PesoMinimo)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Especie.PesoMinimo) KG
+            @Html.DisplayFor(model => model.PesoMinimo) KG
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Especie.PesoMaximo) 
+            @Html.DisplayNameFor(model => model.PesoMaximo) 
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Especie.PesoMaximo) KG
+            @Html.DisplayFor(model => model.PesoMaximo) KG
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Especie.LongitudMinima)
+            @Html.DisplayNameFor(model => model.LongitudMinima)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Especie.LongitudMinima) CM
+            @Html.DisplayFor(model => model.LongitudMinima) CM
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Especie.LongitudMaxima)
+            @Html.DisplayNameFor(model => model.LongitudMaxima)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Especie.LongitudMaxima) CM
+            @Html.DisplayFor(model => model.LongitudMaxima) CM
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Especie.ImagenEspecie)
+            @Html.DisplayNameFor(model => model.ImagenEspecie)
         </dt>
         <dd class = "col-sm-10">
-            <img src="/img/especies/@Model.Especie.ImagenEspecie" height="70" />
+            <img src="/img/especies/@Model.ImagenEspecie" height="70" />
         </dd>
     </dl>
 </div>

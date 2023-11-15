@@ -1,15 +1,16 @@
-﻿namespace MVC.Models;
-using LogicaNegocio;
+﻿
+using MVC.DTOs;
 
+namespace MVC.Models;
 public class HabitatViewModel
 {
     
-    public Habitat Habitat  { get; set; }
-    public Especie Especie  { get; set; }
+    public DTOHabitat Habitat  { get; set; }
+    public DTOEspecie Especie  { get; set; }
 
-    public IEnumerable<Ecosistema> Ecosistemas { get; set; }
-    public IEnumerable<Habitat> Habitats { get; set; }
-    public IEnumerable<Especie> Especies { get; set; }
+    public IEnumerable<DTOEcosistema> Ecosistemas { get; set; }
+    public IEnumerable<DTOHabitat> Habitats { get; set; }
+    public IEnumerable<DTOEspecie> Especies { get; set; }
 
     public int IdEcosistema  { get; set; }
 

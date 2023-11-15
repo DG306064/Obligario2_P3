@@ -3548,6 +3548,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "ExcepcionesPropias/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/ExcepcionesPropias.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ExcepcionesPropias.dll": {}
+        }
       }
     }
   },
@@ -10419,11 +10429,17 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "ExcepcionesPropias/1.0.0": {
+      "type": "project",
+      "path": "../ExcepcionesPropias/ExcepcionesPropias.csproj",
+      "msbuildProject": "../ExcepcionesPropias/ExcepcionesPropias.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "BCrypt.Net-Next >= 4.0.3",
+      "ExcepcionesPropias >= 1.0.0",
       "Microsoft.AspNet.WebApi.Client >= 6.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.11",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 7.0.10"
@@ -10462,7 +10478,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_MVC\\ExcepcionesPropias\\ExcepcionesPropias.csproj": {
+              "projectPath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_MVC\\ExcepcionesPropias\\ExcepcionesPropias.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

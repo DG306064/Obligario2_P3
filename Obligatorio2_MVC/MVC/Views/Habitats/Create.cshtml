@@ -1,4 +1,4 @@
-﻿@model MVC.Models.HabitatViewModel
+﻿@model MVC.DTOs.DTOHabitat
 
 @{
     ViewData["Title"] = "Create";
@@ -73,7 +73,7 @@
                 @Html.DisplayFor(modelItem => item.Area)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Descripcion.Value)
+                @Html.DisplayFor(modelItem => item.Descripcion)
             </td>
                 <td>
                     <img src="/img/especies/@item.ImagenEcosistema" height="70" />

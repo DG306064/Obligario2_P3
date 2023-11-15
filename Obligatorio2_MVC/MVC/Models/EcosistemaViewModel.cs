@@ -1,15 +1,17 @@
-﻿using LogicaNegocio;
+﻿using MVC.DTOs;
 using System.ComponentModel.DataAnnotations;
+
+
 namespace MVC.Models
 {
     public class EcosistemaViewModel
     {
-        public Ecosistema Ecosistema { get; set; }
-        public IEnumerable<Pais> Paises { get; set; }
-        public int idPaisSeleccionado { get; set; }
-        public int idEstadoConservacion { get; set; }
+        public DTOEcosistema Ecosistema { get; set; }
+        public IEnumerable<DTOPais> Paises { get; set; }
+        public int IdPaisSeleccionado { get; set; }
+        public int IdEstadoConservacion { get; set; }
 
-        public IEnumerable<EstadoConservacion> EstadosDeConservacion { get; set; }
+        public IEnumerable<DTOEstadoConservacion> EstadosDeConservacion { get; set; }
 
         public IFormFile ImagenEcosistema { get; set; }
         [Display(Name ="Nombre")]

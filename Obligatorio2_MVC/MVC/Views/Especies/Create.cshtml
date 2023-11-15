@@ -1,4 +1,4 @@
-﻿@model MVC.Models.EspecieViewModel;
+﻿@model MVC.DTOs.DTOEspecie;
 
 @{
     ViewData["Title"] = "Create";
@@ -17,39 +17,39 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
        
             <div class="form-group">
-                <label asp-for="Especie.NombreCientifico" class="control-label"></label>
-                <input asp-for="Especie.NombreCientifico" class="form-control" />
-                <span asp-validation-for="Especie.NombreCientifico" class="text-danger"></span>
+                <label asp-for="NombreCientifico" class="control-label"></label>
+                <input asp-for="NombreCientifico" class="form-control" />
+                <span asp-validation-for="NombreCientifico" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NombreComunEspecie" class="control-label"></label>
-                <input asp-for="NombreComunEspecie" class="form-control" />
-                <span asp-validation-for="NombreComunEspecie" class="text-danger"></span>
+                <label asp-for="NombreComun" class="control-label"></label>
+                <input asp-for="NombreComun" class="form-control" />
+                <span asp-validation-for="NombreComun" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DescripcionEspecie" class="control-label"></label>
-                <input asp-for="DescripcionEspecie" class="form-control" />
-                <span asp-validation-for="DescripcionEspecie" class="text-danger"></span>
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Especie.PesoMinimo" class="control-label"></label>
-                <input asp-for="Especie.PesoMinimo" class="form-control" />
-                <span asp-validation-for="Especie.PesoMinimo" class="text-danger"></span>
+                <label asp-for="PesoMinimo" class="control-label"></label>
+                <input asp-for="PesoMinimo" class="form-control" />
+                <span asp-validation-for="PesoMinimo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Especie.PesoMaximo" class="control-label"></label>
-                <input asp-for="Especie.PesoMaximo" class="form-control" />
-                <span asp-validation-for="Especie.PesoMaximo" class="text-danger"></span>
+                <label asp-for="PesoMaximo" class="control-label"></label>
+                <input asp-for="PesoMaximo" class="form-control" />
+                <span asp-validation-for="PesoMaximo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Especie.LongitudMinima" class="control-label"></label>
-                <input asp-for="Especie.LongitudMinima" class="form-control" />
-                <span asp-validation-for="Especie.LongitudMinima" class="text-danger"></span>
+                <label asp-for="LongitudMinima" class="control-label"></label>
+                <input asp-for="LongitudMinima" class="form-control" />
+                <span asp-validation-for="LongitudMinima" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Especie.LongitudMaxima" class="control-label"></label>
-                <input asp-for="Especie.LongitudMaxima" class="form-control" />
-                <span asp-validation-for="Especie.LongitudMaxima" class="text-danger"></span>
+                <label asp-for="LongitudMaxima" class="control-label"></label>
+                <input asp-for="LongitudMaxima" class="form-control" />
+                <span asp-validation-for="LongitudMaxima" class="text-danger"></span>
             </div>
 
             <div class="form-group">
@@ -57,15 +57,15 @@
                 <label class="control-label">Estado de conservación</label>
 
                 <select name="idEstadoConservacion">
-                    @foreach (LogicaNegocio.EstadoConservacion estado in Model.EstadosDeConservacion)
+                    @foreach (MVC.DTOs.DTOEstadoConservacion estado in Model.EstadosDeConservacion)
                     {
-                        if (estado.Id == Model.idEstadoConservacion)
+                        if (estado.Id == Model.IdEstadoCons)
                         {
-                            <option selected value="@estado.Id">@estado.Nombre.Value</option>
+                            <option selected value="@estado.Id">@estado.Nombre</option>
                         }
                         else
                         {
-                            <option value="@estado.Id">@estado.Nombre.Value</option>
+                            <option value="@estado.Id">@estado.Nombre</option>
                         }
                     }
                 </select>

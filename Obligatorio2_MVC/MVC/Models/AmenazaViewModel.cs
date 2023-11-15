@@ -1,17 +1,17 @@
-﻿using LogicaNegocio;
+﻿using MVC.DTOs;
 
 namespace MVC.Models
 {
     public class AmenazaViewModel
     {
 
-        public IEnumerable<Amenaza> amenazas { get; set; }
-        public Amenaza Amenaza { get; set; }
-        public Especie Especie { get; set; }
+        public IEnumerable<DTOAmenaza> amenazas { get; set; }
+        public DTOAmenaza Amenaza { get; set; }
+        public DTOEspecie Especie { get; set; }
         public int IdEspecie { get; set; }
         public int IdAmenaza { get; set; }
         public int IdEcosistema { get; set; }
         public IEnumerable<int> IdsDeLasAmenazas { get; set; }
-        public Ecosistema Ecosistema { get; set; }
+        public DTOEcosistema Ecosistema { get; set; }
     }
 }

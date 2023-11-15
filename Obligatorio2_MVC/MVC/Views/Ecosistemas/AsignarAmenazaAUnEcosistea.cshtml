@@ -1,4 +1,4 @@
-﻿@model MVC.Models.AmenazaViewModel;
+﻿@model MVC.DTOs.DTOAmenaza;
 
 @{
     ViewData["Title"] = "AsignarAmenazaAUnEcosistea";
@@ -33,13 +33,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Amenaza.Id)
+                @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
-                    @Html.DisplayNameFor(model => model.Amenaza.Descripcion)
+                    @Html.DisplayNameFor(model => model.Descripcion)
             </th>
             <th>
-                    @Html.DisplayNameFor(model => model.Amenaza.Peligrosidad)
+                    @Html.DisplayNameFor(model => model.Peligrosidad)
             </th>
             <th></th>
         </tr>

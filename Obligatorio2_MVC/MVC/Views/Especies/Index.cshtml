@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LogicaNegocio.Especie>
+﻿@model IEnumerable<MVC.DTOs.DTOEspecie>
 
     
  <style>
@@ -72,10 +72,10 @@
                 @Html.DisplayNameFor(model => model.NombreCientifico)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NombreComun.Value)
+                @Html.DisplayNameFor(model => model.NombreComun)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Descripcion.Value)
+                @Html.DisplayNameFor(model => model.Descripcion)
             </th>
             <th>
             </th>
@@ -101,10 +101,10 @@
                 @Html.DisplayFor(modelItem => item.NombreCientifico)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.NombreComun.Value)
+                @Html.DisplayFor(modelItem => item.NombreComun)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Descripcion.Value)
+                @Html.DisplayFor(modelItem => item.Descripcion)
             </td>
             <td>
                     <div class="my-div">
@@ -128,7 +128,7 @@
                     @Html.ActionLink("Borrar", "Delete", new {  id=item.Id }) |
                                     
                    
-                    @Html.ActionLink("Asignar Ecosistema", "AsignarEcosistemas", new {  idEspecie=item.Id }) |
+                    @Html.ActionLink("Asignar Ecosistema", "AsignarEcosistemas", new {  IdEspecie=item.Id }) |
                 
                    
                     @Html.ActionLink("Asignar Amenazas", "AsignarAmenazaAUnaEspecie", "Especies", new { IdEspecie=item.Id })

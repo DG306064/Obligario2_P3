@@ -1,4 +1,4 @@
-﻿@model MVC.Models.HabitatViewModel;
+﻿@model MVC.DTOs.DTOHabitat
 
 @{
     ViewData["Title"] = "AsignarEcosistemas";
@@ -59,38 +59,38 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ecosistema.Id)
+                    @Html.DisplayFor(modelItem => item.Ecosistema.Id)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ecosistema.Nombre)
+                    @Html.DisplayFor(modelItem => item.Ecosistema.Nombre)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ecosistema.Latitud)
+                    @Html.DisplayFor(modelItem => item.Ecosistema.Latitud)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ecosistema.Longitud)
+                    @Html.DisplayFor(modelItem => item.Ecosistema.Longitud)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ecosistema.Area)
+                    @Html.DisplayFor(modelItem => item.Ecosistema.Area)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ecosistema.Descripcion)
+                    @Html.DisplayFor(modelItem => item.Ecosistema.Descripcion)
                 </td>
                 <td>
-                    <img src="/img/ecosistemas/@item.ecosistema.ImagenEcosistema" height="70" />
+                    <img src="/img/ecosistemas/@item.Ecosistema.ImagenEcosistema" height="70" />
                 </td>
                 <td>
-                    @if(item.habita == true)
+                    @if(item.Habita == true)
                     {
                         <div class="my-div">
-                            @Html.ActionLink("ELIMINAR ASIGNACION", "AsignarElEcosistema", new { IdEcosistema = item.ecosistema.Id, IdEspecie = Model.IdEspecie  })
+                            @Html.ActionLink("ELIMINAR ASIGNACION", "AsignarElEcosistema", new { IdEcosistema = item.Ecosistema.Id, IdEspecie = Model.IdEspecie  })
                         </div>
 
                     }
-                    @if(item.habita == false)
+                    @if(item.Habita == false)
                     {
                         <div class="my-div">
-                            @Html.ActionLink("ASIGNAR", "AsignarElEcosistema", new { IdEcosistema = item.ecosistema.Id, IdEspecie = Model.IdEspecie  })
+                            @Html.ActionLink("ASIGNAR", "AsignarElEcosistema", new { IdEcosistema = item.Ecosistema.Id, IdEspecie = Model.IdEspecie  })
                         </div>
                     }
                 </td>

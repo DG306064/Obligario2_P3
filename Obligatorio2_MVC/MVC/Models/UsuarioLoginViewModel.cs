@@ -1,13 +1,14 @@
-﻿ using LogicaNegocio;
-
-
+﻿using MVC.DTOs;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVC.Models
 {
     public class UsuarioLoginViewModel
     {
-        public Usuario Usuario { get; set; }
-        public string alias { get; set; }
-        public string password { get; set; }
+        public DTOUsuario Usuario { get; set; }
+        public string Alias { get; set; }
+        public string Password { get; set; }
+        [Display(Name = "Confirmar contraseña")]
+        public string PasswordAConfirmar { get; set; }
     }
 }

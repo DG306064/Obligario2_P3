@@ -17,8 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\img\especies\" />
-    <Folder Include="wwwroot\img\ecosistemas\" />
+    <ProjectReference Include="..\ExcepcionesPropias\ExcepcionesPropias.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
