@@ -33,24 +33,24 @@ namespace MVC.Controllers
 
             string url = "http://localhost:5285/api/Especies";
 
-            var tarea1 = cliente.GetAsync(url);
+            Task<HttpResponseMessage> tarea1 = cliente.GetAsync(url);
             tarea1.Wait();
 
-            var respuesta = tarea1.Result;
+            HttpResponseMessage respuesta = tarea1.Result;
 
             var contenido = respuesta.Content;
 
-            var tarea2 = contenido.ReadAsStringAsync();
+            Task<string> tarea2 = contenido.ReadAsStringAsync();
 
             tarea2.Wait();
 
-            string json = tarea2.Result;
+            string body = tarea2.Result;
 
             if (respuesta.IsSuccessStatusCode)
             {
 
 
-                especies = JsonConvert.DeserializeObject<List<DTOEspecie>>(json);
+                especies = JsonConvert.DeserializeObject<List<DTOEspecie>>(body);
 
                 var vms = especies.Select(e => new EspecieViewModel()
                 {

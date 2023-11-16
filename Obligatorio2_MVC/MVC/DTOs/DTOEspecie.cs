@@ -11,7 +11,7 @@ namespace MVC.DTOs
         public int PesoMaximo { get; set; }
         public int LongitudMinima { get; set; }
         public int LongitudMaxima { get; set; }
-        public string ImagenEspecie { get; set; }
+        public string? ImagenEspecie { get; set; }
         public DTOEstadoConservacion EstadoCons { get; set; }
         public int IdEstadoCons { get; set; }
         public IEnumerable<DTOAmenaza>? Amenazas { get; set; }

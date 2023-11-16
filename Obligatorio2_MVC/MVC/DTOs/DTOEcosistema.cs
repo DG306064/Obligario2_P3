@@ -20,7 +20,7 @@ namespace MVC.DTOs
         public int IdEstadoConservacion { get; set; }
         public IEnumerable<DTOAmenaza>? Amenazas { get; set; }
         public string[]? NombreAmenazas { get; set; }
-        public string NombreImagenEcosistema { get; set; }
+        public string? NombreImagenEcosistema { get; set; }
         public IFormFile ImagenEcosistema { get; set; }
     }
 
