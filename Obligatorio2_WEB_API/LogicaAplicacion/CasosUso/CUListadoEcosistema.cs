@@ -30,11 +30,11 @@ namespace LogicaAplicacion.CasosUso
             return RepoEcosistema.FindAll().Select(e => new EcosistemaDTO
             {
                 Id = e.Id,
-                TextoNombre = e.Nombre.Value,
+                Nombre = e.Nombre.Value,
                 Latitud = e.Latitud,
                 Longitud = e.Longitud,
                 Area = e.Area,
-                TextoDescripcion = e.Descripcion.Value,
+                Descripcion = e.Descripcion.Value,
                 Pais = new PaisDTO() 
                 {
                     Id = e.Pais.Id,
@@ -49,7 +49,7 @@ namespace LogicaAplicacion.CasosUso
                     Valor = e.EstadoConservacion.Valor
                 },
                 Amenazas = ConvertirAmenazas(e.Amenazas),
-                ImagenEcosistema = e.ImagenEcosistema
+                NombreImagenEcosistema = e.ImagenEcosistema
             }); ;
         }
 

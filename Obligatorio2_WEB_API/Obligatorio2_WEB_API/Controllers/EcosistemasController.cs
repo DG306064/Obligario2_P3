@@ -4,6 +4,8 @@ using LogicaAplicacion.CasosUso;
 using LogicaAplicacion.InterfacesCU;
 using LogicaNegocio.Dominio;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.Data.Odbc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -28,6 +30,7 @@ namespace Obligatorio2_Web_API.Controllers
         public IActualizarEcosistema CUActualizarEcosistema { get; set; }
 
         public IEcosistemasQueNoPuedeHabitarUnaEspecie CUEcosistemasQueNoPuedeHabitarUnaEspecie { get; set; }
+        public IObtenerAmenaza CUObtenerAmenaza { get; set; }
 
 
 
@@ -38,7 +41,7 @@ namespace Obligatorio2_Web_API.Controllers
                                 cuObtenerIdsDeAmenazasDelEcosistema, IAsignarAmenazaAEcosistema cuAsignarAmenaza,
                                     ICantidadDeEspeciesEnEcosistema cUCantidadDeEspeciesEnEcosistema, IAmenazasDeUnEcosistema cuAmenazasDeUnEcosistema,
                                     IEcosistemasQueNoPuedeHabitarUnaEspecie cUEcosistemasQueNoPuedeHabitarUnaEspecie,
-                                     IActualizarEcosistema cuActualizarEcosistema)
+                                     IActualizarEcosistema cuActualizarEcosistema, IObtenerAmenaza cuObtenerAmenaza)
         {
 
 
@@ -57,6 +60,7 @@ namespace Obligatorio2_Web_API.Controllers
             CUAmenazasDeUnEcosistema = cuAmenazasDeUnEcosistema;
             CUEcosistemasQueNoPuedeHabitarUnaEspecie = cUEcosistemasQueNoPuedeHabitarUnaEspecie;
             CUActualizarEcosistema = cuActualizarEcosistema;
+            CUObtenerAmenaza = cuObtenerAmenaza;
 
         }
         // GET: api/<EcosistemasController>
@@ -78,17 +82,17 @@ namespace Obligatorio2_Web_API.Controllers
         }
 
         // GET api/<EcosistemasController>/5
-        [HttpGet("{id}", Name ="BuscarEcosistemaPorId")]
+        [HttpGet("{id}", Name = "BuscarEcosistemaPorId")]
         public IActionResult Get(int id)
         {
             if (id <= 0) return BadRequest("El id debe ser un número mayor a 0.");
-            
+
             EcosistemaDTO ecosistema = null;
 
             try
             {
                 ecosistema = CUBuscarEcosistemaPorId.BuscarEcoPorId(id);
-                
+
             }
             catch (Exception ex)
             {
@@ -125,7 +129,7 @@ namespace Obligatorio2_Web_API.Controllers
             {
                 return BadRequest(ex.Message);
             }
-            catch(DescripcionException ex)
+            catch (DescripcionException ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -178,6 +182,83 @@ namespace Obligatorio2_Web_API.Controllers
             catch (EcosistemaException ex)
             {
                 return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Ocurrió un error inesperado");
+            }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult AsignarAmenazaAUnEcosistea(int id)
+        {
+            if (id == 0) return BadRequest("El id debe ser un numero mayor a 0.");
+
+            string nombreUsuario = "Daniel";
+
+            try
+            {
+                var ecosistema = CUBuscarEcosistemaPorId.BuscarEcoPorId(id);
+                ecosistema.Amenazas = CUlistadoAmenazas.ListadoAmenaza();
+                ecosistema.IdsDeLasAmenazas = CUObtenerIdsDeAmenazasDelEcosistema.ObtenerIdsDeAmenazasDelEcosistema(ecosistema.Id);
+
+                return Ok(ecosistema);
+            }
+            catch (EcosistemaException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Ocurrió un error obteniendo las amenazas");
+            }
+        }
+
+
+        public ActionResult AsignarAmenazaAEcosistema(int idAmenaza, int idEcosistema)
+        {
+            if (idAmenaza == 0 || idEcosistema == 0) return BadRequest("Los ids proporcionados deben ser mayor a 0.");
+
+            string nombreUsuario = "Daniel";
+
+            try
+            {
+                CUAsignarAmenaza.AsignarAmenazaAUnEcosistema(idAmenaza, idEcosistema, nombreUsuario);
+                return Ok();
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, "Ocurrió un error inesperado");
+            }
+        }
+
+        public ActionResult AmenazasDelEcosistema(int idEcosistema)
+        {
+            if (idEcosistema == 0) return BadRequest("El id del ecosistema debe ser mayor a 0.");
+
+            string nombreUsuario = "Daniel";
+
+            try
+            {
+                var amenazas = CUAmenazasDeUnEcosistema.AmenazasDeUnEcosistema(idEcosistema);
+                return Ok(amenazas);
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, "Ocurrió un error inesperado");
+            }
+        }
+
+        public ActionResult Busqueda(string busqueda)
+        {
+            if (busqueda.IsNullOrEmpty()) return BadRequest("El nombre de la especie no puede estar vacio.");
+
+            var nombreUsuario = "Daniel";
+
+            try
+            {
+                IEnumerable<EcosistemaDTO> ecosistemas = CUEcosistemasQueNoPuedeHabitarUnaEspecie.EcosistemasQueNoPuedeHabitarUnaEspecie(busqueda);
+                return Ok(ecosistemas);
             }
             catch (Exception ex)
             {

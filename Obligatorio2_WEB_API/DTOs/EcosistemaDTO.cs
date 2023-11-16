@@ -20,7 +20,9 @@ namespace DTOs
         public int IdEstadoConservacion { get; set; }
         public IEnumerable<AmenazaDTO>? Amenazas { get; set; }
         public string[]? NombreAmenazas { get; set; }
-        public string ImagenEcosistema { get; set; }
+        public string? NombreImagenEcosistema { get; set; }
+        public IEnumerable<int> IdsDeLasAmenazas { get; set; }
+
     }
 
 

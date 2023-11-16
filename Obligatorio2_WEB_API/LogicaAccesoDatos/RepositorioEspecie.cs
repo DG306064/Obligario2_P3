@@ -54,10 +54,12 @@ namespace LogicaAccesoDatos
 
         public IEnumerable<Especie> FindAll()
         {
-            return Contexto.Especies.Include(e=>e.EstadoCons)
+             var especies = Contexto.Especies.Include(e=>e.EstadoCons)
                                     .Include(e=>e.Habitats)
                                     .Include(e=>e.Amenazas)
                                     .ToList();
+
+            return especies;
         }
 
         public Especie FindById(int id)

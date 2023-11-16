@@ -19,7 +19,7 @@ namespace MVC.Controllers
             
         }
 
-        public IActionResult Create(DTOEspecie especie)
+        public ActionResult Create(DTOEspecie especie)
         {
            // if (HttpContext.Session.GetString("nombre") == null)
            // {
@@ -35,6 +35,43 @@ namespace MVC.Controllers
            //};
 
             return View(especie);
+        }
+
+
+        public ActionResult Details(int id)
+        {
+            DTOHabitat habitat = new DTOHabitat();
+
+            HttpClient cliente = new HttpClient();
+
+            string url = $"http://localhost:5285/api/Habitats/{id}";
+
+            var tarea1 = cliente.GetAsync(url);
+            tarea1.Wait();
+
+            var respuesta = tarea1.Result;
+
+            var contenido = respuesta.Content;
+
+            var tarea2 = contenido.ReadAsStringAsync();
+
+            tarea2.Wait();
+
+            string json = tarea2.Result;
+
+            if (respuesta.IsSuccessStatusCode)
+            {
+
+
+                habitat = JsonConvert.DeserializeObject<DTOHabitat>(json);
+
+                return View(habitat);
+            }
+            else
+            {
+                ViewBag.Error = json;
+                return View();
+            }
         }
 
 
@@ -136,10 +173,6 @@ namespace MVC.Controllers
 
             //}
 
-
         }
-
-
-       
     }
 }

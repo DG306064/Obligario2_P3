@@ -27,8 +27,8 @@ namespace LogicaAplicacion.CasosUso
             {
                 Id = e.Id,
                 NombreCientifico = e.NombreCientifico,
-                TextoNombreComun = e.NombreComun.Value,
-                TextoDescripcion = e.Descripcion.Value,
+                NombreComun = e.NombreComun.Value,
+                Descripcion = e.Descripcion.Value,
                 PesoMinimo = e.PesoMinimo,
                 PesoMaximo = e.PesoMaximo,
                 LongitudMinima = e.LongitudMinima,

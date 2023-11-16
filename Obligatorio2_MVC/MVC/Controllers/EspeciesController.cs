@@ -52,7 +52,16 @@ namespace MVC.Controllers
 
                 especies = JsonConvert.DeserializeObject<List<DTOEspecie>>(json);
 
-                return View(especies);
+                var vms = especies.Select(e => new EspecieViewModel()
+                {
+                    Id = e.Id,
+                    NombreCientifico = e.NombreCientifico,
+                    NombreComun = e.NombreComun,
+                    Descripcion = e.Descripcion,
+                    NombreImagenEspecie = e.ImagenEspecie
+                });
+
+                return View(vms);
             }
             else
             {
@@ -68,7 +77,7 @@ namespace MVC.Controllers
 
             HttpClient cliente = new HttpClient();
 
-            string url = "http://localhost:5285/api/Especies/5";
+            string url = $"http://localhost:5285/api/Especies/{id}";
 
             var tarea1 = cliente.GetAsync(url);
             tarea1.Wait();

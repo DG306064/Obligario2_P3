@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-
+using MVC.Models;
 
 namespace MVC.Controllers
 {
@@ -51,8 +51,21 @@ namespace MVC.Controllers
 
 
                 ecosistemas = JsonConvert.DeserializeObject<List<DTOEcosistema>>(json);
+                var vms = ecosistemas.Select(e => new EcosistemaViewModel()
+                {
+                    Ecosistema = new DTOEcosistema()
+                    {
+                        Id = e.Id,
+                        Nombre = e.Nombre,
+                        Latitud = e.Latitud,
+                        Longitud = e.Longitud,
+                        Area = e.Area,
+                        Descripcion = e.Descripcion,
+                        NombreImagenEcosistema = e.NombreImagenEcosistema
+                    }
+                });
 
-                return View(ecosistemas);
+                return View(vms);
             }
             else
             {
@@ -68,7 +81,7 @@ namespace MVC.Controllers
 
             HttpClient cliente = new HttpClient();
 
-            string url = "http://localhost:5285/api/Ecosistema/5";
+            string url = $"http://localhost:5285/api/Ecosistema/{id}";
 
             var tarea1 = cliente.GetAsync(url);
             tarea1.Wait();

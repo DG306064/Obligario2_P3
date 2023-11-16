@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MVC.DTOs.DTOEspecie>
+﻿@model IEnumerable<MVC.Models.EspecieViewModel>
 
     
  <style>
@@ -85,7 +85,7 @@
 
 
             <th>
-                @Html.DisplayNameFor(model => model.ImagenEspecie)
+                @Html.DisplayNameFor(model => model.NombreImagenEspecie)
             </th>
             <th></th>
             <th></th>
@@ -113,7 +113,7 @@
             </td>
                 
              <td>
-                <img src="/img/especies/@item.ImagenEspecie" height="70" />
+                <img src="/img/especies/@item.NombreImagenEspecie" height="70" />
              </td>
              <td>
                 <div class="my-div">
@@ -128,10 +128,10 @@
                     @Html.ActionLink("Borrar", "Delete", new {  id=item.Id }) |
                                     
                    
-                    @Html.ActionLink("Asignar Ecosistema", "AsignarEcosistemas", new {  IdEspecie=item.Id }) |
+                    @Html.ActionLink("Asignar Ecosistema", "AsignarEcosistemas", new {  idEspecie=item.Id }) |
                 
                    
-                    @Html.ActionLink("Asignar Amenazas", "AsignarAmenazaAUnaEspecie", "Especies", new { IdEspecie=item.Id })
+                    @Html.ActionLink("Asignar Amenazas", "AsignarAmenazaAUnaEspecie", "Especies", new { idEspecie=item.Id })
                   
             </td>
             }

@@ -40,7 +40,7 @@ namespace LogicaAplicacion.CasosUso
             eco.Pais = new Pais(){Id = obj.Pais.Id};
             eco.EstadoConservacion = RepoEstadoConservacion.FindById(obj.IdEstadoConservacion);
             eco.Amenazas = obj.Amenazas.Select(a => RepositorioAmenaza.FindById(a.Id));
-            eco.ImagenEcosistema = obj.ImagenEcosistema;
+            eco.ImagenEcosistema = obj.NombreImagenEcosistema;
 
             RepoEcosistema.Update(eco);
         }

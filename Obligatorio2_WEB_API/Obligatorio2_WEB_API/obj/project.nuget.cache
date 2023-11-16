@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HwV9uT/v4PJxx5Sa5uAsPTS2glFgO5gXKj7Y5OegHL2G36WDjFpbyrxNr/tqzsPOODQw5Er1c1m7rQd2ROmP9g==",
+  "dgSpecHash": "gPEEdQL0J9+SgkZNJl0vngz+I1ehVpRJU+lfjiA9+2lNVF+HK14sBXKWhLUVd9oRE+Ms3lijVqPsP4maGkMhvA==",
   "success": true,
   "projectFilePath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\Obligatorio2_WEB_API\\Obligatorio2_WEB_API.csproj",
   "expectedPackageFiles": [
@@ -56,6 +56,7 @@
     "C:\\Users\\danie\\.nuget\\packages\\humanizer.core.zh-cn\\2.14.1\\humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.11\\microsoft.aspnetcore.authentication.jwtbearer.7.0.11.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.12\\microsoft.aspnetcore.openapi.7.0.12.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.11\\microsoft.aspnetcore.razor.language.6.0.11.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

@@ -49,7 +49,7 @@ namespace LogicaAplicacion.CasosUso
                     Descripcion = a.Descripcion.Value,
                     Peligrosidad = a.Peligrosidad
                 }),
-                ImagenEcosistema = e.ImagenEcosistema
+                NombreImagenEcosistema = e.ImagenEcosistema
             };
 
             return ecosistema;

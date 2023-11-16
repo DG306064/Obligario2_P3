@@ -21,12 +21,12 @@ namespace LogicaAplicacion.CasosUso
 
         public IEnumerable<EspecieDTO> Listado()
         {
-            return RepoEspecie.FindAll().Select(e => new EspecieDTO
+            var especies = RepoEspecie.FindAll().Select(e => new EspecieDTO
             {
                 Id = e.Id,
                 NombreCientifico = e.NombreCientifico,
-                TextoNombreComun = e.NombreComun.Value,
-                TextoDescripcion = e.Descripcion.Value,
+                NombreComun = e.NombreComun.Value,
+                Descripcion = e.Descripcion.Value,
                 PesoMinimo = e.PesoMinimo,
                 PesoMaximo = e.PesoMaximo,
                 LongitudMinima = e.LongitudMinima,
@@ -45,6 +45,8 @@ namespace LogicaAplicacion.CasosUso
                     Peligrosidad = a.Peligrosidad
                 }),
             });
+
+            return especies;
         }
     }
 }

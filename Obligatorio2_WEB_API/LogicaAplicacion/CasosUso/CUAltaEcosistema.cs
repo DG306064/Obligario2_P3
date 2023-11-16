@@ -45,7 +45,7 @@ namespace LogicaAplicacion.CasosUso
                 },
                 EstadoConservacion = RepoEstadoConservacion.FindById(eco.IdEstadoConservacion),
                 //Amenazas = eco.Amenazas.Select(a => RepositorioAmenaza.FindById(a.Id)),
-                ImagenEcosistema = eco.ImagenEcosistema
+                ImagenEcosistema = eco.NombreImagenEcosistema
             };
 
             RepoEcosistema.Add(ecosistema);
