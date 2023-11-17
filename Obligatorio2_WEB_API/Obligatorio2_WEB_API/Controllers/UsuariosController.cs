@@ -4,6 +4,7 @@ using LogicaAplicacion.CasosUso;
 using LogicaAplicacion.InterfacesCU;
 using LogicaNegocio.Dominio;
 using Microsoft.AspNetCore.Mvc;
+using System.Runtime.InteropServices;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,11 +21,12 @@ namespace Obligatorio2_WEB_API.Controllers
         public IBuscarUsuarioPorId CUBuscarUsuarioPorId { get; set; }
         public IBajaUsuario CUBajaUsuario { get; set; }
         public IModificarUsuario CUModificarUsuario { get; set; }
+        public ILoginUsuarios CULoginUsuario { get; set; }
 
         public UsuariosController(IAltaUsuario CUAltaUsu, IListadoUsuario CUListUsu,
                                     IObtenerUsuarioParaLogear CUobtenerUsuarioParaLogear, IVerSiExisteUsuario CUverSiExisteUsu,
                                     IBuscarUsuarioPorId cuBuscarUsuarioPorId, IBajaUsuario cuBajaUsuario, IModificarUsuario
-                                    cuModificarUsuario)
+                                    cuModificarUsuario, ILoginUsuarios cuLoginUsuario)
         {
             CUAltaUsuario = CUAltaUsu;
             CUListadoUsuario = CUListUsu;
@@ -33,6 +35,8 @@ namespace Obligatorio2_WEB_API.Controllers
             CUBuscarUsuarioPorId = cuBuscarUsuarioPorId;
             CUBajaUsuario = cuBajaUsuario;
             CUModificarUsuario = cuModificarUsuario;
+            CULoginUsuario = cuLoginUsuario;
+
         }
 
         // GET: api/<UsuarioController>
@@ -125,6 +129,13 @@ namespace Obligatorio2_WEB_API.Controllers
             {
                 return StatusCode(500, "Ocurrió un error inesperado");
             }
+        }
+
+        public IActionResult Login([FromBody] LoginDTO usuario)
+        {
+            UsuarioDTO logueado = CULoginUsuario.Login(usuario.Alias, usuario.Password);
+            if (logueado == null) return Unauthorized("El usuario o la contraseña no son correctos");
+            return Ok(new { Rol = logueado.Rol, TokenJWT = ManejadorJWT.GenerarToken(logueado) });
         }
     }
 }

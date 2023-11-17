@@ -6,13 +6,42 @@ using LogicaNegocio.InterfacesDominio;
 using LogicaNegocio.InterfacesRepositorios;
 using LogicaNegocio.RegistrodeCambios;
 using LogicaNegocio.ValueObjects;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+var claveSecreta = "ZWRpw6fDo28gZW0gY29tcHV0YWRvcmE=";
+
+builder.Services.AddAuthentication(aut =>
+{
+    aut.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    aut.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(aut =>
+{
+    aut.RequireHttpsMetadata = false;
+    aut.SaveToken = true;
+    aut.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(claveSecreta)),
+        ValidateIssuer = false,
+        ValidateAudience = false
+    };
+});
+
+/////////////////////////////////////
+
+
+app.UseAuthorization();
+
 
 builder.Services.AddScoped<IRepositorioPais, RepositorioPais>();
 builder.Services.AddScoped<IRepositorio<EstadoConservacion>, RepositorioEstadoConservacion>();
@@ -76,6 +105,7 @@ builder.Services.AddScoped<IBuscarEcosistemaPorNombre, CUBuscarEcosistemaPorNomb
 builder.Services.AddScoped<IBuscarParametroPorNombre, CUBuscarParametroPorNombre>();
 builder.Services.AddScoped<IModificarParametro, CUModificarParametro>();
 builder.Services.AddScoped<IBajaHabitat, CUBajaHabitat>();
+builder.Services.AddScoped<ILoginUsuarios, CULoginUsuarios>();
 
 builder.Services.AddScoped<IVOModificarMaxLargoNombre, CUVOModificarMaxLargoNombre>();
 builder.Services.AddScoped<IVOModificarMinLargoNombre, CUVOModificarMinLargoNombre>();

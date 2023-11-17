@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "gPEEdQL0J9+SgkZNJl0vngz+I1ehVpRJU+lfjiA9+2lNVF+HK14sBXKWhLUVd9oRE+Ms3lijVqPsP4maGkMhvA==",
+  "dgSpecHash": "5wIDdIFkpMPaGRy6Byd9dfsGSptOyGowXljFX9XYCxeOzOJZu6efuWycqQwThPea7ZG0t3YqvDY2LJONsKXrLQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\Obligatorio2_WEB_API\\Obligatorio2_WEB_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danie\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\danie\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

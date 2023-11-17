@@ -192,35 +192,49 @@ namespace MVC.Controllers
         }
 
         [HttpPost]
-         public ActionResult Login(DTOUsuario vm)
+         public ActionResult Login(UsuarioException usu)
          {
-            return View();
-           // try
-           // {
-           //     IEnumerable<Usuario> usuario = CUObtenerUsuarioParaLogear.ObtenerUsuarioParaLogear(vm.alias, vm.password);
-           //     if (usuario.Count() == 1)
-           //     {
-           //         Usuario usu = usuario.First();
+            try
+            {
+                HttpClient cliente = new HttpClient();
+                string url = $"http://localhost:5285/api/Usuarios";
+                //cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                Task<HttpResponseMessage> tarea1 = cliente.PostAsJsonAsync(url, usu);
+                tarea1.Wait();
 
-           //         HttpContext.Session.SetString("nombre", usu.Alias);
-           //         HttpContext.Session.SetString("rol", usu.Rol);
+                HttpResponseMessage respuesta = tarea1.Result;
+                HttpContent contenido = respuesta.Content;
+                Task<string> tarea2 = contenido.ReadAsStringAsync();
+                tarea2.Wait();
 
-           //         return RedirectToAction("Index", "Home");
+                string body = tarea2.Result;
 
-           //     }
-           //     else
-           //     {
-           //         throw new Exception( "DATOS INCORRECTOS. ingrese datos válidos");
-           //     }
+                if (respuesta.IsSuccessStatusCode)
+                {
+                    //OBTENGO EL TOKEN Y EL ROL
+                    var login = JsonConvert.DeserializeObject<DTOLogin>(body);
+                    string rol = login.Rol;
+                    string token = login.TokenJWT;
 
-           // }
-           //catch(Exception ex)   
-           // {
-           //     ViewBag.Error = "DATOS INCORRECTOS. ingrese datos válidos";
-           //     return View();
+                    //LOS GUARDO EN SESSION
+                    HttpContext.Session.SetString("token", token);
+                    HttpContext.Session.SetString("rol", rol);
 
-           // }
-         }
+                    //REDIRIJO A ALGUNA ACCIÓN
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ViewBag.Error = body;
+                    return View(usu);
+                }
+            }
+            catch
+            {
+                ViewBag.Error("Ocurrió un error inesperado");
+                return View(usu);
+            }
+        }
 
         public ActionResult Logout()
         {

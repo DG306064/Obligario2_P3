@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "sR8IjdqOtcjeNIYHNVWWe58KmvVPQ1fJT6rcSzVRhfbT1uK5HYqvmt9yG9HevbgxCI0cuTHmpvbYAnq3d5I3/g==",
+  "dgSpecHash": "b5ftXZZlYXYMypOCpjeqyh+3a0IAFd5fcg8Z0Kv3YkJGkn/j4r8DdYn1VJ5ij6vYYjaddnO4ocZLYv5SDerYQw==",
   "success": true,
   "projectFilePath": "C:\\Users\\danie\\OneDrive\\ORT\\3ER SEMESTRE\\P3\\Obligatorio2_GitHub\\Obligatorio2_P3\\Obligatorio2_WEB_API\\LogicaAccesoDatos\\LogicaAccesoDatos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danie\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\danie\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

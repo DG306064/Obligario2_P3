@@ -12,5 +12,7 @@ namespace LogicaNegocio.InterfacesRepositorios
         Usuario ObtenerUsuarioParaLogear(string alias, string password);
 
         bool VerSiExisteUsuario(string alias);
+
+        Usuario Login(string email, string password);
     }
 }
