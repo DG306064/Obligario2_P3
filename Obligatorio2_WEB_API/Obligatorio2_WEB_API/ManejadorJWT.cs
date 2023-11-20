@@ -23,7 +23,7 @@ namespace Obligatorio2_WEB_API
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Email, usuarioDto.Email)
+                    new Claim("Alias", usu.Alias)
                 }),
                 Expires = DateTime.UtcNow.AddMonths(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(clave),

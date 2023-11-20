@@ -172,18 +172,6 @@ namespace MVC.Controllers
             //}
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
         public ActionResult Login()
         {
             DTOUsuario vm = new DTOUsuario();
@@ -192,7 +180,8 @@ namespace MVC.Controllers
         }
 
         [HttpPost]
-         public ActionResult Login(UsuarioException usu)
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(DTOUsuario usu)
          {
             try
             {
@@ -215,10 +204,12 @@ namespace MVC.Controllers
                     var login = JsonConvert.DeserializeObject<DTOLogin>(body);
                     string rol = login.Rol;
                     string token = login.TokenJWT;
+                    string nombre = login.Nombre;
 
                     //LOS GUARDO EN SESSION
                     HttpContext.Session.SetString("token", token);
                     HttpContext.Session.SetString("rol", rol);
+                    HttpContext.Session.SetString("nombre", nombre);
 
                     //REDIRIJO A ALGUNA ACCIÓN
                     return RedirectToAction("Index", "Home");

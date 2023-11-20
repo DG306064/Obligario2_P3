@@ -88,6 +88,8 @@ C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\Ob
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\System.CodeDom.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\appsettings.json
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\Controllers\appsettings.Development.json
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\Controllers\appsettings.json
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\Obligatorio2_WEB_API.exe
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\Obligatorio2_WEB_API.deps.json
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\Obligatorio2_WEB_API.runtimeconfig.json
@@ -96,7 +98,9 @@ C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\Obligatorio2_WEB_API.xml
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\Azure.Core.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\Azure.Identity.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\BCrypt.Net-Next.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\Humanizer.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_WEB_API\Obligatorio2_WEB_API\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll

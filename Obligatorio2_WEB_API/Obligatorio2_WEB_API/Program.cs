@@ -40,7 +40,7 @@ builder.Services.AddAuthentication(aut =>
 /////////////////////////////////////
 
 
-app.UseAuthorization();
+
 
 
 builder.Services.AddScoped<IRepositorioPais, RepositorioPais>();

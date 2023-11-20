@@ -3,6 +3,7 @@ using ExcepcionesPropias;
 using LogicaAplicacion.CasosUso;
 using LogicaAplicacion.InterfacesCU;
 using LogicaNegocio.Dominio;
+using LogicaNegocio.ValueObjects;
 using Microsoft.AspNetCore.Mvc;
 using System.Runtime.InteropServices;
 
@@ -79,27 +80,27 @@ namespace Obligatorio2_WEB_API.Controllers
             return Ok(usuario);
         }
 
-        // POST api/<UsuarioController>
-        [HttpPost]
-        public IActionResult Post(UsuarioDTO usuario)
-        {
-            string nombreUsuario = "Daniel";//HttpContext.Session.GetString("nombre");
+        //// POST api/<UsuarioController>
+        //[HttpPost]
+        //public IActionResult Post(UsuarioDTO usuario)
+        //{
+        //    string nombreUsuario = "Daniel";//HttpContext.Session.GetString("nombre");
 
-            if (usuario == null)
-            {
-                return BadRequest("La información enviada no es correcta para el alta");
-            }
+        //    if (usuario == null)
+        //    {
+        //        return BadRequest("La información enviada no es correcta para el alta");
+        //    }
 
-            try
-            {
-                CUAltaUsuario.AltaUsuario(usuario, nombreUsuario);
-                return CreatedAtRoute("BuscarPorId", new { id = usuario.Id }, usuario);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Ocurrió un error inesperado.");
-            }
-        }
+        //    try
+        //    {
+        //        CUAltaUsuario.AltaUsuario(usuario, nombreUsuario);
+        //        return CreatedAtRoute("BuscarPorId", new { id = usuario.Id }, usuario);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, "Ocurrió un error inesperado.");
+        //    }
+        //}
 
         // PUT api/<UsuarioController>/5
         [HttpPut("{id}")]
@@ -131,11 +132,12 @@ namespace Obligatorio2_WEB_API.Controllers
             }
         }
 
+        [HttpPost]
         public IActionResult Login([FromBody] LoginDTO usuario)
         {
             UsuarioDTO logueado = CULoginUsuario.Login(usuario.Alias, usuario.Password);
             if (logueado == null) return Unauthorized("El usuario o la contraseña no son correctos");
-            return Ok(new { Rol = logueado.Rol, TokenJWT = ManejadorJWT.GenerarToken(logueado) });
+            return Ok(new { Rol = logueado.Rol, TokenJWT = ManejadorJWT.GenerarToken(logueado), Nombre = logueado.Alias });
         }
     }
 }

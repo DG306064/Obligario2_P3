@@ -4,5 +4,6 @@
     {
         public string Rol { get; set; }
         public string TokenJWT { get; set; }
+        public string Nombre { get; set; }
     }
 }

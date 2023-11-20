@@ -249,7 +249,7 @@ namespace Obligatorio2_Web_API.Controllers
             }
         }
 
-        [HttpGet,"{busqueda}"/]
+        [HttpGet("busqueda/{busqueda}")]
         public ActionResult Busqueda(string busqueda)
         {
             if (busqueda.IsNullOrEmpty()) return BadRequest("El nombre de la especie no puede estar vacio.");

@@ -65,8 +65,8 @@ namespace MVC.Controllers
             }
             else
             {
-                ViewBag.Error = json;
-                return View();
+                ViewBag.Error = body;
+                return View(new List<DTOEspecie>());
             }
         }
 

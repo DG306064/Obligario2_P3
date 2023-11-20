@@ -117,7 +117,7 @@ namespace LogicaAccesoDatos
         public Usuario Login(string alias, string password)
         {
             var usuario = Contexto.Usuarios.Where(u => u.Alias == alias && u.Password == password).FirstOrDefault();
-            if (BCrypt.Net.BCrypt.HashPassword(password) != usuario.HashedPassword) throw new UsuarioException("El password del usuario no es correcta.");
+            if(!BCrypt.Net.BCrypt.Verify(password, usuario.HashedPassword)) throw new UsuarioException("El password del usuario no es correcta.");
             return usuario;
         }
     }
