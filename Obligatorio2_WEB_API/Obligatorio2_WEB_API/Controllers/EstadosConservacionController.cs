@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DTOs;
+using LogicaAplicacion.InterfacesCU;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,11 +10,28 @@ namespace Obligatorio2_WEB_API.Controllers
     [ApiController]
     public class EstadosConservacionController : ControllerBase
     {
+        IObtenerEstadosDeConservacion CUObtenerEstadosConservacion { get; set; }
+
+        public EstadosConservacionController(IObtenerEstadosDeConservacion cuEstadosConservacion)
+        {
+            CUObtenerEstadosConservacion = cuEstadosConservacion;
+        }
+
         // GET: api/<EstadosConservacionController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            IEnumerable<EstadoConservacionDTO> estadosConservacion = null;
+            try
+            {
+                estadosConservacion = CUObtenerEstadosConservacion.ObtenerEstadosDeConservacion();
+                
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Ocurrio un error inesperado");
+            }
+            return Ok(estadosConservacion);
         }
 
         // GET api/<EstadosConservacionController>/5
