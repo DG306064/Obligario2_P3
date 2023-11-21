@@ -29,6 +29,7 @@ namespace MVC.Controllers
 
             IEnumerable<DTOEcosistema> ecosistemas = null;
 
+            IEnumerable<DTOEstadoConservacion> estados = null;
             HttpClient cliente = new HttpClient();
 
             string url = "http://localhost:5285/api/ecosistemas";
@@ -46,10 +47,25 @@ namespace MVC.Controllers
 
             string json = tarea2.Result;
 
-            if (respuesta.IsSuccessStatusCode)
+            string url2 = "http://localhost:5285/api/estadosconservacion";
+
+            var tarea3 = cliente.GetAsync(url);
+            tarea3.Wait();
+
+            var respuesta2 = tarea3.Result;
+
+            var contenido2 = respuesta2.Content;
+
+            var tarea4 = contenido2.ReadAsStringAsync();
+
+            tarea4.Wait();
+
+            string json2 = tarea4.Result;
+
+            if (respuesta.IsSuccessStatusCode && respuesta2.IsSuccessStatusCode)
             {
 
-
+                estados = JsonConvert.DeserializeObject<List<DTOEstadoConservacion>>(json2);
                 ecosistemas = JsonConvert.DeserializeObject<List<DTOEcosistema>>(json);
                 var vms = ecosistemas.Select(e => new EcosistemaViewModel()
                 {
@@ -115,17 +131,49 @@ namespace MVC.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            var vm = new EcosistemaViewModel();
+            vm.Paises = null;
 
-            //if (HttpContext.Session.GetString("nombre") == null)
-            //{
-            //    return View("NoAutorizado");
-            //}
+            HttpClient cliente = new HttpClient();
 
-            //IEnumerable<Pais> paises = CUListadoPaises.Listado();
+            string url = $"http://localhost:5285/api/Paises";
 
-            DTOEcosistema vm = new DTOEcosistema();
+            var tarea1 = cliente.GetAsync(url);
+            tarea1.Wait();
 
-            return View(vm);
+            var respuesta = tarea1.Result;
+
+            var contenido = respuesta.Content;
+
+            var tarea2 = contenido.ReadAsStringAsync();
+
+            tarea2.Wait();
+
+            string json = tarea2.Result;
+
+
+
+            if (respuesta.IsSuccessStatusCode)
+            {
+
+                vm.EstadosDeConservacion = JsonConvert.DeserializeObject<List<DTOEstadoConservacion>>(json);
+                vm.Paises = JsonConvert.DeserializeObject<List<DTOPais>>(json);
+
+                return View(vm);
+            }
+            else
+            {
+                ViewBag.Error = json;
+                return View();
+            }
+            if (HttpContext.Session.GetString("rol") == "Usuario" || HttpContext.Session.GetString("rol") == "Admin")
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Usuarios");
+            }
         }
 
         // POST: EcosistemasController/Create

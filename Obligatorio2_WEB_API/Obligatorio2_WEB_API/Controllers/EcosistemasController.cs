@@ -5,7 +5,11 @@ using LogicaAplicacion.InterfacesCU;
 using LogicaNegocio.Dominio;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Data.Odbc;
+using NuGet.Common;
+using System.Text;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -108,12 +112,6 @@ namespace Obligatorio2_Web_API.Controllers
         [HttpPost]
         public IActionResult Post(EcosistemaDTO eco)
         {
-            /*if (HttpContext.Session.GetString("nombre") == null)
-            {
-                return BadRequest("NoAutorizado");
-            }*/
-
-            string nombreUsuario = "Daniel";//HttpContext.Session.GetString("nombre");
 
             if (eco == null)
             {
@@ -122,6 +120,26 @@ namespace Obligatorio2_Web_API.Controllers
 
             try
             {
+                var nombreUsuario = HttpContext.Session.GetString("nombre");
+                var token = HttpContext.Session.GetString("token");
+
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var parametrosValidos = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("ZWRpw6fDo28gZW0gY29tcHV0YWRvcmE=")),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ClockSkew = TimeSpan.Zero
+                };
+
+
+                // Intenta validar y decodificar el token
+                SecurityToken tokenValidado;
+                ClaimsPrincipal principal = tokenHandler.ValidateToken(token, parametrosValidos, out tokenValidado);
+
+                // Si no hay excepciones, el token es válido
+
                 CUAltaEcosistema.Alta(eco, nombreUsuario);
                 return CreatedAtRoute("BuscarPorId", new { id = eco.Id }, eco);
             }
