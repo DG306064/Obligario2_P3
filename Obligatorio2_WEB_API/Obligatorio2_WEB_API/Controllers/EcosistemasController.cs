@@ -10,6 +10,8 @@ using System.Security.Claims;
 using System.Data.Odbc;
 using NuGet.Common;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,6 +25,7 @@ namespace Obligatorio2_Web_API.Controllers
         public IListadoEcosistemas CUListadoEcosistema { get; set; }
         public IListadoPaises CUListadoPaises { get; set; }
         public IBuscarEcosistemaPorId CUBuscarEcosistemaPorId { get; set; }
+        public IBuscarPaisPorId CUBuscarPaisPorId { get; set; }
         public IAltaEcosistema CUAltaEcosistema { get; set; }
         public IBajaEcosistema CUBajaEco { get; set; }
         public IObtenerEstadosDeConservacion CUObtenerEstadosDeConservacion { get; set; }
@@ -35,6 +38,7 @@ namespace Obligatorio2_Web_API.Controllers
 
         public IEcosistemasQueNoPuedeHabitarUnaEspecie CUEcosistemasQueNoPuedeHabitarUnaEspecie { get; set; }
         public IObtenerAmenaza CUObtenerAmenaza { get; set; }
+        public IBuscarEstadoPorId CUBuscarEstadoPorId { get; set; }
 
 
 
@@ -45,7 +49,8 @@ namespace Obligatorio2_Web_API.Controllers
                                 cuObtenerIdsDeAmenazasDelEcosistema, IAsignarAmenazaAEcosistema cuAsignarAmenaza,
                                     ICantidadDeEspeciesEnEcosistema cUCantidadDeEspeciesEnEcosistema, IAmenazasDeUnEcosistema cuAmenazasDeUnEcosistema,
                                     IEcosistemasQueNoPuedeHabitarUnaEspecie cUEcosistemasQueNoPuedeHabitarUnaEspecie,
-                                     IActualizarEcosistema cuActualizarEcosistema, IObtenerAmenaza cuObtenerAmenaza)
+                                     IActualizarEcosistema cuActualizarEcosistema, IObtenerAmenaza cuObtenerAmenaza, IBuscarPaisPorId cuBuscarPaisPorId,
+                                     IBuscarEstadoPorId cuBuscarEstadoPorId)
         {
 
 
@@ -65,7 +70,8 @@ namespace Obligatorio2_Web_API.Controllers
             CUEcosistemasQueNoPuedeHabitarUnaEspecie = cUEcosistemasQueNoPuedeHabitarUnaEspecie;
             CUActualizarEcosistema = cuActualizarEcosistema;
             CUObtenerAmenaza = cuObtenerAmenaza;
-
+            CUBuscarPaisPorId = cuBuscarPaisPorId;
+            CUBuscarEstadoPorId = cuBuscarEstadoPorId;
         }
         // GET: api/<EcosistemasController>
         [HttpGet]
@@ -109,10 +115,9 @@ namespace Obligatorio2_Web_API.Controllers
         }
 
         // POST api/<EcosistemasController>
-        [HttpPost]
-        public IActionResult Post(EcosistemaDTO eco)
+        [HttpPost()]
+        public IActionResult Alta([FromBody] EcosistemaDTO eco)
         {
-
             if (eco == null)
             {
                 return BadRequest("La información enviada no es correcta para el alta");
@@ -120,25 +125,9 @@ namespace Obligatorio2_Web_API.Controllers
 
             try
             {
-                var nombreUsuario = HttpContext.Session.GetString("nombre");
-                var token = HttpContext.Session.GetString("token");
-
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var parametrosValidos = new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("ZWRpw6fDo28gZW0gY29tcHV0YWRvcmE=")),
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
-                    ClockSkew = TimeSpan.Zero
-                };
-
-
-                // Intenta validar y decodificar el token
-                SecurityToken tokenValidado;
-                ClaimsPrincipal principal = tokenHandler.ValidateToken(token, parametrosValidos, out tokenValidado);
-
-                // Si no hay excepciones, el token es válido
+                eco.Pais = CUBuscarPaisPorId.Buscar(eco.IdPaisSeleccionado);
+                eco.EstadoConservacion = CUBuscarEstadoPorId.Buscar(eco.IdEstadoConservacion);
+                var nombreUsuario = eco.NombreUsuario;
 
                 CUAltaEcosistema.Alta(eco, nombreUsuario);
                 return CreatedAtRoute("BuscarPorId", new { id = eco.Id }, eco);
@@ -207,8 +196,8 @@ namespace Obligatorio2_Web_API.Controllers
             }
         }
 
-        [HttpPut("{id}")]
-        public IActionResult AsignarAmenazaAUnEcosistea(int id)
+        [HttpGet("EcosistemaPorId")]
+        public IActionResult AsignarAmenazaAUnEcosistema(int id)
         {
             if (id == 0) return BadRequest("El id debe ser un numero mayor a 0.");
 
@@ -232,7 +221,7 @@ namespace Obligatorio2_Web_API.Controllers
             }
         }
 
-
+        [HttpPut("AsignarAmenaza")]
         public ActionResult AsignarAmenazaAEcosistema(int idAmenaza, int idEcosistema)
         {
             if (idAmenaza == 0 || idEcosistema == 0) return BadRequest("Los ids proporcionados deben ser mayor a 0.");
@@ -244,12 +233,13 @@ namespace Obligatorio2_Web_API.Controllers
                 CUAsignarAmenaza.AsignarAmenazaAUnEcosistema(idAmenaza, idEcosistema, nombreUsuario);
                 return Ok();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return StatusCode(500, "Ocurrió un error inesperado");
             }
         }
 
+        [HttpGet("AmenazasDeEcosistema/{5}")]
         public ActionResult AmenazasDelEcosistema(int idEcosistema)
         {
             if (idEcosistema == 0) return BadRequest("El id del ecosistema debe ser mayor a 0.");

@@ -9,6 +9,7 @@ using MVC.DTOs;
 using MVC.Models;
 //using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
+using System.Net.Http.Headers;
 
 namespace MVC.Controllers
 {
@@ -27,7 +28,7 @@ namespace MVC.Controllers
         public ActionResult Index()
         {
 
-            IEnumerable<DTOEspecie> especies = null;
+            IEnumerable<EspecieDTO> especies = null;
 
             HttpClient cliente = new HttpClient();
 
@@ -50,7 +51,7 @@ namespace MVC.Controllers
             {
 
 
-                especies = JsonConvert.DeserializeObject<List<DTOEspecie>>(body);
+                especies = JsonConvert.DeserializeObject<List<EspecieDTO>>(body);
 
                 var vms = especies.Select(e => new EspecieViewModel()
                 {
@@ -66,14 +67,14 @@ namespace MVC.Controllers
             else
             {
                 ViewBag.Error = body;
-                return View(new List<DTOEspecie>());
+                return View(new List<EspecieDTO>());
             }
         }
 
 
         public ActionResult Details(int id)
         {
-            DTOEspecie especie = new DTOEspecie();
+            EspecieDTO especie = new EspecieDTO();
 
             HttpClient cliente = new HttpClient();
 
@@ -96,7 +97,7 @@ namespace MVC.Controllers
             {
 
 
-                especie = JsonConvert.DeserializeObject<DTOEspecie>(json);
+                especie = JsonConvert.DeserializeObject<EspecieDTO>(json);
 
                 return View(especie);
             }
@@ -111,30 +112,140 @@ namespace MVC.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            //if (HttpContext.Session.GetString("nombre") == null)
-            //{
-            //    return View("NoAutorizado");
-            //}
+            var vm = new EspecieViewModel();
 
+            vm.EstadosDeConservacion = null;
 
-            //EspecieViewModel vm = new EspecieViewModel()
-            //{
-            //    Especie = new Especie(),
-            //    EstadosDeConservacion = CUObtenerEstadosDeConservacion.ObtenerEstadosDeConservacion()
+            HttpClient cliente = new HttpClient();
 
-            //};
+            string url = $"http://localhost:5285/api/EstadosConservacion";
 
+            var tarea1 = cliente.GetAsync(url);
+            tarea1.Wait();
 
-            return View();
+            var respuesta = tarea1.Result;
+
+            var contenido = respuesta.Content;
+
+            var tarea2 = contenido.ReadAsStringAsync();
+
+            tarea2.Wait();
+
+            string json = tarea2.Result;
+
+            
+            if (respuesta.IsSuccessStatusCode)
+            {
+
+                vm.EstadosDeConservacion = JsonConvert.DeserializeObject<List<EstadoConservacionDTO>>(json);
+
+                return View(vm);
+            }
+            else
+            {
+                ViewBag.Error = json;
+                return View();
+            }
         }
 
         // POST: EspeciesController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(DTOEspecie vm)
+        public ActionResult Create(EspecieViewModel vm)
         {
+            if (HttpContext.Session.GetString("rol") == "Usuario" || HttpContext.Session.GetString("rol") == "Admin")
+            {
+                try
+                {
 
-            return View(vm);
+                    FileInfo fi = new FileInfo(vm.ImagenEspecie.FileName);
+                    string ext = fi.Extension;
+
+                    if (ext == ".png" || ext == ".jpg" || ext == ".jpeg")
+                    {
+                        HttpClient cliente = new HttpClient();
+                        string url = "http://localhost:5285/api/especies";
+                        string token = HttpContext.Session.GetString("token");
+                        cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                        vm.Especie.IdEstadoCons = vm.IdEstadoCons;
+                        vm.Especie.NombreUsuario = HttpContext.Session.GetString("nombre");
+
+                        Task<HttpResponseMessage> tarea1 = cliente.PostAsJsonAsync(url, vm.Especie);
+                        tarea1.Wait();
+
+                        HttpResponseMessage respuesta = tarea1.Result;
+
+                        if (respuesta.IsSuccessStatusCode)
+                        {
+                            //OBTENGO EL ID GENERADO
+                            HttpContent contenido = respuesta.Content;
+                            Task<string> tarea2 = contenido.ReadAsStringAsync();
+                            tarea2.Wait();
+
+                            string body = tarea2.Result;
+
+                            EspecieDTO creado = JsonConvert.DeserializeObject<EspecieDTO>(body);
+                            int id_generada = creado.Id;
+
+                            //GUARDO LA IMAGEN LOCALMENTE
+                            string nomImagen = $"{vm.Especie.Id}_001{ext}"; ;
+
+                            string dirRaiz = WHE.WebRootPath;
+                            string rutaCompleta = Path.Combine(dirRaiz, "Ecosistemas", nomImagen);
+
+                            FileStream fs = new FileStream(rutaCompleta, FileMode.Create);
+                            vm.ImagenEspecie.CopyTo(fs);
+                            fs.Flush();
+                            fs.Close();
+
+                            //ACTUALIZO EL NOMBRE DE IMAGEN DE LA ESPACIE DADA DE ALTA
+                            creado.ImagenEspecie = nomImagen;
+                            url = url + "/" + id_generada;
+                            Task<HttpResponseMessage> tarea3 = cliente.PutAsJsonAsync(url, creado);
+                            tarea3.Wait();
+
+                            if (tarea3.Result.IsSuccessStatusCode)
+                            {
+                                return RedirectToAction(nameof(Index));
+                            }
+                            else
+                            {
+                                HttpContent contenido2 = tarea3.Result.Content;
+                                Task<string> tarea4 = contenido2.ReadAsStringAsync();
+                                tarea4.Wait();
+
+                                string error2 = tarea4.Result;
+                                ViewBag.Error = error2;
+                            }
+                        }
+                        else
+                        {
+                            HttpContent contenido3 = tarea1.Result.Content;
+                            Task<string> tarea5 = contenido3.ReadAsStringAsync();
+                            tarea5.Wait();
+
+                            string error = tarea5.Result;
+                            ViewBag.Error = error;
+                            return View(vm);
+                        }
+                    }
+                    else
+                    {
+                        ViewBag.Error = "El tipo de imagen debe ser png, jpeg o jpg";
+                        return View(vm);
+                    }
+                }
+                catch (Exception)
+                {
+                    ViewBag.Error = "Ocurrió un error inesperado, no se realizó el alta";
+                }
+
+                return View(vm);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Usuarios");
+            }
             //vm.Especie.habitats = new List<Habitat>();
             //vm.Especie.Amenazas = new List<Amenaza>();
 
@@ -252,7 +363,7 @@ namespace MVC.Controllers
         // POST: EspeciesController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(DTOEspecie especie)
+        public ActionResult Delete(EspecieDTO especie)
         {
             //try
             //{
@@ -284,7 +395,7 @@ namespace MVC.Controllers
         }
 
 
-        public ActionResult AsignarEcosistemas(DTOEspecie especie)
+        public ActionResult AsignarEcosistemas(EspecieDTO especie)
         {
             var habitats = new List<DTOHabitat>();
             especie.Habitats = habitats;
@@ -391,7 +502,7 @@ namespace MVC.Controllers
 
 
 
-        public ActionResult AsignarAmenazaAUnaEspecie(DTOAmenaza amenaza)
+        public ActionResult AsignarAmenazaAUnaEspecie(AmenazaDTO amenaza)
         {
             return View("Index");
             //if (HttpContext.Session.GetString("nombre") == null)
@@ -435,7 +546,7 @@ namespace MVC.Controllers
         }
 
 
-        public ActionResult AsignarAmenaza(DTOAmenaza vm)
+        public ActionResult AsignarAmenaza(AmenazaDTO vm)
         {
             return View(vm);
             //try
@@ -494,7 +605,7 @@ namespace MVC.Controllers
 
         }
 
-        public ActionResult AmenazasDeLaEspecie(DTOAmenaza vm)
+        public ActionResult AmenazasDeLaEspecie(AmenazaDTO vm)
         {
             return View();
             //Especie especie = CUBuscarEspeciePorid.Buscar(vm.IdEspecie);

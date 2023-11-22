@@ -1,7 +1,7 @@
 ﻿
 namespace MVC.DTOs
 {
-    public class DTOEspecie
+    public class EspecieDTO
     {
         public int Id { get; set; }
         public string NombreCientifico { get; set; }
@@ -12,10 +12,11 @@ namespace MVC.DTOs
         public int LongitudMinima { get; set; }
         public int LongitudMaxima { get; set; }
         public string? ImagenEspecie { get; set; }
-        public DTOEstadoConservacion EstadoCons { get; set; }
+        public EstadoConservacionDTO EstadoCons { get; set; }
         public int IdEstadoCons { get; set; }
-        public IEnumerable<DTOAmenaza>? Amenazas { get; set; }
+        public IEnumerable<AmenazaDTO>? Amenazas { get; set; }
         public IEnumerable<DTOHabitat>? Habitats { get; set; }
-        public IEnumerable<DTOEstadoConservacion> EstadosDeConservacion { get; set; }
+        public IEnumerable<EstadoConservacionDTO> EstadosDeConservacion { get; set; }
+        public string NombreUsuario { get; set; }
     }
 }

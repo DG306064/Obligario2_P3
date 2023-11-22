@@ -19,7 +19,7 @@ namespace MVC.Controllers
             
         }
 
-        public ActionResult Create(DTOEspecie especie)
+        public ActionResult Create(EspecieDTO especie)
         {
            // if (HttpContext.Session.GetString("nombre") == null)
            // {

@@ -1,11 +1,11 @@
 ﻿
-
 namespace MVC.DTOs
 {
-    public class DTOEstadoConservacion
+    public class PaisDTO
     {
+        
         public int Id { get; set; }
+        public string? CodigoIsoAlpha { get; set; }
         public string? Nombre { get; set; }
-        public int? Valor { get; set; }
     }
 }

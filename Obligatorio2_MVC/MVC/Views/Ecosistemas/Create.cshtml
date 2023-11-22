@@ -48,7 +48,7 @@
                 
                 <label class="control-label">Paises</label>
 
-                <select name="IdPaisSeleccionado">
+                <select asp-for="IdPaisSeleccionado" name="IdPaisSeleccionado" class="form-control">
                     @foreach (var pais in Model.Paises)
                     {
                         if (pais.Id == Model.IdPaisSeleccionado)
@@ -69,7 +69,7 @@
                 <label class="control-label">Estado de conservación</label>
 
                 <select name="idEstadoConservacion">
-                    @foreach (MVC.DTOs.DTOEstadoConservacion estado in Model.EstadosDeConservacion)
+                    @foreach (MVC.DTOs.EstadoConservacionDTO estado in Model.EstadosDeConservacion)
                     {
                         if (estado.Id == Model.IdEstadoConservacion)
                         {

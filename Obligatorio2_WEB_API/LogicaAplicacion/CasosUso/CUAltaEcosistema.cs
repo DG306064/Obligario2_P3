@@ -19,13 +19,15 @@ namespace LogicaAplicacion.CasosUso
         public IRepositorioEcosistema RepoEcosistema { get; set; }
         public IRepositorio<EstadoConservacion> RepoEstadoConservacion { get; set; }
         public IRepositorio<RegistroDeCambios> RepoRegistroCambios { get; set; }
+        public IRepositorioPais RepoPaises { get; set; }
 
         public CUAltaEcosistema(IRepositorioEcosistema repoEcosistema,IRepositorio<EstadoConservacion> repoEstado, IRepositorio<RegistroDeCambios> 
-                                repoRegistroCambios)
+                                repoRegistroCambios, IRepositorioPais repoPaises)
         {
             RepoEcosistema = repoEcosistema;
             RepoEstadoConservacion = repoEstado;
             RepoRegistroCambios = repoRegistroCambios;
+            RepoPaises = repoPaises;
         }
 
     
@@ -39,10 +41,7 @@ namespace LogicaAplicacion.CasosUso
                 Longitud = eco.Longitud,
                 Area = eco.Area,
                 Descripcion = new Descripcion(eco.Descripcion),
-                Pais = new Pais() 
-                { 
-                    Id = eco.Pais.Id
-                },
+                Pais = RepoPaises.FindById(eco.IdPaisSeleccionado),
                 EstadoConservacion = RepoEstadoConservacion.FindById(eco.IdEstadoConservacion),
                 //Amenazas = eco.Amenazas.Select(a => RepositorioAmenaza.FindById(a.Id)),
                 ImagenEcosistema = eco.NombreImagenEcosistema

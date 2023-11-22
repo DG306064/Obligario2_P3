@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MVC.DTOs;
 using Newtonsoft.Json;
+using ExcepcionesPropias;
 using Microsoft.AspNetCore.Http;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -14,12 +15,13 @@ namespace MVC.Controllers
     {
 
         private HttpClient httpClient = new HttpClient();
+        public IWebHostEnvironment WHE { get; set; }
 
 
 
-        public EcosistemasController()
+        public EcosistemasController(IWebHostEnvironment whe)
         {
-
+            WHE = whe;
         }
 
 
@@ -27,9 +29,9 @@ namespace MVC.Controllers
         public ActionResult Index()
         {
 
-            IEnumerable<DTOEcosistema> ecosistemas = null;
+            IEnumerable<EcosistemaDTO> ecosistemas = null;
 
-            IEnumerable<DTOEstadoConservacion> estados = null;
+            IEnumerable<EstadoConservacionDTO> estados = null;
             HttpClient cliente = new HttpClient();
 
             string url = "http://localhost:5285/api/ecosistemas";
@@ -65,11 +67,11 @@ namespace MVC.Controllers
             if (respuesta.IsSuccessStatusCode && respuesta2.IsSuccessStatusCode)
             {
 
-                estados = JsonConvert.DeserializeObject<List<DTOEstadoConservacion>>(json2);
-                ecosistemas = JsonConvert.DeserializeObject<List<DTOEcosistema>>(json);
+                estados = JsonConvert.DeserializeObject<List<EstadoConservacionDTO>>(json2);
+                ecosistemas = JsonConvert.DeserializeObject<List<EcosistemaDTO>>(json);
                 var vms = ecosistemas.Select(e => new EcosistemaViewModel()
                 {
-                    Ecosistema = new DTOEcosistema()
+                    Ecosistema = new EcosistemaDTO()
                     {
                         Id = e.Id,
                         Nombre = e.Nombre,
@@ -93,7 +95,7 @@ namespace MVC.Controllers
         // GET: EcosistemasController/Details/5
         public ActionResult Details(int id)
         {
-            DTOEcosistema ecosistema = new DTOEcosistema();
+            EcosistemaDTO ecosistema = new EcosistemaDTO();
 
             HttpClient cliente = new HttpClient();
 
@@ -116,7 +118,7 @@ namespace MVC.Controllers
             {
 
 
-                ecosistema = JsonConvert.DeserializeObject<DTOEcosistema>(json);
+                ecosistema = JsonConvert.DeserializeObject<EcosistemaDTO>(json);
 
                 return View(ecosistema);
             }
@@ -133,6 +135,7 @@ namespace MVC.Controllers
         {
             var vm = new EcosistemaViewModel();
             vm.Paises = null;
+            vm.EstadosDeConservacion = null;
 
             HttpClient cliente = new HttpClient();
 
@@ -151,13 +154,29 @@ namespace MVC.Controllers
 
             string json = tarea2.Result;
 
+            string url2 = $"http://localhost:5285/api/estadosconservacion";
+
+            var tarea3 = cliente.GetAsync(url2);
+            tarea3.Wait();
+
+            var respuesta2 = tarea3.Result;
+
+            var contenido2 = respuesta2.Content;
+
+            var tarea4 = contenido2.ReadAsStringAsync();
+
+            tarea4.Wait();
+
+            string json2 = tarea4.Result;
 
 
-            if (respuesta.IsSuccessStatusCode)
+
+            if (respuesta.IsSuccessStatusCode && respuesta2.IsSuccessStatusCode)
             {
 
-                vm.EstadosDeConservacion = JsonConvert.DeserializeObject<List<DTOEstadoConservacion>>(json);
-                vm.Paises = JsonConvert.DeserializeObject<List<DTOPais>>(json);
+                vm.Paises = JsonConvert.DeserializeObject<List<PaisDTO>>(json);
+                vm.EstadosDeConservacion = JsonConvert.DeserializeObject<List<EstadoConservacionDTO>>(json2);
+                
 
                 return View(vm);
             }
@@ -166,120 +185,107 @@ namespace MVC.Controllers
                 ViewBag.Error = json;
                 return View();
             }
-            if (HttpContext.Session.GetString("rol") == "Usuario" || HttpContext.Session.GetString("rol") == "Admin")
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login", "Usuarios");
-            }
         }
 
         // POST: EcosistemasController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(DTOEcosistema vm)
+        public ActionResult Create(EcosistemaViewModel vm)
         {
-            var ecosistema = new DTOEcosistema();
-            return View("Details", ecosistema);
-            //vm.Ecosistema.Amenazas = new List<Amenaza>();
+            if (HttpContext.Session.GetString("rol") == "Usuario" || HttpContext.Session.GetString("rol") == "Admin")
+            {
+                try
+                {
 
-            //Pais p = new Pais() { Id = vm.idPaisSeleccionado };
-            //vm.Ecosistema.Pais = p;
+                    FileInfo fi = new FileInfo(vm.ImagenEcosistema.FileName);
+                    string ext = fi.Extension;
 
-            //EstadoConservacion estado = new EstadoConservacion() { Id = vm.idEstadoConservacion };
-            //vm.Ecosistema.EstadoConservacion = estado;
+                    if (ext == ".png" || ext == ".jpg" || ext == ".jpeg")
+                    {
+                        HttpClient cliente = new HttpClient();
+                        string url = "http://localhost:5285/api/ecosistemas";
+                        string token = HttpContext.Session.GetString("token");
+                        cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                        vm.Ecosistema.IdPaisSeleccionado = vm.IdPaisSeleccionado;
+                        vm.Ecosistema.IdEstadoConservacion = vm.IdEstadoConservacion;
+                        vm.Ecosistema.NombreImagenEcosistema = vm.ImagenEcosistema.FileName;
+                        vm.Ecosistema.NombreUsuario = HttpContext.Session.GetString("nombre");
+                        Task<HttpResponseMessage> tarea1 = cliente.PostAsJsonAsync(url, vm.Ecosistema);
+                        tarea1.Wait();
 
+                        HttpResponseMessage respuesta = tarea1.Result;
 
+                        if (respuesta.IsSuccessStatusCode)
+                        {
+                            //OBTENGO EL ID GENERADO
+                            HttpContent contenido = respuesta.Content;
+                            Task<string> tarea2 = contenido.ReadAsStringAsync();
+                            tarea2.Wait();
 
-            //try
-            //{
+                            string body = tarea2.Result;
 
-            //    vm.Ecosistema.Nombre = new Nombre(vm.NombreEcosistema);
+                            EcosistemaDTO creado = JsonConvert.DeserializeObject<EcosistemaDTO>(body);
+                            int id_generada = creado.Id;
 
-            //    vm.Ecosistema.Descripcion = new Descripcion(vm.DescripcionEcosistema);
+                            //GUARDO LA IMAGEN LOCALMENTE
+                            string nomImagen = $"{vm.Ecosistema.Id}_001{ext}"; ;
 
+                            string dirRaiz = WHE.WebRootPath;
+                            string rutaCompleta = Path.Combine(dirRaiz, "Ecosistemas", nomImagen);
 
-            //    FileInfo fi = new FileInfo(vm.ImagenEcosistema.FileName);
-            //    string ext = fi.Extension;
+                            FileStream fs = new FileStream(rutaCompleta, FileMode.Create);
+                            vm.ImagenEcosistema.CopyTo(fs);
+                            fs.Flush();
+                            fs.Close();
 
-            //    if (ext == ".png" || ext == ".jpg" || ext == ".jpeg")
-            //    {
-            //        vm.Ecosistema.ImagenEcosistema = "";
+                            //ACTUALIZO EL NOMBRE DE IMAGEN DEL ECOSISTEMA DADO DE ALTA
+                            creado.NombreImagenEcosistema = nomImagen;
+                            url = url + "/" + id_generada;
+                            Task<HttpResponseMessage> tarea3 = cliente.PutAsJsonAsync(url, creado);
+                            tarea3.Wait();
 
-            //        if (HttpContext.Session.GetString("nombre") == null) throw new CambiosException("HAY QUE LOGEARSE PRIMERO");
-            //        string NombreUsuario = HttpContext.Session.GetString("nombre");
-            //        vm.Ecosistema.Validate();
-            //        CUAltaEcosistema.Alta(vm.Ecosistema, NombreUsuario);
+                            if (tarea3.Result.IsSuccessStatusCode)
+                            {
+                                return RedirectToAction(nameof(Index));
+                            }
+                            else
+                            {
+                                HttpContent contenido2 = tarea3.Result.Content;
+                                Task<string> tarea4 = contenido2.ReadAsStringAsync();
+                                tarea4.Wait();
 
-            //        string nomArchivo = $"{vm.Ecosistema.Id}_001{ext}";
-            //        vm.Ecosistema.ImagenEcosistema = nomArchivo;
-            //        CUActualizarEcosistema.Actualizar(vm.Ecosistema);
+                                string error2 = tarea4.Result;
+                                ViewBag.Error = error2;
+                            }
+                        }
+                        else
+                        {
+                            HttpContent contenido3 = tarea1.Result.Content;
+                            Task<string> tarea5 = contenido3.ReadAsStringAsync();
+                            tarea5.Wait();
 
-            //        string dirRaiz = Path.Combine(WHE.WebRootPath, "img");
-            //        string rutaCompleta = Path.Combine(dirRaiz, "ecosistemas", nomArchivo);
+                            string error = tarea5.Result;
+                            ViewBag.Error = error;
+                            return View(vm);
+                        }
+                    }
+                    else
+                    {
+                        ViewBag.Error = "El tipo de imagen debe ser png, jpeg o jpg";
+                        return View(vm);
+                    }
+                }
+                catch (Exception)
+                {
+                    ViewBag.Error = "Ocurrió un error inesperado, no se realizó el alta";
+                }
 
-            //        FileStream fs = new FileStream(rutaCompleta, FileMode.Create);
-            //        vm.ImagenEcosistema.CopyTo(fs);
-            //        return RedirectToAction(nameof(Index));
-
-
-
-            //    }
-            //    else
-            //    {
-            //        vm.Paises = CUListadoPaises.Listado();
-            //        vm.EstadosDeConservacion = CUObtenerEstadosDeConservacion.ObtenerEstadosDeConservacion();
-            //        ViewBag.Mensaje = "El tipo de imagen debe ser png, jpeg o jpg";
-            //        return View(vm);
-
-            //    }
-
-
-
-            //}
-            //catch (DescripcionException ex)
-            //{
-            //    vm.Paises = CUListadoPaises.Listado();
-            //    vm.EstadosDeConservacion = CUObtenerEstadosDeConservacion.ObtenerEstadosDeConservacion();
-            //    ViewBag.Error = ex.Message;
-            //    return View(vm);
-
-            //}
-            //catch (NombreException ex)
-            //{
-            //    vm.Paises = CUListadoPaises.Listado();
-            //    vm.EstadosDeConservacion = CUObtenerEstadosDeConservacion.ObtenerEstadosDeConservacion();
-            //    ViewBag.Error = ex.Message;
-            //    return View(vm);
-
-            //}
-            //catch (EcosistemaException ex)
-            //{
-            //    vm.Paises = CUListadoPaises.Listado();
-            //    vm.EstadosDeConservacion = CUObtenerEstadosDeConservacion.ObtenerEstadosDeConservacion();
-            //    ViewBag.Error = ex.Message;
-            //    return View(vm);
-
-            //}
-            //catch (CambiosException ex)
-            //{
-            //    vm.Paises = CUListadoPaises.Listado();
-            //    vm.EstadosDeConservacion = CUObtenerEstadosDeConservacion.ObtenerEstadosDeConservacion();
-            //    ViewBag.Error = ex.Message;
-            //    return View(vm);
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    vm.Paises = CUListadoPaises.Listado();
-            //    vm.EstadosDeConservacion = CUObtenerEstadosDeConservacion.ObtenerEstadosDeConservacion();
-            //    ViewBag.Error = "Ocurrió un problema al intentar el alta del Ecosistema";
-            //    return View(vm);
-            //}
-
-
+                return View(vm);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Usuarios");
+            }
         }
 
 
@@ -310,7 +316,7 @@ namespace MVC.Controllers
 
         public ActionResult Delete(int id)
         {
-            var ecosistemas = new List<DTOEcosistema>();
+            var ecosistemas = new List<EcosistemaDTO>();
             return View("Index", ecosistemas);
             //try
             //{
@@ -357,7 +363,7 @@ namespace MVC.Controllers
         }
 
 
-        public ActionResult AsignarAmenazaAUnEcosistea(DTOAmenaza vm)
+        public ActionResult AsignarAmenazaAUnEcosistea(AmenazaDTO vm)
         {
             return View(vm);
             //if (HttpContext.Session.GetString("nombre") == null)
@@ -402,7 +408,7 @@ namespace MVC.Controllers
         }
 
        
-        public ActionResult AsignarAmenazaAEcosistema(DTOAmenaza vm)
+        public ActionResult AsignarAmenazaAEcosistema(AmenazaDTO vm)
         {
             return View(vm);
             //try
@@ -463,7 +469,7 @@ namespace MVC.Controllers
 
         }
 
-        public ActionResult AmenazasDelEcosistema(DTOAmenaza vm)
+        public ActionResult AmenazasDelEcosistema(AmenazaDTO vm)
         {
             return View(vm);
 

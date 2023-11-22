@@ -129,9 +129,8 @@ namespace Obligatorio2_WEB_API.Controllers
 
         // POST api/<EspeciesController>
         [HttpPost]
-        public IActionResult Post(EspecieDTO especie)
+        public IActionResult Create(EspecieDTO especie)
         {
-            string nombreUsuario = "Daniel";//HttpContext.Session.GetString("nombre");
 
             if (especie == null)
             {
@@ -140,6 +139,7 @@ namespace Obligatorio2_WEB_API.Controllers
 
             try
             {
+                var nombreUsuario = especie.NombreUsuario;
                 CUAltaEspecie.Add(especie, nombreUsuario);
                 return CreatedAtRoute("BuscarPorId", new { id = especie.Id }, especie);
             }

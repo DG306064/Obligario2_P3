@@ -6,18 +6,20 @@ namespace MVC.Models
 {
     public class EcosistemaViewModel
     {
-        public DTOEcosistema Ecosistema { get; set; }
-        public IEnumerable<DTOPais> Paises { get; set; }
+        public EcosistemaDTO Ecosistema { get; set; }
+        public IEnumerable<PaisDTO> Paises { get; set; }
         public int IdPaisSeleccionado { get; set; }
         public int IdEstadoConservacion { get; set; }
 
-        public IEnumerable<DTOEstadoConservacion> EstadosDeConservacion { get; set; }
+        public IEnumerable<EstadoConservacionDTO> EstadosDeConservacion { get; set; }
 
         public IFormFile ImagenEcosistema { get; set; }
         [Display(Name ="Nombre")]
         public string NombreEcosistema { get; set; }
         [Display(Name = "Descripcion")]
         public string DescripcionEcosistema { get; set; }
+
+        public string NombreUsuario { get; set; }
 
     }
 

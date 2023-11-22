@@ -21,9 +21,10 @@ namespace DTOs
         public int LongitudMinima { get; set; }
         public int LongitudMaxima { get; set; }
         public string? ImagenEspecie { get; set; }
-        public EstadoConservacionDTO EstadoCons { get; set; }
+        public EstadoConservacionDTO? EstadoCons { get; set; }
         public int IdEstadoCons { get; set; }
         public IEnumerable<AmenazaDTO>? Amenazas { get; set; }
         public IEnumerable<HabitatDTO>? Habitats { get; set; }
+        public string? NombreUsuario { get; set; }
     }
 }

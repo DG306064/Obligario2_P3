@@ -1,8 +1,9 @@
 ﻿
 
+
 namespace MVC.DTOs
 {
-    public class DTOEcosistema
+    public class EcosistemaDTO
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
@@ -12,16 +13,18 @@ namespace MVC.DTOs
         public int Area { get; set; }
         public string Descripcion { get; set; }
         public string? TextoDescripcion { get; set; }
-        public DTOPais Pais { get; set; }
-        public IEnumerable<DTOPais> Paises { get; set; }
+        public PaisDTO Pais { get; set; }
+        public IEnumerable<PaisDTO> Paises { get; set; }
         public int IdPaisSeleccionado { get; set; }
-        public DTOEstadoConservacion EstadoConservacion { get; set; }
-        public IEnumerable<DTOEstadoConservacion> EstadosDeConservacion { get; set; }
+        public EstadoConservacionDTO EstadoConservacion { get; set; }
+        public IEnumerable<EstadoConservacionDTO> EstadosDeConservacion { get; set; }
         public int IdEstadoConservacion { get; set; }
-        public IEnumerable<DTOAmenaza>? Amenazas { get; set; }
+        public IEnumerable<AmenazaDTO>? Amenazas { get; set; }
         public string[]? NombreAmenazas { get; set; }
         public string? NombreImagenEcosistema { get; set; }
+        public IEnumerable<int> IdsDeLasAmenazas { get; set; }
         public IFormFile ImagenEcosistema { get; set; }
+        public string NombreUsuario { get; set; }
     }
 
 
