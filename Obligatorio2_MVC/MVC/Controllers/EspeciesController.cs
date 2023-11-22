@@ -112,39 +112,46 @@ namespace MVC.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            var vm = new EspecieViewModel();
-
-            vm.EstadosDeConservacion = null;
-
-            HttpClient cliente = new HttpClient();
-
-            string url = $"http://localhost:5285/api/EstadosConservacion";
-
-            var tarea1 = cliente.GetAsync(url);
-            tarea1.Wait();
-
-            var respuesta = tarea1.Result;
-
-            var contenido = respuesta.Content;
-
-            var tarea2 = contenido.ReadAsStringAsync();
-
-            tarea2.Wait();
-
-            string json = tarea2.Result;
-
-            
-            if (respuesta.IsSuccessStatusCode)
+            if (HttpContext.Session.GetString("rol") == "Usuario" || HttpContext.Session.GetString("rol") == "Admin")
             {
+                var vm = new EspecieViewModel();
 
-                vm.EstadosDeConservacion = JsonConvert.DeserializeObject<List<EstadoConservacionDTO>>(json);
+                vm.EstadosDeConservacion = null;
 
-                return View(vm);
+                HttpClient cliente = new HttpClient();
+
+                string url = $"http://localhost:5285/api/EstadosConservacion";
+
+                var tarea1 = cliente.GetAsync(url);
+                tarea1.Wait();
+
+                var respuesta = tarea1.Result;
+
+                var contenido = respuesta.Content;
+
+                var tarea2 = contenido.ReadAsStringAsync();
+
+                tarea2.Wait();
+
+                string json = tarea2.Result;
+
+
+                if (respuesta.IsSuccessStatusCode)
+                {
+
+                    vm.EstadosDeConservacion = JsonConvert.DeserializeObject<List<EstadoConservacionDTO>>(json);
+
+                    return View(vm);
+                }
+                else
+                {
+                    ViewBag.Error = json;
+                    return View();
+                }
             }
             else
             {
-                ViewBag.Error = json;
-                return View();
+                return RedirectToAction("Login", "Usuarios");
             }
         }
 
@@ -169,6 +176,9 @@ namespace MVC.Controllers
                         cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                         vm.Especie.IdEstadoCons = vm.IdEstadoCons;
                         vm.Especie.NombreUsuario = HttpContext.Session.GetString("nombre");
+                        vm.Especie.ImagenEspecie = vm.ImagenEspecie.FileName;
+                        vm.Especie.Amenazas = Enumerable.Empty<AmenazaDTO>();
+                        vm.Especie.Habitats = Enumerable.Empty<DTOHabitat>();
 
                         Task<HttpResponseMessage> tarea1 = cliente.PostAsJsonAsync(url, vm.Especie);
                         tarea1.Wait();
@@ -185,13 +195,15 @@ namespace MVC.Controllers
                             string body = tarea2.Result;
 
                             EspecieDTO creado = JsonConvert.DeserializeObject<EspecieDTO>(body);
+                            //creado.Amenazas = Enumerable.Empty<AmenazaDTO>();
+                            //creado.Habitats = Enumerable.Empty<DTOHabitat>();
                             int id_generada = creado.Id;
 
                             //GUARDO LA IMAGEN LOCALMENTE
-                            string nomImagen = $"{vm.Especie.Id}_001{ext}"; ;
+                            string nomImagen = $"{id_generada}_001{ext}"; ;
 
                             string dirRaiz = WHE.WebRootPath;
-                            string rutaCompleta = Path.Combine(dirRaiz, "Ecosistemas", nomImagen);
+                            string rutaCompleta = Path.Combine(dirRaiz, "img\\especies", nomImagen);
 
                             FileStream fs = new FileStream(rutaCompleta, FileMode.Create);
                             vm.ImagenEspecie.CopyTo(fs);
@@ -246,94 +258,10 @@ namespace MVC.Controllers
             {
                 return RedirectToAction("Login", "Usuarios");
             }
-            //vm.Especie.habitats = new List<Habitat>();
-            //vm.Especie.Amenazas = new List<Amenaza>();
-
-            //try
-            //{
-            //    EstadoConservacion estado = new EstadoConservacion() { Id = vm.idEstadoConservacion };
-            //    vm.Especie.EstadoCons = estado;
-
-
-            //    vm.Especie.NombreComun = new Nombre(vm.NombreComunEspecie);
-            //    vm.Especie.Descripcion = new Descripcion(vm.DescripcionEspecie);
-
-
-            //    FileInfo fi = new FileInfo(vm.ImagenEspecie.FileName);
-            //    string ext = fi.Extension;
-
-            //    if (ext == ".png" || ext == ".jpg" || ext == ".jpeg")
-            //    {
-
-            //        vm.Especie.Validate();
-            //        vm.Especie.ImagenEspecie = "";
-            //        if (HttpContext.Session.GetString("nombre") == null) throw new CambiosException("HAY QUE LOGEARSE PRIMERO");
-
-            //        string NombreUsuario = HttpContext.Session.GetString("nombre");
-            //        CUAltaEsp.Add(vm.Especie, NombreUsuario);
-
-            //        string nomArchivo = $"{vm.Especie.Id}_001{ext}";
-            //        vm.Especie.ImagenEspecie = nomArchivo;
-            //        CUModificarEspecie.ModificarEspecie(vm.Especie);
-
-            //        string dirRaiz = Path.Combine(WHE.WebRootPath, "img");
-            //        string rutaCompleta = Path.Combine(dirRaiz, "especies", nomArchivo);
-
-            //        FileStream fs = new FileStream(rutaCompleta, FileMode.Create);
-
-            //        vm.ImagenEspecie.CopyTo(fs);
 
 
 
 
-            //        return RedirectToAction("Create", "Habitats", vm.Especie);
-
-
-            //    }
-            //    else
-            //    {
-            //        vm.EstadosDeConservacion = CUObtenerEstadosDeConservacion.ObtenerEstadosDeConservacion();
-            //        ViewBag.Error = "El tipo de imagen debe ser png o jpg";
-            //        return View(vm);
-            //    }
-
-
-            //}
-            //catch (NombreException ex)
-            //{
-            //    vm.EstadosDeConservacion = CUObtenerEstadosDeConservacion.ObtenerEstadosDeConservacion();
-            //    ViewBag.Error = ex.Message;
-
-            //    return View(vm);
-            //}
-            //catch (DescripcionException ex)
-            //{
-            //    vm.EstadosDeConservacion = CUObtenerEstadosDeConservacion.ObtenerEstadosDeConservacion();
-            //    ViewBag.Error = ex.Message;
-
-            //    return View(vm);
-            //}
-            //catch (CambiosException ex)
-            //{
-            //    vm.EstadosDeConservacion = CUObtenerEstadosDeConservacion.ObtenerEstadosDeConservacion();
-            //    ViewBag.Error = ex.Message;
-            //    return View(vm);
-
-            //}
-            //catch (EspecieException ex)
-            //{
-            //    vm.EstadosDeConservacion = CUObtenerEstadosDeConservacion.ObtenerEstadosDeConservacion();
-            //    ViewBag.Error = ex.Message;
-            //    return View(vm);
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    vm.EstadosDeConservacion = CUObtenerEstadosDeConservacion.ObtenerEstadosDeConservacion();
-            //    ViewBag.Error = "Ocurrió un error realizando el alta de una especie";
-
-            //    return View(vm);
-            //}
 
 
 
@@ -344,19 +272,9 @@ namespace MVC.Controllers
 
 
         // GET: EspeciesController/Delete/5
+        [HttpDelete]
         public ActionResult Delete(int id)
         {
-            //if (HttpContext.Session.GetString("nombre") == null)
-            //{
-            //    return View("NoAutorizado");
-            //}
-
-            //Especie especie = CUBuscarEspeciePorid.Buscar(id);
-
-            //if (especie == null)
-            //{
-            //    ViewBag.Error = "La especie con el id " + id + " no existe";
-            //}
             return View();
         }
 

@@ -43,8 +43,13 @@ namespace LogicaAplicacion.CasosUso
                 Descripcion = new Descripcion(eco.Descripcion),
                 Pais = RepoPaises.FindById(eco.IdPaisSeleccionado),
                 EstadoConservacion = RepoEstadoConservacion.FindById(eco.IdEstadoConservacion),
-                //Amenazas = eco.Amenazas.Select(a => RepositorioAmenaza.FindById(a.Id)),
-                ImagenEcosistema = eco.NombreImagenEcosistema
+                Amenazas = eco.Amenazas.Select(a => new Amenaza()
+                {
+                    Id = a.Id,
+                    Descripcion = new Descripcion(a.Descripcion),
+                    Peligrosidad = a.Peligrosidad
+                }),
+            ImagenEcosistema = eco.NombreImagenEcosistema
             };
 
             RepoEcosistema.Add(ecosistema);
@@ -64,16 +69,6 @@ namespace LogicaAplicacion.CasosUso
 
             RepoRegistroCambios.Add(registro);
 
-        }
-
-        public IEnumerable<Amenaza> ConvertirAmenazas(IEnumerable<AmenazaDTO> amenazas)
-        {
-            return amenazas.Select(a => new Amenaza()
-            {
-                Id = a.Id,
-                Descripcion = new Descripcion(a.Descripcion),
-                Peligrosidad = a.Peligrosidad
-            });
         }
     }
 }

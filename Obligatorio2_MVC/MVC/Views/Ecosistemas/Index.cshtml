@@ -92,9 +92,9 @@
                 </div>
             </td>
             
-        @if (Context.Session.GetString("nombre") != null){ 
+        @if (Context.Session.GetString("rol") != null){ 
             <td>
-                        @Html.ActionLink("BORRAR", "Delete", new { id=item.Ecosistema.Id }) |
+                        @Html.ActionLink("BORRAR", "Borrar", new { id=item.Ecosistema.Id }) |
 
                         @Html.ActionLink("ASIGNAR AMENAZAS", "AsignarAmenazaAUnEcosistea", "Ecosistemas", new { IdEcosistema=item.Ecosistema.Id })
                 

@@ -28,7 +28,7 @@ namespace LogicaAplicacion.CasosUso
 
         public void Add(EspecieDTO obj, string nombreUsuario)
         {
-            Especie especie = new Especie() 
+            Especie especie = new Especie()
             {
                 Id = obj.Id,
                 NombreCientifico = obj.NombreCientifico,
@@ -40,16 +40,20 @@ namespace LogicaAplicacion.CasosUso
                 LongitudMaxima = obj.LongitudMaxima,
                 ImagenEspecie = obj.ImagenEspecie,
                 EstadoCons = RepoEstadoConservacion.FindById(obj.IdEstadoCons),
+                Amenazas = Enumerable.Empty<Amenaza>(),
+                Habitats = Enumerable.Empty<Habitat>()
             };
 
             RepoEspecie.Add(especie);
+
+            obj.Id = especie.Id;
 
             RegistroDeCambios registro = new RegistroDeCambios()
             {
 
                 NombreUsuario = nombreUsuario,
                 Fecha = DateTime.Now,
-                IdEntidadModificada = obj.Id,
+                IdEntidadModificada = especie.Id,
                 TipoDeEntidad = "Especie",
                 TipoDeModificacion = "ALTA"
 

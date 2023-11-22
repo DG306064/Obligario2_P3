@@ -93,6 +93,7 @@ namespace Obligatorio2_Web_API.Controllers
 
         // GET api/<EcosistemasController>/5
         [HttpGet("{id}", Name = "BuscarEcosistemaPorId")]
+        [Authorize(Roles = "Admin,Usuario")]
         public IActionResult Get(int id)
         {
             if (id <= 0) return BadRequest("El id debe ser un número mayor a 0.");
@@ -116,6 +117,7 @@ namespace Obligatorio2_Web_API.Controllers
 
         // POST api/<EcosistemasController>
         [HttpPost()]
+        [Authorize(Roles = "Admin,Usuario")]
         public IActionResult Alta([FromBody] EcosistemaDTO eco)
         {
             if (eco == null)
@@ -148,6 +150,7 @@ namespace Obligatorio2_Web_API.Controllers
 
         // PUT api/<EcosistemasController>/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin,Usuario")]
         public IActionResult Put(EcosistemaDTO e)
         {
             string nombreUsuario = "Daniel";//HttpContext.Session.GetString("nombre");
@@ -173,11 +176,14 @@ namespace Obligatorio2_Web_API.Controllers
         }
 
         // DELETE api/<EcosistemasController>/5
+        
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin,Usuario")]
         public IActionResult Delete(int id)
         {
+            var nombreUsuario = "Daniel";
+
             if (id <= 0) return BadRequest("El id debe ser un número positivo mayor a cero");
-            string nombreUsuario = "Daniel";
             try
             {
                 EcosistemaDTO ecosistema = CUBuscarEcosistemaPorId.BuscarEcoPorId(id);
@@ -197,6 +203,7 @@ namespace Obligatorio2_Web_API.Controllers
         }
 
         [HttpGet("EcosistemaPorId")]
+        [Authorize(Roles = "Admin,Usuario")]
         public IActionResult AsignarAmenazaAUnEcosistema(int id)
         {
             if (id == 0) return BadRequest("El id debe ser un numero mayor a 0.");
@@ -222,6 +229,7 @@ namespace Obligatorio2_Web_API.Controllers
         }
 
         [HttpPut("AsignarAmenaza")]
+        [Authorize(Roles = "Admin,Usuario")]
         public ActionResult AsignarAmenazaAEcosistema(int idAmenaza, int idEcosistema)
         {
             if (idAmenaza == 0 || idEcosistema == 0) return BadRequest("Los ids proporcionados deben ser mayor a 0.");

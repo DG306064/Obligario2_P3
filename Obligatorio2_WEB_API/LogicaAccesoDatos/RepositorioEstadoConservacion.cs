@@ -30,8 +30,10 @@ namespace LogicaAccesoDatos
 
         public EstadoConservacion FindById(int id)
         {
-            return Contexto.Estados.Include(e => e.Nombre)
+            var estado = Contexto.Estados.Include(e => e.Nombre)
                                    .SingleOrDefault(e => e.Id == id);
+            
+            return estado;
         }
 
         public void Remove(EstadoConservacion obj)

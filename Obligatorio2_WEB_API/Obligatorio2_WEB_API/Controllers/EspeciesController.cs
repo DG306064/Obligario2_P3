@@ -2,7 +2,9 @@
 using ExcepcionesPropias;
 using LogicaAplicacion.CasosUso;
 using LogicaAplicacion.InterfacesCU;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -106,7 +108,7 @@ namespace Obligatorio2_WEB_API.Controllers
         }
 
         // GET api/<EspeciesController>/5
-        [HttpGet("{id}",Name ="BuscarPorEspecieId")]
+        [HttpGet("{id}",Name ="BuscarPorId")]
         public IActionResult Get(int id)
         {
             if(id<=0) return BadRequest("El id debe ser mayor a 0");
@@ -129,6 +131,7 @@ namespace Obligatorio2_WEB_API.Controllers
 
         // POST api/<EspeciesController>
         [HttpPost]
+        [Authorize(Roles = "Admin,Usuario")]
         public IActionResult Create(EspecieDTO especie)
         {
 
@@ -151,12 +154,33 @@ namespace Obligatorio2_WEB_API.Controllers
 
         // PUT api/<EspeciesController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [Authorize(Roles = "Admin,Usuario")]
+        public IActionResult Put(int id, [FromBody] EspecieDTO especie)
         {
+            if (especie == null || especie.Id != id)
+            {
+                return BadRequest("No se envió información para el alta o es incorrecta");
+            }
+
+            try
+            {
+                CUModificarEspecie.ModificarEspecie(especie);
+                return Ok(especie);
+            }
+            catch (EspecieException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch
+            {
+                return StatusCode(500, "Ocurrió un error inesperado");
+            }
+
         }
 
         // DELETE api/<EspeciesController>/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin,Usuario")]
         public IActionResult Delete(int id)
         {
             if (id <= 0) return BadRequest("El id debe ser un número positivo mayor a cero");

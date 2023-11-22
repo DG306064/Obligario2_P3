@@ -31,17 +31,29 @@ namespace LogicaAplicacion.CasosUso
 
         public void Actualizar(EcosistemaDTO obj)
         {
-            Ecosistema eco = RepoEcosistema.FindById(obj.Id);
-            eco.Nombre = new Nombre(obj.Nombre);
-            eco.Latitud = obj.Latitud;
-            eco.Longitud = obj.Longitud;
-            eco.Area = obj.Area;
-            eco.Descripcion = new Descripcion(eco.Descripcion.Value);
-            eco.Pais = new Pais(){Id = obj.Pais.Id};
-            eco.EstadoConservacion = RepoEstadoConservacion.FindById(obj.IdEstadoConservacion);
-            eco.Amenazas = obj.Amenazas.Select(a => RepositorioAmenaza.FindById(a.Id));
-            eco.ImagenEcosistema = obj.NombreImagenEcosistema;
-
+            Ecosistema eco = new Ecosistema
+            {
+                Id = obj.Id,
+                Nombre = new Nombre(obj.Nombre),
+                Latitud = obj.Latitud,
+                Longitud = obj.Longitud,
+                Area = obj.Area,
+                Descripcion = new Descripcion(obj.Descripcion),
+                Pais = new Pais
+                { 
+                    Id = obj.Pais.Id,
+                    CodigoIsoAlpha = obj.Pais.CodigoIsoAlpha,
+                    Nombre = new Nombre(obj.Pais.Nombre)
+                },
+                EstadoConservacion = RepoEstadoConservacion.FindById(obj.IdEstadoConservacion),
+                Amenazas = obj.Amenazas.Select(a => new Amenaza
+                {
+                    Id = a.Id,
+                    Descripcion = new Descripcion(a.Descripcion),
+                    Peligrosidad = a.Peligrosidad
+                }),
+                ImagenEcosistema = obj.NombreImagenEcosistema
+            };
             RepoEcosistema.Update(eco);
         }
     }

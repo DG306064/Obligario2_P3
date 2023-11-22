@@ -3138,17 +3138,6 @@ C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\MV
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\MVC\obj\Debug\net7.0\MVC.pdb
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\MVC\obj\Debug\net7.0\MVC.genruntimeconfig.cache
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\OBLIGATORIO-P3 FINAL\MVC\obj\Debug\net7.0\ref\MVC.dll
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\Microsoft.CodeAnalysis.Features.dll
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\System.Windows.Extensions.dll
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\MVC.csproj.AssemblyReference.cache
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\MVC.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\MVC.AssemblyInfoInputs.cache
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\MVC.AssemblyInfo.cs
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\MVC.csproj.CoreCompileInputs.cache
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\MVC.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\MVC.RazorAssemblyInfo.cache
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\MVC.RazorAssemblyInfo.cs
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\appsettings.json
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\MVC.staticwebassets.runtime.json
@@ -3170,6 +3159,7 @@ C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\Microsoft.CodeAnalysis.CSharp.Features.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\Microsoft.CodeAnalysis.Elfie.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\Microsoft.CodeAnalysis.Features.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\Microsoft.CodeAnalysis.Razor.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\Microsoft.CodeAnalysis.Scripting.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\Microsoft.CodeAnalysis.Workspaces.dll
@@ -3210,7 +3200,9 @@ C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\System.Drawing.Common.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\System.Reflection.MetadataLoadContext.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\System.Security.Permissions.dll
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\System.Windows.Extensions.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\af\Humanizer.resources.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\ar\Humanizer.resources.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\az\Humanizer.resources.dll
@@ -3357,6 +3349,14 @@ C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\ExcepcionesPropias.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\bin\Debug\net7.0\ExcepcionesPropias.pdb
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\MVC.csproj.AssemblyReference.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\MVC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\MVC.AssemblyInfoInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\MVC.AssemblyInfo.cs
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\MVC.csproj.CoreCompileInputs.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\MVC.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\MVC.RazorAssemblyInfo.cache
+C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\MVC.RazorAssemblyInfo.cs
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\staticwebassets\msbuild.MVC.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\staticwebassets\msbuild.build.MVC.props
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.MVC.props

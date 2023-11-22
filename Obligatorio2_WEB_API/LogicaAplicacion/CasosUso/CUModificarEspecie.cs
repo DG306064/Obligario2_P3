@@ -17,10 +17,13 @@ namespace LogicaAplicacion.CasosUso
         public IRepositorioEspecie RepoEspecie { get; set; }
         public IRepositorioEcosistema RepoEcosistema { get; set; }
 
-        public CUModificarEspecie(IRepositorioEspecie repoEspecie, IRepositorioEcosistema repoEcosistema)
+        public IRepositorio<EstadoConservacion> RepoEstado { get; set; }
+
+        public CUModificarEspecie(IRepositorioEspecie repoEspecie, IRepositorioEcosistema repoEcosistema, IRepositorio<EstadoConservacion> repoEstado)
         {
             RepoEspecie = repoEspecie;
             RepoEcosistema = repoEcosistema;
+            RepoEstado = repoEstado;
         }
 
         public void ModificarEspecie(EspecieDTO obj)
@@ -35,12 +38,7 @@ namespace LogicaAplicacion.CasosUso
                 LongitudMinima = obj.LongitudMinima,
                 LongitudMaxima = obj.LongitudMaxima,
                 ImagenEspecie = obj.ImagenEspecie,
-                EstadoCons = new EstadoConservacion()
-                {
-                    Id = obj.EstadoCons.Id,
-                    Nombre = new Nombre(obj.EstadoCons.Nombre),
-                    Valor = (int)obj.EstadoCons.Valor
-                },
+                EstadoCons = RepoEstado.FindById(obj.IdEstadoCons),
                 Amenazas = obj.Amenazas.Select(a => new Amenaza()
                 {
                     Id = a.Id,
