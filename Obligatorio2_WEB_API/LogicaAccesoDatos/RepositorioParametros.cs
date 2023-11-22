@@ -42,7 +42,10 @@ namespace LogicaAccesoDatos
 
         public Parametro FindById(int id)
         {
-            throw new NotImplementedException();
+            var parametro = Contexto.Parametros.Where(p => p.Id == id)
+                                               .SingleOrDefault();
+
+            return parametro;
         }
 
         public void Remove(Parametro obj)
@@ -66,7 +69,9 @@ namespace LogicaAccesoDatos
         }
         public IEnumerable<Parametro> FindAll()
         {
-            throw new NotImplementedException();
+            var parametros = Contexto.Parametros.ToList();
+
+            return parametros;
         }
 
         

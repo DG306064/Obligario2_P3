@@ -4,13 +4,15 @@
 using ExcepcionesPropias;
 using MVC.DTOs;
 using Newtonsoft.Json;
+using MVC.Models;
+using System.Net.Http.Headers;
 
 namespace MVC.Controllers
 {
     public class ParametrosController : Controller
     {
 
-        public ParametrosController(){}
+        public ParametrosController() { }
 
 
 
@@ -18,241 +20,353 @@ namespace MVC.Controllers
 
 
 
-        public ActionResult ModificarParametros()
+        public ActionResult Index()
         {
-            //if (HttpContext.Session.GetString("nombre") == null || HttpContext.Session.GetString("rol") != "Admin")
-            //{
-            //    return View("NoAutorizado");
-            //}
+            if (HttpContext.Session.GetString("nombre") == null || HttpContext.Session.GetString("rol") != "Admin")
+            {
+                return View("NoAutorizado");
+            }
 
-            return View();
+            IEnumerable<ParametroDTO> parametros = null;
+
+            HttpClient cliente = new HttpClient();
+
+            string url = "http://localhost:5285/api/parametros";
+
+            var tarea1 = cliente.GetAsync(url);
+            tarea1.Wait();
+
+            var respuesta = tarea1.Result;
+
+            var contenido = respuesta.Content;
+
+            var tarea2 = contenido.ReadAsStringAsync();
+
+            tarea2.Wait();
+
+            string json = tarea2.Result;
+
+            if (respuesta.IsSuccessStatusCode)
+            {
+
+                parametros = JsonConvert.DeserializeObject<List<ParametroDTO>>(json);
+                return View(parametros);
+            }
+            else
+            {
+                ViewBag.Error = json;
+                return View();
+            }
         }
 
-        public ActionResult ModificarElParametro(int value, string valorNuevo)
+        [HttpGet]
+        public ActionResult Edit(int id)
         {
 
-            return View("ModificarParametros");
-            //try
-            //{
-            //    switch (value)
-            //    {
-            //        case 0:
+            HttpClient cliente = new HttpClient();
 
-            //            ViewBag.Error = "ELIGE UNA OPCIÓN";
-            //            return View("ModificarParametros");
-            //            break;
+            string url = $"http://localhost:5285/api/parametros/{id}";
 
-            //        case 1:
+            var tarea1 = cliente.GetAsync(url);
+            tarea1.Wait();
 
-            //            // LARGO MAXIMO DE LAS DESCRIPCIONES
-            //            int valorParseado;
-            //            int ValorParametRO;
+            var respuesta = tarea1.Result;
 
-            //            if (int.TryParse(valorNuevo, out valorParseado))
-            //            {
-            //                if (valorParseado < 0) throw new ParametrosException("Debes ingresar un numero positivo");
+            var contenido = respuesta.Content;
 
-            //                string valorParametro = CUBuscarValorParametroPorNombre.BuscarValorParametroPorNombre("MinLargoDescripcion");
+            var tarea2 = contenido.ReadAsStringAsync();
 
-            //                if (int.TryParse(valorParametro, out ValorParametRO))
-            //                {
-            //                    if (valorParseado < ValorParametRO) throw new ParametrosException("El largo máximo ingresado no puede ser menor a " + CUBuscarValorParametroPorNombre.BuscarValorParametroPorNombre("MinLargoDescripcion"));
+            tarea2.Wait();
 
+            string json = tarea2.Result;
 
-            //                }
+            if (respuesta.IsSuccessStatusCode)
+            {
 
 
-            //                if (HttpContext.Session.GetString("nombre") == null) throw new CambiosException("HAY QUE LOGEARSE PRIMERO");
+                var parametro = JsonConvert.DeserializeObject<ParametroDTO>(json);
 
-            //                string NombreUsuario = HttpContext.Session.GetString("nombre");
-            //                CUModificarMaxLargoDescripcion.Modificar("MaxLargoDescripcion", valorParseado.ToString(), NombreUsuario);
-            //                CUVOModificarMaxLargoDescripcion.Modificar(valorParseado);
-            //                ///////////////////////////////
+                return View(parametro);
+            }
+            else
+            {
+                ViewBag.Error = json;
+                return View();
+            }
+        }
 
+        [HttpPost]
+        public ActionResult Edit(ParametroDTO parametro)
+        {
+            if (HttpContext.Session.GetString("rol") == "Usuario" || HttpContext.Session.GetString("rol") == "Admin")
+            {
+                try
+                {
 
+                    HttpClient cliente = new HttpClient();
+                    string url = $"http://localhost:5285/api/parametros/{parametro.Id}";
+                    string token = HttpContext.Session.GetString("token");
+                    cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            //                ViewBag.Exito = "Parametro actualizado con éxito";
-            //                return View("ModificarParametros");
+                    Task<HttpResponseMessage> tarea1 = cliente.PutAsJsonAsync(url, parametro);
+                    tarea1.Wait();
 
-            //            }
-            //            else
-            //            {
-            //                ViewBag.Error = "Debes ingresar un numero";
-            //                return View("ModificarParametros");
+                    HttpResponseMessage respuesta = tarea1.Result;
 
-            //            }
+                    if (respuesta.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction(nameof(Index));
 
-            //            break;
+                    }
+                    else
+                    {
+                        HttpContent contenido = tarea1.Result.Content;
+                        Task<string> tarea2 = contenido.ReadAsStringAsync();
+                        tarea2.Wait();
 
+                        string error = tarea2.Result;
+                        ViewBag.Error = error;
+                    }
+                }
+                catch (Exception)
+                {
+                    ViewBag.Error = "Ocurrió un error inesperado, no se realizó el alta";
+                }
 
-            //        case 2:
-            //            //LARGO MÍNIMO DE LAS DESCRIPCIONES
-            //            int valorParseadO;
-            //            int ValorParamETRO;
+                return View(parametro);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Usuarios");
+            }
+        }
 
-            //            if (int.TryParse(valorNuevo, out valorParseadO))
-            //            {
-            //                if (valorParseadO < 0) throw new ParametrosException("Debes ingresar un numero positivo");
 
-            //                string valorParametro = CUBuscarValorParametroPorNombre.BuscarValorParametroPorNombre("MaxLargoDescripcion");
+            public ActionResult ModificarElParametro(int value, string valorNuevo)
+            {
 
-            //                if (int.TryParse(valorParametro, out ValorParamETRO))
-            //                {
-            //                    if (valorParseadO < ValorParamETRO) throw new ParametrosException("El largo máximo ingresado no puede ser menor a " + CUBuscarValorParametroPorNombre.BuscarValorParametroPorNombre("MaxLargoDescripcion"));
+                return View("ModificarParametros");
+                //try
+                //{
+                //    switch (value)
+                //    {
+                //        case 0:
 
+                //            ViewBag.Error = "ELIGE UNA OPCIÓN";
+                //            return View("ModificarParametros");
+                //            break;
 
-            //                }
-            //                if (HttpContext.Session.GetString("nombre") == null) throw new CambiosException("HAY QUE LOGEARSE PRIMERO");
+                //        case 1:
 
-            //                string NombreUsuario = HttpContext.Session.GetString("nombre");
-            //                CUModificarMinLargoDescripcion.Modificar("MinLargoDescripcion", valorParseadO.ToString(), NombreUsuario);
-            //                CUVOModificarMinLargoDescripcion.Modificar(valorParseadO);
+                //            // LARGO MAXIMO DE LAS DESCRIPCIONES
+                //            int valorParseado;
+                //            int ValorParametRO;
 
-            //                ///////////////////////////////
+                //            if (int.TryParse(valorNuevo, out valorParseado))
+                //            {
+                //                if (valorParseado < 0) throw new ParametrosException("Debes ingresar un numero positivo");
 
+                //                string valorParametro = CUBuscarValorParametroPorNombre.BuscarValorParametroPorNombre("MinLargoDescripcion");
 
-            //                ViewBag.Exito = "Parametro actualizado con éxito";
-            //                return View("ModificarParametros");
+                //                if (int.TryParse(valorParametro, out ValorParametRO))
+                //                {
+                //                    if (valorParseado < ValorParametRO) throw new ParametrosException("El largo máximo ingresado no puede ser menor a " + CUBuscarValorParametroPorNombre.BuscarValorParametroPorNombre("MinLargoDescripcion"));
 
-            //            }
-            //            else
-            //            {
-            //                ViewBag.Error ="Debes ingresar un numero";
-            //                return View("ModificarParametros");
 
-            //            }
+                //                }
 
-            //            break;
 
-            //        case 3:
-            //            //LARGO MAXIMO DE LOS NOMBRES
+                //                if (HttpContext.Session.GetString("nombre") == null) throw new CambiosException("HAY QUE LOGEARSE PRIMERO");
 
-            //            int ValorParseadO;
-            //            int ValorParametro;
+                //                string NombreUsuario = HttpContext.Session.GetString("nombre");
+                //                CUModificarMaxLargoDescripcion.Modificar("MaxLargoDescripcion", valorParseado.ToString(), NombreUsuario);
+                //                CUVOModificarMaxLargoDescripcion.Modificar(valorParseado);
+                //                ///////////////////////////////
 
-            //            if (int.TryParse(valorNuevo, out ValorParseadO))
-            //            {
-            //                if (ValorParseadO < 0) throw new ParametroException("DEBES INGRESAR UN NUMERO POSITIVO");
 
-            //                string valorParametro = CUBuscarParametroPorNombre.BuscarParametroPorNombre("MinLargoNombre");
 
-            //                if(int.TryParse(valorParametro, out ValorParametro))
-            //                {
-            //                    if(ValorParseadO < ValorParametro) throw new ParametrosException("El largo máximo ingresado no puede ser menor a " + CUBuscarValorParametroPorNombre.BuscarValorParametroPorNombre("MinLargoNombre"));
+                //                ViewBag.Exito = "Parametro actualizado con éxito";
+                //                return View("ModificarParametros");
 
+                //            }
+                //            else
+                //            {
+                //                ViewBag.Error = "Debes ingresar un numero";
+                //                return View("ModificarParametros");
 
-            //                }
+                //            }
 
-            //                if (HttpContext.Session.GetString("nombre") == null) throw new CambiosException("HAY QUE LOGEARSE PRIMERO");
+                //            break;
 
-            //                string NombreUsuario = HttpContext.Session.GetString("nombre");
-            //                CUModificarMaxLargoNombre.Modificar("MaxLargoNombre", ValorParseadO.ToString(), NombreUsuario);
-            //                CUVOModificarMaxLargoNombre.Modificar(ValorParseadO);
 
+                //        case 2:
+                //            //LARGO MÍNIMO DE LAS DESCRIPCIONES
+                //            int valorParseadO;
+                //            int ValorParamETRO;
 
+                //            if (int.TryParse(valorNuevo, out valorParseadO))
+                //            {
+                //                if (valorParseadO < 0) throw new ParametrosException("Debes ingresar un numero positivo");
 
-            //                ///////////////////////////////
+                //                string valorParametro = CUBuscarValorParametroPorNombre.BuscarValorParametroPorNombre("MaxLargoDescripcion");
 
+                //                if (int.TryParse(valorParametro, out ValorParamETRO))
+                //                {
+                //                    if (valorParseadO < ValorParamETRO) throw new ParametrosException("El largo máximo ingresado no puede ser menor a " + CUBuscarValorParametroPorNombre.BuscarValorParametroPorNombre("MaxLargoDescripcion"));
 
 
+                //                }
+                //                if (HttpContext.Session.GetString("nombre") == null) throw new CambiosException("HAY QUE LOGEARSE PRIMERO");
 
+                //                string NombreUsuario = HttpContext.Session.GetString("nombre");
+                //                CUModificarMinLargoDescripcion.Modificar("MinLargoDescripcion", valorParseadO.ToString(), NombreUsuario);
+                //                CUVOModificarMinLargoDescripcion.Modificar(valorParseadO);
 
-            //                ViewBag.Exito = "Parametro actualizado con éxito";
-            //                return View("ModificarParametros");
+                //                ///////////////////////////////
 
-            //            }
-            //            else
-            //            {
-            //                ViewBag.Error = "Debes ingresar un numero";
-            //                return View("ModificarParametros");
 
-            //            }
+                //                ViewBag.Exito = "Parametro actualizado con éxito";
+                //                return View("ModificarParametros");
 
-            //            break;
+                //            }
+                //            else
+                //            {
+                //                ViewBag.Error ="Debes ingresar un numero";
+                //                return View("ModificarParametros");
 
-            //        case 4:
-            //            //LARGO MÍNIMO DE LOS NOMBRES
+                //            }
 
-            //            int ValorPArseadO;
-            //            int ValorPArametro;
+                //            break;
 
+                //        case 3:
+                //            //LARGO MAXIMO DE LOS NOMBRES
 
-            //            if (int.TryParse(valorNuevo, out ValorPArseadO))
-            //            {
+                //            int ValorParseadO;
+                //            int ValorParametro;
 
-            //                if (ValorPArseadO < 0) throw new ParametrosException("DEBES INGRESAR UN NUMERO POSITIVO");
+                //            if (int.TryParse(valorNuevo, out ValorParseadO))
+                //            {
+                //                if (ValorParseadO < 0) throw new ParametroException("DEBES INGRESAR UN NUMERO POSITIVO");
 
-            //                string valorParametRo = CUBuscarValorParametroPorNombre.BuscarValorParametroPorNombre("MinLargoNombre");
+                //                string valorParametro = CUBuscarParametroPorNombre.BuscarParametroPorNombre("MinLargoNombre");
 
-            //                if (int.TryParse(valorParametRo, out ValorPArametro))
-            //                {
-            //                    if (ValorPArseadO > ValorPArametro) throw new ParametrosException("El largo mínimo ingresado no puede ser mayor a " + CUBuscarValorParametroPorNombre.BuscarValorParametroPorNombre("MaxLargoNombre"));
+                //                if(int.TryParse(valorParametro, out ValorParametro))
+                //                {
+                //                    if(ValorParseadO < ValorParametro) throw new ParametrosException("El largo máximo ingresado no puede ser menor a " + CUBuscarValorParametroPorNombre.BuscarValorParametroPorNombre("MinLargoNombre"));
 
 
-            //                }
+                //                }
 
-            //                if (HttpContext.Session.GetString("nombre") == null) throw new CambiosException("HAY QUE LOGEARSE PRIMERO");
+                //                if (HttpContext.Session.GetString("nombre") == null) throw new CambiosException("HAY QUE LOGEARSE PRIMERO");
 
+                //                string NombreUsuario = HttpContext.Session.GetString("nombre");
+                //                CUModificarMaxLargoNombre.Modificar("MaxLargoNombre", ValorParseadO.ToString(), NombreUsuario);
+                //                CUVOModificarMaxLargoNombre.Modificar(ValorParseadO);
 
-            //                string NombreUsuario = HttpContext.Session.GetString("nombre");
-            //                CUModificarMinLargoNombre.Modificar("MINLargoNombre", ValorPArseadO.ToString(), NombreUsuario);
-            //                CUVOModificarMinLargoNombre.Modificar(ValorPArseadO);
-            //                ///////////////////////////////
 
 
+                //                ///////////////////////////////
 
 
-            //                ViewBag.Exito = "Parametro actualizado con éxito";
-            //                return View("ModificarParametros");
 
-            //            }
-            //            else
-            //            {
-            //                ViewBag.Error = "Debes ingresar un numero";
-            //                return View("ModificarParametros");
 
-            //            }
 
-            //        default:
-            //            break;
+                //                ViewBag.Exito = "Parametro actualizado con éxito";
+                //                return View("ModificarParametros");
 
-            //    }
+                //            }
+                //            else
+                //            {
+                //                ViewBag.Error = "Debes ingresar un numero";
+                //                return View("ModificarParametros");
 
+                //            }
 
+                //            break;
 
-            //}
-            //catch (CambiosException ex)
-            //{
+                //        case 4:
+                //            //LARGO MÍNIMO DE LOS NOMBRES
 
-            //    ViewBag.Error = ex.Message;
-            //    return View("ModificarParametros");
+                //            int ValorPArseadO;
+                //            int ValorPArametro;
 
 
+                //            if (int.TryParse(valorNuevo, out ValorPArseadO))
+                //            {
 
+                //                if (ValorPArseadO < 0) throw new ParametrosException("DEBES INGRESAR UN NUMERO POSITIVO");
 
-            //}
-            //catch (ParametrosException ex)
-            //{
+                //                string valorParametRo = CUBuscarValorParametroPorNombre.BuscarValorParametroPorNombre("MinLargoNombre");
 
-            //    ViewBag.Error = ex.Message;
-            //    return View("ModificarParametros");
+                //                if (int.TryParse(valorParametRo, out ValorPArametro))
+                //                {
+                //                    if (ValorPArseadO > ValorPArametro) throw new ParametrosException("El largo mínimo ingresado no puede ser mayor a " + CUBuscarValorParametroPorNombre.BuscarValorParametroPorNombre("MaxLargoNombre"));
 
 
+                //                }
 
+                //                if (HttpContext.Session.GetString("nombre") == null) throw new CambiosException("HAY QUE LOGEARSE PRIMERO");
 
-            //}
-            //catch (Exception ex)
-            //{
 
-            //    ViewBag.Error = "No se pudo modificar el tope del largo";
-            //    return View("ModificarParametros");
+                //                string NombreUsuario = HttpContext.Session.GetString("nombre");
+                //                CUModificarMinLargoNombre.Modificar("MINLargoNombre", ValorPArseadO.ToString(), NombreUsuario);
+                //                CUVOModificarMinLargoNombre.Modificar(ValorPArseadO);
+                //                ///////////////////////////////
 
 
 
 
-            //}
+                //                ViewBag.Exito = "Parametro actualizado con éxito";
+                //                return View("ModificarParametros");
 
+                //            }
+                //            else
+                //            {
+                //                ViewBag.Error = "Debes ingresar un numero";
+                //                return View("ModificarParametros");
+
+                //            }
+
+                //        default:
+                //            break;
+
+                //    }
+
+
+
+                //}
+                //catch (CambiosException ex)
+                //{
+
+                //    ViewBag.Error = ex.Message;
+                //    return View("ModificarParametros");
+
+
+
+
+                //}
+                //catch (ParametrosException ex)
+                //{
+
+                //    ViewBag.Error = ex.Message;
+                //    return View("ModificarParametros");
+
+
+
+
+                //}
+                //catch (Exception ex)
+                //{
+
+                //    ViewBag.Error = "No se pudo modificar el tope del largo";
+                //    return View("ModificarParametros");
+
+
+
+
+                //}
+
+            }
         }
     }
-}
 

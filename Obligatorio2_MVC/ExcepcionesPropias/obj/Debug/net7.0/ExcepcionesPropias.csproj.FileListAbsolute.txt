@@ -154,15 +154,3 @@ C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\Excepc
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\ExcepcionesPropias\obj\Debug\net7.0\refint\ExcepcionesPropias.dll
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.pdb
 C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2\Obligatorio2_MVC\ExcepcionesPropias\obj\Debug\net7.0\ref\ExcepcionesPropias.dll
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.deps.json
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.dll
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\ExcepcionesPropias\bin\Debug\net7.0\ExcepcionesPropias.pdb
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.AssemblyReference.cache
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfoInputs.cache
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.AssemblyInfo.cs
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.csproj.CoreCompileInputs.cache
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.dll
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\ExcepcionesPropias\obj\Debug\net7.0\refint\ExcepcionesPropias.dll
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\ExcepcionesPropias\obj\Debug\net7.0\ExcepcionesPropias.pdb
-C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\ExcepcionesPropias\obj\Debug\net7.0\ref\ExcepcionesPropias.dll

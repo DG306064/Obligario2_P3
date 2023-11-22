@@ -26,7 +26,7 @@ namespace LogicaAplicacion.CasosUso
 
         public void Modificar(ParametroDTO obj, string nombreUsuario)
         {
-            Parametro parametro = RepoParametros.BuscarParametroPorNombre(obj.Nombre);
+            Parametro parametro = RepoParametros.FindById(obj.Id);
 
             parametro.Nombre = obj.Nombre;
             parametro.Valor = obj.Valor;

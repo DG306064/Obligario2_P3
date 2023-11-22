@@ -306,8 +306,9 @@ namespace MVC.Controllers
 
 
         // DELETE: EcosistemasController/Delete/5
-        [HttpPost]
+        [HttpGet]
         [ValidateAntiForgeryToken]
+
         public ActionResult Borrar(int id)
         {
             if (HttpContext.Session.GetString("rol") == "Usuario" || HttpContext.Session.GetString("rol") == "Admin")
@@ -315,18 +316,32 @@ namespace MVC.Controllers
 
                 HttpClient cliente = new HttpClient();
 
-                string url = $"http://localhost:5285/api/ecosistemas/{id}";
+                string url = "http://localhost:5285/api/ecosistemas";
 
-                var respuesta = cliente.DeleteAsync(url).Result;
+                var tarea1 = cliente.GetAsync(url);
+                tarea1.Wait();
+
+                var respuesta = tarea1.Result;
+
+                var contenido = respuesta.Content;
+
+                var tarea2 = contenido.ReadAsStringAsync();
+
+                tarea2.Wait();
+
+                string json = tarea2.Result;
+
 
                 if (respuesta.IsSuccessStatusCode)
                 {
 
-                    return RedirectToAction("Index");
+                    EcosistemaDTO ecosistema = JsonConvert.DeserializeObject<EcosistemaDTO>(json);
+
+                    return View(ecosistema);
                 }
                 else
                 {
-                    ViewBag.Error = "No se puedo borrar el ecosistema.";
+                    ViewBag.Error = json;
                     return View();
                 }
             }

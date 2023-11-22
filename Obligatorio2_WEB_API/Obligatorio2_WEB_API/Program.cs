@@ -108,6 +108,8 @@ builder.Services.AddScoped<IBajaHabitat, CUBajaHabitat>();
 builder.Services.AddScoped<ILoginUsuarios, CULoginUsuarios>();
 builder.Services.AddScoped<IBuscarPaisPorId, CUBuscarPaisPorId>();
 builder.Services.AddScoped<IBuscarEstadoPorId, CuBuscarEstadoPorId>();
+builder.Services.AddScoped<IListadoParametros, CUListadoParametros>();
+builder.Services.AddScoped<IBuscarParametroPorId, CUBuscarParametroPorId>();
 
 builder.Services.AddScoped<IVOModificarMaxLargoNombre, CUVOModificarMaxLargoNombre>();
 builder.Services.AddScoped<IVOModificarMinLargoNombre, CUVOModificarMinLargoNombre>();

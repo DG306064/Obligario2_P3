@@ -2,8 +2,10 @@
 using ExcepcionesPropias;
 using LogicaAplicacion.CasosUso;
 using LogicaAplicacion.InterfacesCU;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using System.Data;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,6 +22,8 @@ namespace Obligatorio2_WEB_API.Controllers
         public IVOModificarMinLargoNombre CUVOModificarMinLargoNombre { get; set; }
         public IVOModificarMaxLargoDescripcion CUVOModificarMaxLargoDescripcion { get; set; }
         public IVOModificarMinLargoDescripcion CUVOModificarMinLargoDescripcion { get; set; }
+        public IListadoParametros CUListadoParametros { get; set; }
+        public IBuscarParametroPorId CUBuscarParametroPorId { get; set; }
 
 
 
@@ -27,7 +31,8 @@ namespace Obligatorio2_WEB_API.Controllers
                                         IModificarParametro cuModificarParametro
                                         , IVOModificarMaxLargoNombre cuVOModificarMaxLargoNombre, IVOModificarMinLargoNombre cuVOModificarMinLargoNombre,
                                          IVOModificarMaxLargoDescripcion cuVOModificarMaxLargoDescripcion,
-                                        IVOModificarMinLargoDescripcion cuVOModificarMinLargoDescripcion)
+                                        IVOModificarMinLargoDescripcion cuVOModificarMinLargoDescripcion, IListadoParametros cuListadoParametros,
+                                        IBuscarParametroPorId cuBuscarParametroPorId)
         {
 
             
@@ -37,21 +42,49 @@ namespace Obligatorio2_WEB_API.Controllers
             CUVOModificarMinLargoNombre = cuVOModificarMinLargoNombre;
             CUVOModificarMaxLargoDescripcion = cuVOModificarMaxLargoDescripcion;
             CUVOModificarMinLargoDescripcion = cuVOModificarMinLargoDescripcion;
+            CUListadoParametros = cuListadoParametros;
+            CUBuscarParametroPorId = cuBuscarParametroPorId;
         }
 
 
         // GET: api/<ParametrosController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            IEnumerable<ParametroDTO> parametros = null;
+
+            try
+            {
+                parametros = CUListadoParametros.Listado();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Ocurrió un error inesperado");
+            }
+
+            return Ok(parametros);
         }
 
         // GET api/<ParametrosController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            if (id <= 0) return BadRequest("El id debe ser mayor a 0");
+
+            ParametroDTO parametro = null;
+
+            try
+            {
+                parametro = CUBuscarParametroPorId.Buscar(id);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Ocurrió un error inesperado.");
+            }
+
+            if (parametro == null) return NotFound($"El parametro con el id {id} no existe en la base de datos");
+
+            return Ok(parametro);
         }
 
         [HttpGet("nombre/{nombre}",Name ="BuscarParametroPorNombre")]
@@ -83,6 +116,7 @@ namespace Obligatorio2_WEB_API.Controllers
 
         // PUT api/<ParametrosController>/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin,Usuario")]
         public IActionResult Put(ParametroDTO p)
         {
             string nombreUsuario = "Daniel";

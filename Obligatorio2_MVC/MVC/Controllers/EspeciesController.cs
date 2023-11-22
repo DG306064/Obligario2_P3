@@ -313,43 +313,45 @@ namespace MVC.Controllers
         }
 
 
-        public ActionResult AsignarEcosistemas(EspecieDTO especie)
+        public ActionResult AsignarEcosistemas(HabitatViewModel vm)
         {
-            var habitats = new List<DTOHabitat>();
-            especie.Habitats = habitats;
-            return View(especie);
-            //if (HttpContext.Session.GetString("nombre") == null)
-            //{
-            //    return View("NoAutorizado");
-            //}
+            if (HttpContext.Session.GetString("rol") == "Usuario" || HttpContext.Session.GetString("rol") == "Admin")
+            {
+                HttpClient cliente = new HttpClient();
 
-            //try
-            //{
+                string url = $"http://localhost:5285/api/Especies/{vm.IdEspecie}";
 
-            //    vm.Habitats = CUObtenerHabitatsDeLaEspecie.ObtenerHabitatsDeLaEspecie(vm.IdEspecie);
+                var tarea1 = cliente.GetAsync(url);
+                tarea1.Wait();
 
-            //    if (vm.Habitats == null) throw new EspecieException("ocurrió un problema obteniendo los ecosistemas de esa especie");
-            //    if (vm.Habitats.Count() == 0) throw new EspecieException("La especie no tiene ningun ecosistemas para poder habitar");
+                var respuesta = tarea1.Result;
 
+                var contenido = respuesta.Content;
 
+                var tarea2 = contenido.ReadAsStringAsync();
 
-            //    return View(vm);
-            //}
-            //catch (EspecieException ex)
-            //{
-            //    vm.Especies = CUListadoEspecie.Listado();
-            //    ViewBag.Error = ex.Message;
-            //    return View("Index", vm.Especies);
+                tarea2.Wait();
+
+                string json = tarea2.Result;
+
+                if (respuesta.IsSuccessStatusCode)
+                {
 
 
-            //}
-            //catch (Exception ex)
-            //{
-            //    vm.Especies = CUListadoEspecie.Listado();
-            //    ViewBag.Error = "Ocurrió un error obteniendo los ecosistema";
-            //    return View("Index", vm.Especies);
+                    var especie = JsonConvert.DeserializeObject<EspecieDTO>(json);
 
-            //}
+                    return View(especie);
+                }
+                else
+                {
+                    ViewBag.Error = json;
+                    return View();
+                }
+            }
+            else
+            {
+                return RedirectToAction("Login", "Usuarios");
+            }
         }
 
 

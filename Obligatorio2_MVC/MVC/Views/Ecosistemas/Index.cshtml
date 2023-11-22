@@ -96,7 +96,7 @@
             <td>
                         @Html.ActionLink("BORRAR", "Borrar", new { id=item.Ecosistema.Id }) |
 
-                        @Html.ActionLink("ASIGNAR AMENAZAS", "AsignarAmenazaAUnEcosistea", "Ecosistemas", new { IdEcosistema=item.Ecosistema.Id })
+                        @Html.ActionLink("ASIGNAR AMENAZAS", "AsignarAmenazaAUnEcosistea", new { IdEcosistema=item.Ecosistema.Id })
                 
             </td>
         }
