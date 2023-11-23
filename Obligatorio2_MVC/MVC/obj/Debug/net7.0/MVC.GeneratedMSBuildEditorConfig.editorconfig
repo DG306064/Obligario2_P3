@@ -1,0 +1,133 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MVC
+build_property.RootNamespace = MVC
+build_property.ProjectDir = C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\danie\OneDrive\ORT\3ER SEMESTRE\P3\Obligatorio2_GitHub\Obligatorio2_P3\Obligatorio2_MVC\MVC
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Ecosistemas/AmenazasDelEcosistema.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWNvc2lzdGVtYXNcQW1lbmF6YXNEZWxFY29zaXN0ZW1hLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Ecosistemas/AsignarAmenazaAUnEcosistea.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWNvc2lzdGVtYXNcQXNpZ25hckFtZW5hemFBVW5FY29zaXN0ZWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Ecosistemas/Busqueda.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWNvc2lzdGVtYXNcQnVzcXVlZGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Ecosistemas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWNvc2lzdGVtYXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Ecosistemas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWNvc2lzdGVtYXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Ecosistemas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWNvc2lzdGVtYXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Especies/AmenazasDeLaEspecie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpZXNcQW1lbmF6YXNEZUxhRXNwZWNpZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Especies/AsignarAmenazaAUnaEspecie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpZXNcQXNpZ25hckFtZW5hemFBVW5hRXNwZWNpZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Especies/AsignarEcosistemas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpZXNcQXNpZ25hckVjb3Npc3RlbWFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Especies/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Especies/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Especies/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Especies/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Habitats/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFiaXRhdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Parametros/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyYW1ldHJvc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Parametros/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyYW1ldHJvc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Parametros/ModificarParametros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyYW1ldHJvc1xNb2RpZmljYXJQYXJhbWV0cm9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Shared/NoAutorizado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5vQXV0b3JpemFkby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Usuarios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Usuarios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Usuarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Usuarios/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danie/OneDrive/ORT/3ER SEMESTRE/P3/Obligatorio2_GitHub/Obligatorio2_P3/Obligatorio2_MVC/MVC/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-q0a04yuu0e

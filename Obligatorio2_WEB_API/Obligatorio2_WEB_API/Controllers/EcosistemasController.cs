@@ -12,6 +12,7 @@ using NuGet.Common;
 using System.Text;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
+using Microsoft.AspNetCore.Cors;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -73,6 +74,8 @@ namespace Obligatorio2_Web_API.Controllers
             CUBuscarPaisPorId = cuBuscarPaisPorId;
             CUBuscarEstadoPorId = cuBuscarEstadoPorId;
         }
+
+
         // GET: api/<EcosistemasController>
         [HttpGet]
         public IActionResult Get()
@@ -91,9 +94,10 @@ namespace Obligatorio2_Web_API.Controllers
             return Ok(ecosistemas);
         }
 
+
         // GET api/<EcosistemasController>/5
         [HttpGet("{id}", Name = "BuscarEcosistemaPorId")]
-        [Authorize(Roles = "Admin,Usuario")]
+
         public IActionResult Get(int id)
         {
             if (id <= 0) return BadRequest("El id debe ser un número mayor a 0.");
@@ -115,9 +119,10 @@ namespace Obligatorio2_Web_API.Controllers
             return Ok(ecosistema);
         }
 
+
         // POST api/<EcosistemasController>
         [HttpPost()]
-        [Authorize(Roles = "Admin,Usuario")]
+
         public IActionResult Alta([FromBody] EcosistemaDTO eco)
         {
             if (eco == null)
@@ -148,9 +153,10 @@ namespace Obligatorio2_Web_API.Controllers
             }
         }
 
+
         // PUT api/<EcosistemasController>/5
         [HttpPut("{id}")]
-        [Authorize(Roles = "Admin,Usuario")]
+
         public IActionResult Put(EcosistemaDTO e)
         {
             string nombreUsuario = "Daniel";//HttpContext.Session.GetString("nombre");
@@ -176,9 +182,9 @@ namespace Obligatorio2_Web_API.Controllers
         }
 
         // DELETE api/<EcosistemasController>/5
-        
+
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin,Usuario")]
+
         public IActionResult Delete(int id)
         {
             var nombreUsuario = "Daniel";
@@ -202,8 +208,8 @@ namespace Obligatorio2_Web_API.Controllers
             }
         }
 
-        [HttpGet("EcosistemaPorId")]
-        [Authorize(Roles = "Admin,Usuario")]
+        [HttpGet("AsignarAmenazaAUnEcosistema")]
+
         public IActionResult AsignarAmenazaAUnEcosistema(int id)
         {
             if (id == 0) return BadRequest("El id debe ser un numero mayor a 0.");
@@ -228,8 +234,9 @@ namespace Obligatorio2_Web_API.Controllers
             }
         }
 
+
         [HttpPut("AsignarAmenaza")]
-        [Authorize(Roles = "Admin,Usuario")]
+
         public ActionResult AsignarAmenazaAEcosistema(int idAmenaza, int idEcosistema)
         {
             if (idAmenaza == 0 || idEcosistema == 0) return BadRequest("Los ids proporcionados deben ser mayor a 0.");
@@ -247,7 +254,9 @@ namespace Obligatorio2_Web_API.Controllers
             }
         }
 
+
         [HttpGet("AmenazasDeEcosistema/{5}")]
+
         public ActionResult AmenazasDelEcosistema(int idEcosistema)
         {
             if (idEcosistema == 0) return BadRequest("El id del ecosistema debe ser mayor a 0.");
@@ -264,6 +273,7 @@ namespace Obligatorio2_Web_API.Controllers
                 return StatusCode(500, "Ocurrió un error inesperado");
             }
         }
+
 
         [HttpGet("busqueda/{busqueda}")]
         public ActionResult Busqueda(string busqueda)

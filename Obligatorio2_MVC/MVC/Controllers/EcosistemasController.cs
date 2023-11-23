@@ -306,9 +306,9 @@ namespace MVC.Controllers
 
 
         // DELETE: EcosistemasController/Delete/5
-        [HttpGet]
-        [ValidateAntiForgeryToken]
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Borrar(int id)
         {
             if (HttpContext.Session.GetString("rol") == "Usuario" || HttpContext.Session.GetString("rol") == "Admin")
@@ -316,33 +316,23 @@ namespace MVC.Controllers
 
                 HttpClient cliente = new HttpClient();
 
-                string url = "http://localhost:5285/api/ecosistemas";
+                string url = $"http://localhost:5285/api/ecosistemas/{id}";
+                string token = HttpContext.Session.GetString("token");
+                string rol = HttpContext.Session.GetString("rol");
+                cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", rol);
+                var respuesta = cliente.DeleteAsync(url);
+                respuesta.Wait();
 
-                var tarea1 = cliente.GetAsync(url);
-                tarea1.Wait();
-
-                var respuesta = tarea1.Result;
-
-                var contenido = respuesta.Content;
-
-                var tarea2 = contenido.ReadAsStringAsync();
-
-                tarea2.Wait();
-
-                string json = tarea2.Result;
-
-
-                if (respuesta.IsSuccessStatusCode)
+                if (respuesta.Result.IsSuccessStatusCode)
                 {
 
-                    EcosistemaDTO ecosistema = JsonConvert.DeserializeObject<EcosistemaDTO>(json);
-
-                    return View(ecosistema);
+                    return RedirectToAction("Index");
                 }
                 else
                 {
-                    ViewBag.Error = json;
-                    return View();
+                    ViewBag.Error = "No se puedo borrar el ecosistema.";
+                    return RedirectToAction("Index");
                 }
             }
             else

@@ -4,7 +4,10 @@ using LogicaAplicacion.CasosUso;
 using LogicaAplicacion.InterfacesCU;
 using LogicaNegocio.Dominio;
 using LogicaNegocio.ValueObjects;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using System.Runtime.InteropServices;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -41,6 +44,8 @@ namespace Obligatorio2_WEB_API.Controllers
         }
 
         // GET: api/<UsuarioController>
+
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -80,27 +85,29 @@ namespace Obligatorio2_WEB_API.Controllers
             return Ok(usuario);
         }
 
-        //// POST api/<UsuarioController>
-        //[HttpPost]
-        //public IActionResult Post(UsuarioDTO usuario)
-        //{
-        //    string nombreUsuario = "Daniel";//HttpContext.Session.GetString("nombre");
+        // POST api/<UsuarioController>
 
-        //    if (usuario == null)
-        //    {
-        //        return BadRequest("La información enviada no es correcta para el alta");
-        //    }
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public IActionResult Post(UsuarioDTO usuario)
+        {
+            string nombreUsuario = "Daniel";//HttpContext.Session.GetString("nombre");
 
-        //    try
-        //    {
-        //        CUAltaUsuario.AltaUsuario(usuario, nombreUsuario);
-        //        return CreatedAtRoute("BuscarPorId", new { id = usuario.Id }, usuario);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, "Ocurrió un error inesperado.");
-        //    }
-        //}
+            if (usuario == null)
+            {
+                return BadRequest("La información enviada no es correcta para el alta");
+            }
+
+            try
+            {
+                CUAltaUsuario.AltaUsuario(usuario, nombreUsuario);
+                return CreatedAtRoute("BuscarPorId", new { id = usuario.Id }, usuario);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Ocurrió un error inesperado.");
+            }
+        }
 
         // PUT api/<UsuarioController>/5
         [HttpPut("{id}")]
@@ -109,6 +116,8 @@ namespace Obligatorio2_WEB_API.Controllers
         }
 
         // DELETE api/<UsuarioController>/5
+
+
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -132,7 +141,7 @@ namespace Obligatorio2_WEB_API.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("Login")]
         public IActionResult Login([FromBody] LoginDTO usuario)
         {
             UsuarioDTO logueado = CULoginUsuario.Login(usuario.Alias, usuario.Password);

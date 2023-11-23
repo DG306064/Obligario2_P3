@@ -3,6 +3,7 @@ using ExcepcionesPropias;
 using LogicaAplicacion.CasosUso;
 using LogicaAplicacion.InterfacesCU;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.Data;
@@ -49,6 +50,8 @@ namespace Obligatorio2_WEB_API.Controllers
 
         // GET: api/<ParametrosController>
         [HttpGet]
+
+        [Authorize(Roles = "Admin")]
         public IActionResult Get()
         {
             IEnumerable<ParametroDTO> parametros = null;
@@ -66,6 +69,8 @@ namespace Obligatorio2_WEB_API.Controllers
         }
 
         // GET api/<ParametrosController>/5
+
+
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -87,7 +92,10 @@ namespace Obligatorio2_WEB_API.Controllers
             return Ok(parametro);
         }
 
-        [HttpGet("nombre/{nombre}",Name ="BuscarParametroPorNombre")]
+        
+
+
+        [HttpGet("nombre/{nombre}", Name = "BuscarParametroPorNombre")]
         public IActionResult BuscarParametroPorNombre(string nombre)
         {
             if (nombre.IsNullOrEmpty()) return BadRequest("El nombre no puede estar vacio.");
@@ -115,8 +123,10 @@ namespace Obligatorio2_WEB_API.Controllers
         }
 
         // PUT api/<ParametrosController>/5
+        [EnableCors]
+
         [HttpPut("{id}")]
-        [Authorize(Roles = "Admin,Usuario")]
+
         public IActionResult Put(ParametroDTO p)
         {
             string nombreUsuario = "Daniel";

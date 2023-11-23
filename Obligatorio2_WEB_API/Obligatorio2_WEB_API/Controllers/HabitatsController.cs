@@ -3,7 +3,10 @@ using ExcepcionesPropias;
 using LogicaAplicacion.CasosUso;
 using LogicaAplicacion.InterfacesCU;
 using LogicaNegocio.Dominio;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -44,6 +47,8 @@ namespace Obligatorio2_WEB_API.Controllers
 
 
         // GET: api/<HabitatsController>
+
+
         [HttpGet]
         public IEnumerable<string> Get()
         {
@@ -51,6 +56,8 @@ namespace Obligatorio2_WEB_API.Controllers
         }
 
         // GET api/<HabitatsController>/5
+
+        [Authorize(Roles = "Admin,Usuario")]
         [HttpGet("{id}")]
         public string Get(int id)
         {
@@ -58,6 +65,8 @@ namespace Obligatorio2_WEB_API.Controllers
         }
 
         // POST api/<HabitatsController>
+
+
         [HttpPost]
         public IActionResult Post(HabitatDTO habitat)
         {
@@ -80,12 +89,16 @@ namespace Obligatorio2_WEB_API.Controllers
         }
 
         // PUT api/<HabitatsController>/5
+
+
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
         // DELETE api/<HabitatsController>/5
+        [EnableCors]
+        [Authorize(Roles = "Admin,Usuario")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

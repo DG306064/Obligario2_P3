@@ -11,10 +11,23 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
+// Configuración CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin", builder =>
+    {
+        builder
+            .WithOrigins("http://localhost:5251")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
+//Configuracion de autenticacion
 builder.Services.AddControllers();
 
 var claveSecreta = "ZWRpw6fDo28gZW0gY29tcHV0YWRvcmE=";
@@ -36,6 +49,27 @@ builder.Services.AddAuthentication(aut =>
         ValidateAudience = false
     };
 });
+
+
+//builder.Services.AddAuthentication(aut =>
+//{
+//    aut.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+//    aut.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+//})
+//.AddJwtBearer(aut =>
+//{
+//    aut.RequireHttpsMetadata = false;
+//    aut.SaveToken = true;
+//    aut.TokenValidationParameters = new TokenValidationParameters
+//    {
+//        ValidateIssuerSigningKey = true,
+//        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(claveSecreta)),
+//        ValidateIssuer = true,
+//        ValidateAudience = true,
+//        ValidateLifetime = true,
+//    };
+//});
+
 
 /////////////////////////////////////
 
@@ -150,9 +184,13 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseCors("AllowSpecificOrigin");
+    app.UseAuthorization();
+    app.UseAuthentication();
+
 }
 
-app.UseAuthorization();
+//Configuración CORS
 
 app.MapControllers();
 

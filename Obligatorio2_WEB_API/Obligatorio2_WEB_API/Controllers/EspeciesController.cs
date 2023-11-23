@@ -3,6 +3,7 @@ using ExcepcionesPropias;
 using LogicaAplicacion.CasosUso;
 using LogicaAplicacion.InterfacesCU;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 
@@ -90,6 +91,7 @@ namespace Obligatorio2_WEB_API.Controllers
         }
 
         // GET: api/<EspeciesController>
+
         [HttpGet]
         public IActionResult Get()
         {
@@ -108,7 +110,9 @@ namespace Obligatorio2_WEB_API.Controllers
         }
 
         // GET api/<EspeciesController>/5
+
         [HttpGet("{id}",Name ="BuscarPorId")]
+
         public IActionResult Get(int id)
         {
             if(id<=0) return BadRequest("El id debe ser mayor a 0");
@@ -130,8 +134,9 @@ namespace Obligatorio2_WEB_API.Controllers
         }
 
         // POST api/<EspeciesController>
+
         [HttpPost]
-        [Authorize(Roles = "Admin,Usuario")]
+
         public IActionResult Create(EspecieDTO especie)
         {
 
@@ -153,8 +158,10 @@ namespace Obligatorio2_WEB_API.Controllers
         }
 
         // PUT api/<EspeciesController>/5
+
+
         [HttpPut("{id}")]
-        [Authorize(Roles = "Admin,Usuario")]
+        
         public IActionResult Put(int id, [FromBody] EspecieDTO especie)
         {
             if (especie == null || especie.Id != id)
@@ -179,8 +186,9 @@ namespace Obligatorio2_WEB_API.Controllers
         }
 
         // DELETE api/<EspeciesController>/5
+
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin,Usuario")]
+
         public IActionResult Delete(int id)
         {
             if (id <= 0) return BadRequest("El id debe ser un número positivo mayor a cero");

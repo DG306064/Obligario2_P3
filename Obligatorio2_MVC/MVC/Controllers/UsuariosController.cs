@@ -1,4 +1,5 @@
 ﻿using ExcepcionesPropias;
+using Microsoft.AspNetCore.Authorization;
 //using LogicaAplicacion.CasosUso;
 //using LogicaAplicacion.InterfacesCU;
 //using LogicaNegocio;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MVC.DTOs;
 using Newtonsoft.Json;
+using System.Net.Http.Headers;
 
 namespace MVC.Controllers
 {
@@ -186,8 +188,7 @@ namespace MVC.Controllers
             try
             {
                 HttpClient cliente = new HttpClient();
-                string url = $"http://localhost:5285/api/Usuarios";
-                //cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                string url = $"http://localhost:5285/api/Usuarios/login";
                 Task<HttpResponseMessage> tarea1 = cliente.PostAsJsonAsync(url, usu);
                 tarea1.Wait();
 
@@ -226,6 +227,52 @@ namespace MVC.Controllers
                 return View(usu);
             }
         }
+
+        [HttpGet]
+        [Route("Usuarios/ActualizarPaises")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ActualizarPaises()
+        {
+            try
+            {
+
+                HttpClient cliente = new HttpClient();
+                string token = HttpContext.Session.GetString("token");
+                cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                string url = $"http://localhost:5285/api/WebAPI";
+                Task<HttpResponseMessage> tarea1 = cliente.GetAsync(url);
+                tarea1.Wait();
+
+                HttpResponseMessage respuesta = tarea1.Result;
+                HttpContent contenido = respuesta.Content;
+                Task<string> tarea2 = contenido.ReadAsStringAsync();
+                tarea2.Wait();
+
+                string body = tarea2.Result;
+
+                if (respuesta.IsSuccessStatusCode)
+                {
+                    //OBTENGO EL TOKEN Y EL ROL
+                    var mensaje = JsonConvert.DeserializeObject<string>(body);
+
+                    //REDIRIJO A ALGUNA ACCIÓN
+                    return View("Paises actualizados");
+                }
+                else
+                {
+                    ViewBag.Error = body;
+                    return View();
+                }
+            }
+            catch
+            {
+                ViewBag.Error("Ocurrió un error inesperado");
+                return View();
+            }
+        }
+
+
+
 
         public ActionResult Logout()
         {

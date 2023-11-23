@@ -30,6 +30,8 @@ namespace MVC.Controllers
             IEnumerable<ParametroDTO> parametros = null;
 
             HttpClient cliente = new HttpClient();
+            string token = HttpContext.Session.GetString("token");
+            cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
             string url = "http://localhost:5285/api/parametros";
 

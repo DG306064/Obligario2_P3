@@ -23,6 +23,8 @@
 
 <h1>ECOSISTEMAS</h1>
 
+<h3>@ViewBag.Error</h3>
+
 @if (Context.Session.GetString("nombre") != null){ 
 
     <p>
@@ -94,7 +96,10 @@
             
         @if (Context.Session.GetString("rol") != null){ 
             <td>
-                        @Html.ActionLink("BORRAR", "Borrar", new { id=item.Ecosistema.Id }) |
+                        <form asp-action="Borrar" method="post">
+                        <input type="hidden" name="id" value="@item.Ecosistema.Id" />
+                        <input type="submit" value="BORRAR" class="btn btn-danger" onclick="return confirm('¿Estás seguro que quieres eliminar este ecosistema?');" />
+                        </form>
 
                         @Html.ActionLink("ASIGNAR AMENAZAS", "AsignarAmenazaAUnEcosistea", new { IdEcosistema=item.Ecosistema.Id })
                 
